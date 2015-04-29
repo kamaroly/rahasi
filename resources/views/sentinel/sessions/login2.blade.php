@@ -40,7 +40,9 @@
               <label>E-Mail</label>
                 <div class="field">
                   <input class="form-control" placeholder="Email" autofocus="autofocus" name="email" type="text" value="{{ Input::old('email') }}">
-                {{ ($errors->has('email') ? $errors->first('email') : '') }}
+                  @if($errors->has('email')) 
+                   <span class="error">{{ $errors->first('email')}}</span>
+                  @endif
                 </div>
             </div>
             
@@ -49,7 +51,9 @@
               <label>Password</label>
                 <div class="field">
                   <input class="form-control" placeholder="Password" name="password" value="" type="password">
-                {{ ($errors->has('password') ?  $errors->first('password') : '') }}
+                  @if($errors->has('password')) 
+                   <span class="error">{{ $errors->first('password')}}</span>
+                  @endif
                 </div>
             </div>
            <div class="ui hidden divider"></div>
