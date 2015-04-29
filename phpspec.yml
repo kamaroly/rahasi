@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Rahasi
+        psr4_prefix: Rahasi
+        src_path: app
