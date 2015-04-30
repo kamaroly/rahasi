@@ -59,9 +59,11 @@
            <div class="ui hidden divider"></div>
               <div class="field">
                <div class="ui login toggle checkbox">
-                <input type="checkbox" name="rememberMe" value="rememberMe" checked="checked">
-                <label>Remember <b>me</b> for the next login.</label>
+                <input type="checkbox" name="rememberMe" value="rememberMe" >
+                <label>Remember <b>me</b>.</label>
               </div>
+
+               <a class="btn btn-link" href="{{ route('sentinel.forgot.form') }}">Forgot Password</a>
              </div>
            <input name="_token" value="{{ csrf_token() }}" type="hidden">
            {{-- Login button --}}
