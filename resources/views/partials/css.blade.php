@@ -1,4 +1,4 @@
- <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 <!-- Semantic UI 3.3.2 -->
 <link rel="stylesheet" type="text/css" href="/assets/css/semantic.min.css">
 <!-- FontAwesome 4.3.0 -->
@@ -10,10 +10,9 @@
 <!-- AdminLTE Skins. Choose a skin from the css/skins 
      folder instead of downloading all of them to reduce the load. -->
 <link href="/assets/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
-<!-- iCheck -->
-<link href="/assets/css/flatblue.css" rel="stylesheet" type="text/css" />
-<!-- Morris chart -->
 
+<link href="/assets/css/flatblue.css" rel="stylesheet" type="text/css" />
+<link href="/assets/css/jsmodal-light.css" rel="stylesheet" type="text/css" />
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>

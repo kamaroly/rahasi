@@ -474,4 +474,24 @@ $.AdminLTE.boxWidget = {
       }
     });
   };
+
+  /////////////////////////////
+  // MODAL JAVASCRIPT CODES  //
+  /////////////////////////////
+
+  // POPUP ANY ITEM WITH MODAL CLASS
+  document.getElementById('modal').onclick = function(event) {
+  //prevent default behavious
+  event.preventDefault();
+  // Get current element href
+  var url = this.href;
+
+  Modal.open({
+   ajaxContent: url.toString(),
+    width: '50%',
+    height: '50%',
+    hideClose: true,
+    closeAfter: 10
+  });
+};
 }(jQuery));
