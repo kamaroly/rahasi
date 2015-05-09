@@ -13,8 +13,8 @@
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Theme style -->
-    <link href="/assets/css/AdminLTE.css" rel="stylesheet" type="text/css" />
- <!--    AdminLTE Skins. Choose a skin from the css/skins 
+    <link href="/assets/css/rahasi.css" rel="stylesheet" type="text/css" />
+ <!--    rahasi Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
     <link href="/assets/css/skins/_all-skins.css" rel="stylesheet" type="text/css" />
 
@@ -175,7 +175,7 @@
    <!-- jQuery 2.1.3 -->
     <script src="/assets/js/jQuery-2.1.3.min.js"></script>
 
-    <!-- AdminLTE App -->
+    <!-- rahasi App -->
     <script src="/assets/js/app.min.js" type="text/javascript"></script>
   </body>
 </html>

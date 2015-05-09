@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "012d33c9a593f4930a9ba1c39d0db618",
+    "hash": "6ff2f031bbc8b4ce5ca5cd73255d37ca",
     "packages": [
         {
             "name": "anlutro/l4-settings",
@@ -369,30 +369,30 @@
         },
         {
             "name": "graham-campbell/manager",
-            "version": "v2.0.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Manager.git",
-                "reference": "17c2e2f3282bd795c136487928edb79dc8335a33"
+                "reference": "1a99ed46590cac9c524ca5ab54bd8a80aa127c39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Manager/zipball/17c2e2f3282bd795c136487928edb79dc8335a33",
-                "reference": "17c2e2f3282bd795c136487928edb79dc8335a33",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Manager/zipball/1a99ed46590cac9c524ca5ab54bd8a80aa127c39",
+                "reference": "1a99ed46590cac9c524ca5ab54bd8a80aa127c39",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.0.*",
-                "illuminate/support": "5.0.*",
-                "php": ">=5.4.7"
+                "illuminate/contracts": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*",
+                "php": ">=5.5.9"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.0"
+                "graham-campbell/testbench": "~2.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "2.1-dev"
                 }
             },
             "autoload": {
@@ -422,7 +422,7 @@
                 "laravel",
                 "manager"
             ],
-            "time": "2015-02-05 20:11:50"
+            "time": "2015-05-07 12:37:59"
         },
         {
             "name": "hashids/hashids",
@@ -1042,16 +1042,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v1.2.2",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "08f97eb4efa029e2fafb6d8c98b71731bf0cf621"
+                "reference": "dff239267fd1befa1cd40430c9ed12591aa720ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/08f97eb4efa029e2fafb6d8c98b71731bf0cf621",
-                "reference": "08f97eb4efa029e2fafb6d8c98b71731bf0cf621",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/dff239267fd1befa1cd40430c9ed12591aa720ca",
+                "reference": "dff239267fd1befa1cd40430c9ed12591aa720ca",
                 "shasum": ""
             },
             "require": {
@@ -1061,7 +1061,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.3-dev"
                 }
             },
             "autoload": {
@@ -1083,7 +1083,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-04-03 14:33:59"
+            "time": "2015-05-02 15:40:40"
         },
         {
             "name": "psr/log",
@@ -2015,32 +2015,32 @@
         },
         {
             "name": "vinkla/hashids",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vinkla/hashids.git",
-                "reference": "0b76f82e54ab071d06de4895107aab90bb308481"
+                "reference": "e4eb7ee46aa99f4aca4c8cf65c1938e5464d1b68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vinkla/hashids/zipball/0b76f82e54ab071d06de4895107aab90bb308481",
-                "reference": "0b76f82e54ab071d06de4895107aab90bb308481",
+                "url": "https://api.github.com/repos/vinkla/hashids/zipball/e4eb7ee46aa99f4aca4c8cf65c1938e5464d1b68",
+                "reference": "e4eb7ee46aa99f4aca4c8cf65c1938e5464d1b68",
                 "shasum": ""
             },
             "require": {
-                "graham-campbell/manager": "~2.0",
+                "graham-campbell/manager": "~2.1",
                 "hashids/hashids": "~1.0",
-                "illuminate/contracts": "~5.0",
-                "illuminate/support": "~5.0",
-                "php": ">=5.4.7"
+                "illuminate/contracts": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*",
+                "php": ">=5.5.9"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.0"
+                "graham-campbell/testbench": "~2.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -2055,12 +2055,10 @@
             "authors": [
                 {
                     "name": "Vincent Klaiber",
-                    "email": "me@vinkla.com",
-                    "homepage": "http://vinkla.com"
+                    "email": "hello@vinkla.com"
                 }
             ],
             "description": "Laravel 5 wrapper for the Hashids API.",
-            "homepage": "https://github.com/vinkla/hashids",
             "keywords": [
                 "bitly",
                 "decrypt",
@@ -2073,7 +2071,7 @@
                 "obfuscate",
                 "youtube"
             ],
-            "time": "2015-02-05 18:01:41"
+            "time": "2015-05-07 17:42:50"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -2345,16 +2343,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5"
+                "reference": "3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5",
-                "reference": "8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373",
+                "reference": "3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373",
                 "shasum": ""
             },
             "require": {
@@ -2401,7 +2399,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-03-27 19:31:25"
+            "time": "2015-04-27 22:15:08"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -2651,16 +2649,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.6.4",
+            "version": "4.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "163232991e652e6efed2f8470326fffa61e848e2"
+                "reference": "3afe303d873a4d64c62ef84de491b97b006fbdac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/163232991e652e6efed2f8470326fffa61e848e2",
-                "reference": "163232991e652e6efed2f8470326fffa61e848e2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3afe303d873a4d64c62ef84de491b97b006fbdac",
+                "reference": "3afe303d873a4d64c62ef84de491b97b006fbdac",
                 "shasum": ""
             },
             "require": {
@@ -2719,7 +2717,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-04-11 05:23:21"
+            "time": "2015-04-29 15:18:52"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

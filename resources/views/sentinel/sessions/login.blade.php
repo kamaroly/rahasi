@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title> RAHASI | Log in</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!-- Bootstrap 3.3.2 -->
-         <link rel="stylesheet" type="text/css" href="/assets/css/semantic.min.css">
+    <!-- Semantic UI 3.3.2 -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/semantic.min.css">
     <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
@@ -19,9 +19,8 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-      <script src="/assets/js/jQuery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/assets/js/jQuery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="/assets/js/semantic.js" type="text/javascript" charset="utf-8"></script>
- 
   </head>
   <body class="login-page">
     <div class="login-box">
@@ -38,7 +37,7 @@
           {{-- Username Field --}}
             <div class="fuild field">
               <label>E-Mail</label>
-                <div class="field">
+                <div class="field form-group {{ ($errors->has('password')) ? 'has-error' : '' }}">
                   <input class="form-control" placeholder="Email" autofocus="autofocus" name="email" type="text" value="{{ Input::old('email') }}">
                   @if($errors->has('email')) 
                    <span class="error">{{ $errors->first('email')}}</span>
@@ -49,7 +48,7 @@
            {{-- Password Field --}}
            <div class="fuild field">
               <label>Password</label>
-                <div class="field">
+                <div class="field form-group {{ ($errors->has('password')) ? 'has-error' : '' }}">
                   <input class="form-control" placeholder="Password" name="password" value="" type="password">
                   @if($errors->has('password')) 
                    <span class="error">{{ $errors->first('password')}}</span>
@@ -60,10 +59,10 @@
               <div class="field">
                <div class="ui login toggle checkbox">
                 <input type="checkbox" name="rememberMe" value="rememberMe" >
-                <label>Remember <b>me</b>.</label>
+                <label>Remember <b>me</b>. &nbsp; &nbsp; &nbsp;</label>
               </div>
 
-               <a class="btn btn-link" href="{{ route('sentinel.forgot.form') }}">Forgot Password</a>
+               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a class="btn btn-link" href="{{ route('sentinel.forgot.form') }}">Forgot Password?</a>
              </div>
            <input name="_token" value="{{ csrf_token() }}" type="hidden">
            {{-- Login button --}}
