@@ -9,19 +9,19 @@
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>
+             <li class="treeview">
+              <a href="#">
+                <i class="fa fa-money"></i> <span>Payments</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+            </li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-exchange"></i> <span>Transfers</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-th"></i> <span>Balance</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-            </li>
              <li class="treeview">
               <a href="#">
-                <i class="fa fa-users"></i> <span>Customers</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-th"></i> <span>Balance</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>
             @if (Sentry::check() && Sentry::getUser()->hasAccess('admin'))
