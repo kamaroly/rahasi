@@ -4364,3 +4364,30 @@ fieldset[disabled] .btn-vk.active {
     white-space: normal!important;
   }
 }
+
+/*TOP MENU*/
+.header.menu{
+  float: right;
+  background: rgba(0,0,0,.03);
+  color: rgba(0,0,0,.8);
+  font-weight: 400;
+  box-shadow: 0 2px 0 inset;
+}
+.header.menu .item {
+  color: #eaeaea;
+  position: relative;
+  display: inline-block;
+  padding: 15px 15px;
+  border-top: 0 solid transparent;
+  vertical-align: middle;
+  line-height: 1;
+  text-decoration: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: opacity .2s ease,background .2s ease,box-shadow .2s ease;
+  transition: opacity .2s ease,background .2s ease,box-shadow .2s ease;
+}

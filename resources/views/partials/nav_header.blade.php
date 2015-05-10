@@ -12,30 +12,15 @@
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only"></span>
           </a>
-          <div class="navbar-custom-menu">
-              <ul class="nav">
-                @if (Sentry::check())
-                  <li {{ (Request::is('profile') ? 'class="active"' : '') }}><a href="{{ route('sentinel.profile.show') }}">{{ Session::get('email') }}</a>
-                  </li>
-                  <li>
-                    <a href="{{ route('sentinel.logout') }}">Logout</a>
-                  </li>
-                  @else
-                  <li {{ (Request::is('login') ? 'class="active"' : '') }}><a href="{{ route('sentinel.login') }}">Login</a></li>
-                  <li {{ (Request::is('users/create') ? 'class="active"' : '') }}><a href="{{ route('sentinel.register.form') }}">Register</a></li>
-                  @endif
-              </ul>
-          </div>
-          <div class="ui inverted menu">
-            <a class="active item">
-              <i class="home icon"></i> Home
+          <div class="header menu">
+           @if (Sentry::check())
+           <a href="{{ route('sentinel.login') }}" class="item" id="modal"> <i class="settings icon"></i>Settings</a>
+            <a class="{{ (Request::is('profile') ? 'active' : '') }} item" href="{{ route('sentinel.profile.show') }}">
+              <i class="user icon"></i> 
+              {{ Session::get('email') }}
             </a>
-            <a class="item">
-              <i class="mail icon"></i> Messages
-            </a>
-            <a class="item">
-              <i class="user icon"></i> Friends
-            </a>
+            <a href="{{ route('sentinel.logout') }}" class="item"> <i class="exit icon"></i>Logout</a>
+            @endif
           </div>
         </nav>
       </header>
