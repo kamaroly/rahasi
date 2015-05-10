@@ -14,7 +14,7 @@
           </a>
           <div class="header menu">
            @if (Sentry::check())
-           <a href="{{ route('sentinel.login') }}" class="item" id="modal"> <i class="settings icon"></i>Settings</a>
+           <a href="{{ route('settings.index') }}" class="item" id="modal"> <i class="setting icon"></i>Settings</a>
             <a class="{{ (Request::is('profile') ? 'active' : '') }} item" href="{{ route('sentinel.profile.show') }}">
               <i class="user icon"></i> 
               {{ Session::get('email') }}
