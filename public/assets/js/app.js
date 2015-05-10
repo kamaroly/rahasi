@@ -487,9 +487,7 @@ $.AdminLTE.boxWidget = {
   Modal.open({
    ajaxContent: url.toString(),
     width: '50%',
-    height: '50%',
-    hideClose: true,
-    closeAfter: 10
+    height: '50%'
   });
   //prevent default behavious
   event.preventDefault();

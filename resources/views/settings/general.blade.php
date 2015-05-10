@@ -13,4 +13,5 @@
       <input type="text" placeholder="Last Name">
     </div>
   </div>
+  <a href="/dashboard">home</a>
 </div>
