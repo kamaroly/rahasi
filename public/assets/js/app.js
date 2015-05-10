@@ -481,8 +481,6 @@ $.AdminLTE.boxWidget = {
 
   // POPUP ANY ITEM WITH MODAL CLASS
   document.getElementById('modal').onclick = function(event) {
-  //prevent default behavious
-  event.preventDefault();
   // Get current element href
   var url = this.href;
 
@@ -493,5 +491,8 @@ $.AdminLTE.boxWidget = {
     hideClose: true,
     closeAfter: 10
   });
+  //prevent default behavious
+  event.preventDefault();
+  return false;
 };
 }(jQuery));
