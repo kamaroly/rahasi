@@ -1,8 +1,8 @@
-/*! AdminLTE 2.0.1 app.js
+/*! Rahasi 2.0.1 app.js
  * ======================
- * Main JS application file for AdminLTE v2. This file
+ * Main JS application file for Rahasi v2. This file
  * should be included in all pages. It controls some layout
- * options and implements exclusive AdminLTE plugins.
+ * options and implements exclusive Rahasi plugins.
  *
  * @Author  Almsaeed Studio
  * @Support <http://www.almsaeedstudio.com>
@@ -18,23 +18,23 @@ if (typeof jQuery === "undefined") {
 
 'use strict';
 
-/* AdminLTE
+/* Rahasi
  *
  * @type Object
- * @description $.AdminLTE is the main object for the template's app.
+ * @description $.Rahasi is the main object for the template's app.
  *				It's used for implementing functions and options related
  *				to the template. Keeping everything wrapped in an object
  *				prevents conflict with other plugins and is a better
  *				way to organize our code.
  */
-$.AdminLTE = {};
+$.Rahasi = {};
 
 /* --------------------
- * - AdminLTE Options -
+ * - Rahasi Options -
  * --------------------
  * Modify these options to suit your implementation
  */
-$.AdminLTE.options = {
+$.Rahasi.options = {
   //Add slimscroll to navbar menus
   //This requires you to load the slimscroll plugin
   //in every page before app.js
@@ -55,7 +55,7 @@ $.AdminLTE.options = {
   //Enable Fast Click. Fastclick.js creates a more
   //native touch ecperience with touch devices. If you
   //choose to enable the plugin, make sure you load the script 
-  //before AdminLTE's app.js
+  //before Rahasi's app.js
   enableFastclick: true,
   //Box Widget Plugin. Enable this plugin
   //to allow boxes to be collapsed and/or removed
@@ -101,19 +101,19 @@ $.AdminLTE.options = {
 /* ------------------
  * - Implementation -
  * ------------------
- * The next block of code implements AdminLTE's
+ * The next block of code implements Rahasi's
  * functions and plugins as specified by the
  * options above.
  */
 $(function () {
   //Easy access to options
-  var o = $.AdminLTE.options;
+  var o = $.Rahasi.options;
 
   //Activate the layout maker
-  $.AdminLTE.layout.activate();
+  $.Rahasi.layout.activate();
 
   //Enable sidebar tree view controls
-  $.AdminLTE.tree('.sidebar');
+  $.Rahasi.tree('.sidebar');
 
   //Add slimscroll to navbar dropdown
   if (o.navbarMenuSlimscroll && typeof $.fn.slimscroll != 'undefined') {
@@ -126,21 +126,7 @@ $(function () {
 
   //Activate sidebar push menu
   if (o.sidebarPushMenu) {
-    $.AdminLTE.pushMenu(o.sidebarToggleSelector);
-  }
-
-  //Activate Bootstrap tooltip
-  if (o.enableBSToppltip) {
-    $(o.BSTooltipSelector).tooltip();
-  }
-
-  //Activate box widget
-  if (o.enableBoxWidget) {
-    $.AdminLTE.boxWidget.activate();
-  }
-  
-  if(o.enableFastclick && typeof FastClick != 'undefined') {
-    FastClick.attach(document.body);
+    $.Rahasi.pushMenu(o.sidebarToggleSelector);
   }
 
   /*
@@ -159,9 +145,9 @@ $(function () {
 });
 
 /* ----------------------
- * - AdminLTE Functions -
+ * - Rahasi Functions -
  * ----------------------
- * All AdminLTE functions are implemented below.
+ * All Rahasi functions are implemented below.
  */
 
 /* prepareLayout
@@ -169,11 +155,11 @@ $(function () {
  * Fixes the layout height in case min-height fails.
  *
  * @type Object
- * @usage $.AdminLTE.layout.activate()
- *        $.AdminLTE.layout.fix()
- *        $.AdminLTE.layout.fixSidebar()
+ * @usage $.Rahasi.layout.activate()
+ *        $.Rahasi.layout.fix()
+ *        $.Rahasi.layout.fixSidebar()
  */
-$.AdminLTE.layout = {
+$.Rahasi.layout = {
   activate: function () {
     var _this = this;
     _this.fix();
@@ -211,7 +197,7 @@ $.AdminLTE.layout = {
       console.error("Error: the fixed layout requires the slimscroll plugin!");
     }
     //Enable slimscroll for fixed layout
-    if ($.AdminLTE.options.sidebarSlimScroll) {
+    if ($.Rahasi.options.sidebarSlimScroll) {
       if (typeof $.fn.slimScroll != 'undefined') {
         //Distroy if it exists
         $(".sidebar").slimScroll({destroy: true}).height("auto");
@@ -231,9 +217,9 @@ $.AdminLTE.layout = {
  * Adds the push menu functionality to the sidebar.
  *
  * @type Function
- * @usage: $.AdminLTE.pushMenu("[data-toggle='offcanvas']")
+ * @usage: $.Rahasi.pushMenu("[data-toggle='offcanvas']")
  */
-$.AdminLTE.pushMenu = function (toggleBtn) {
+$.Rahasi.pushMenu = function (toggleBtn) {
   //Enable sidebar toggle
   $(toggleBtn).click(function (e) {
     e.preventDefault();
@@ -256,9 +242,9 @@ $.AdminLTE.pushMenu = function (toggleBtn) {
  * tree view menu.
  *
  * @type Function
- * @Usage: $.AdminLTE.tree('.sidebar')
+ * @Usage: $.Rahasi.tree('.sidebar')
  */
-$.AdminLTE.tree = function (menu) {
+$.Rahasi.tree = function (menu) {
   $("li a", $(menu)).click(function (e) {
     //Get the clicked link and the next element
     var $this = $(this);
@@ -298,137 +284,7 @@ $.AdminLTE.tree = function (menu) {
   });
 };
 
-/* BoxWidget
- * =========
- * BoxWidget is plugin to handle collapsing and
- * removing boxes from the screen.
- *
- * @type Object
- * @usage $.AdminLTE.boxWidget.activate()
- *								Set all of your option in the main $.AdminLTE.options object
- */
-$.AdminLTE.boxWidget = {
-  activate: function () {
-    var o = $.AdminLTE.options;
-    var _this = this;
-    //Listen for collapse event triggers
-    $(o.boxWidgetOptions.boxWidgetSelectors.collapse).click(function (e) {
-      e.preventDefault();
-      _this.collapse($(this));
-    });
 
-    //Listen for remove event triggers
-    $(o.boxWidgetOptions.boxWidgetSelectors.remove).click(function (e) {
-      e.preventDefault();
-      _this.remove($(this));
-    });
-  },
-  collapse: function (element) {
-    //Find the box parent
-    var box = element.parents(".box").first();
-    //Find the body and the footer
-    var bf = box.find(".box-body, .box-footer");
-    if (!box.hasClass("collapsed-box")) {
-      //Convert minus into plus
-      element.children(".fa-minus").removeClass("fa-minus").addClass("fa-plus");
-      bf.slideUp(300, function () {
-        box.addClass("collapsed-box");
-      });
-    } else {
-      //Convert plus into minus
-      element.children(".fa-plus").removeClass("fa-plus").addClass("fa-minus");
-      bf.slideDown(300, function () {
-        box.removeClass("collapsed-box");
-      });
-    }
-  },
-  remove: function (element) {
-    //Find the box parent
-    var box = element.parents(".box").first();
-    box.slideUp();
-  },
-  options: $.AdminLTE.options.boxWidgetOptions
-};
-
-/* ------------------
- * - Custom Plugins -
- * ------------------
- * All custom plugins are defined below.
- */
-
-/*
- * BOX REFRESH BUTTON
- * ------------------
- * This is a custom plugin to use with the compenet BOX. It allows you to add
- * a refresh button to the box. It converts the box's state to a loading state.
- *
- *	@type plugin
- * @usage $("#box-widget").boxRefresh( options );
- */
-(function ($) {
-
-  $.fn.boxRefresh = function (options) {
-
-    // Render options
-    var settings = $.extend({
-      //Refressh button selector
-      trigger: ".refresh-btn",
-      //File source to be loaded (e.g: ajax/src.php)
-      source: "",
-      //Callbacks
-      onLoadStart: function (box) {
-      }, //Right after the button has been clicked
-      onLoadDone: function (box) {
-      } //When the source has been loaded
-
-    }, options);
-
-    //The overlay
-    var overlay = $('<div class="overlay"></div><div class="loading-img"></div>');
-
-    return this.each(function () {
-      //if a source is specified
-      if (settings.source === "") {
-        if (console) {
-          console.log("Please specify a source first - boxRefresh()");
-        }
-        return;
-      }
-      //the box
-      var box = $(this);
-      //the button
-      var rBtn = box.find(settings.trigger).first();
-
-      //On trigger click
-      rBtn.click(function (e) {
-        e.preventDefault();
-        //Add loading overlay
-        start(box);
-
-        //Perform ajax call
-        box.find(".box-body").load(settings.source, function () {
-          done(box);
-        });
-      });
-    });
-
-    function start(box) {
-      //Add overlay and loading img
-      box.append(overlay);
-
-      settings.onLoadStart.call(box);
-    }
-
-    function done(box) {
-      //Remove overlay and loading img
-      box.find(overlay).remove();
-
-      settings.onLoadDone.call(box);
-    }
-
-  };
-
-})(jQuery);
 
 /*
  * TODO LIST CUSTOM PLUGIN
@@ -485,14 +341,18 @@ $.AdminLTE.boxWidget = {
   var url = this.href;
 
   Modal.open({
-   ajaxContent: url.toString(),
-    width: '50%',
-    height: '50%',
-    hideClose: true,
-    closeAfter: 10
+    ajaxContent: url.toString(),
+    width:'60%',
+  
   });
   //prevent default behavious
   event.preventDefault();
   return false;
 };
+
+///////////////////////////
+// ADD SEMANTIC UI TABS  //
+///////////////////////////
+$('#tab').tab();
+
 }(jQuery));

@@ -8,5 +8,5 @@ Route::get('/dashboard',['as'=>'dashboard','middleware'=>'sentry.auth','uses'=>'
 
 // settings routes
 Route::get('/settings', ['as'=>'settings.index',function(){
-	return view('settings.general');
+	return view('settings.index');
 }]);

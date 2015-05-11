@@ -259,7 +259,8 @@ var Modal = (function () {
             }
 
             if (!parameters.horizontalOnly) {
-                modalContainer.style.top = amountScrolledY + (browserHeight / 2) - (modalHeight / 2) + 'px';
+                // alert(modalHeight);
+                modalContainer.style.top = amountScrolledY + (browserHeight*0.01 ) +'%'; //- (modalHeight / 2) + 'px';
             }
 
             modalContainer.style.left = amountScrolledX + (browserWidth / 2) - (modalWidth / 2) + 'px';

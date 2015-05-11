@@ -3,3 +3,5 @@
 <script src="/assets/js/semantic.js" type="text/javascript" charset="utf-8"></script>
 <script src="/assets/js/app.js" type="text/javascript" charset="utf-8"></script>
 <script src="/assets/js/jsmodal-1.0d.js"></script>
+
+@yield('js')
