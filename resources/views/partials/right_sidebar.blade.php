@@ -7,7 +7,7 @@
             <h3 class="control-sidebar-heading"><i class="fa fa-gears"></i> Settings</h3>
             <ul class='control-sidebar-menu'>
              <li>
-                <a href="{{ route('sentinel.profile.show') }}" onClick="modal(this)">
+                <a href="{{ route('sentinel.profile.show') }}"onClick="modal(this)">
                   <i class="menu-icon fa fa-user bg-green"></i>
                   <div class="menu-info">
                     <h4 class="control-sidebar-subheading"> {{ Session::get('email') }}</h4>
@@ -17,10 +17,10 @@
               </li>
               <li>
                 <a href="{{route('settings.general')}}" onClick="modal(this)">
-                  <i class="menu-icon fa fa-tools bg-green"></i>
+                  <i class="menu-icon fa fa-university bg-green"></i>
                   <div class="menu-info">
                     <h4 class="control-sidebar-subheading">General</h4>
-                    <p>Your account general settings</p>
+                    <p>Bank Account, MFS etc.... settings</p>
                   </div>
                 </a>
               </li>
