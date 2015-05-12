@@ -1,5 +1,6 @@
 <?php
 
+
 Route::get('/','WelcomeController@index');
 // Dashboard Routes after user signs in 
 Route::get('/home',['as'=>'home','middleware'=>'sentry.auth','uses'=>'WelcomeController@dashboard']);
@@ -18,7 +19,17 @@ Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
 	}]);
 
 	Route::get('/save', function(){
-		Setting::set('foo', 'bar');
+
+		//Add settings extra column
+		Setting::setExtraColumns(array(
+		    'user_id' => Sentry::getUser()->id
+		));
+		Setting::set('account_name', 'huguka');
 		dd(Setting::save());
 	});
+
+	Route::get('/get', function()
+		{
+			return Setting::get('foor');
+		});
 });

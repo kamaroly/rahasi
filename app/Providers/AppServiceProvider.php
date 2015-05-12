@@ -11,10 +11,7 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//Adding the user id to the settings table
-		Setting::setExtraColumns(array(
-			    'user_id' => Sentry::getUser()->id;
-			));
+		//
 	}
 
 	/**
