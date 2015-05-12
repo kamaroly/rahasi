@@ -4,7 +4,8 @@ use Rahasi\Eloquents\Setting;
 /**
 * Repository for the settings
 */
-class SettingRepository extends Setting
-{
+class SettingRepository extends Setting{
 
+	/** @var table name  */
+	protected $table = 'settings';
 }
