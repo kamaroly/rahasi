@@ -6,7 +6,7 @@
     </div>
     <div class="field">
       <label>{{Lang::get('settings.country')}}</label>
-      <input type="text" name=".country" placeholder="{{ Lang::get('settings.country')}}">
+      <input type="text" name="country" placeholder="{{ Lang::get('settings.country')}}">
     </div>
     <div class="field">
       <label>{{Lang::get('settings.timezone')}}</label>

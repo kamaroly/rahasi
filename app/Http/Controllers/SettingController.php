@@ -3,7 +3,7 @@
 use Rahasi\Http\Requests;
 use Rahasi\Http\Requests\GeneralSettingsRequest;
 use Rahasi\Commands\SettingRegisterCommand;
-use Rahasi\Models\Setting;
+use Rahasi\Repositories\SettingRepository as Setting;
 use Rahasi\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
