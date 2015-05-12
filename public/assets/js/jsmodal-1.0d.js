@@ -62,6 +62,7 @@ var Modal = (function () {
                 modalContent.innerHTML = parameters.content;
             } else if (parameters.ajaxContent && !parameters.content) {
                 modalContainer.className = 'modal-loading';
+              
                 method.ajax(parameters.ajaxContent, function insertAjaxResult(ajaxResult) {
                     modalContent.innerHTML = ajaxResult;
                 });
@@ -260,7 +261,7 @@ var Modal = (function () {
 
             if (!parameters.horizontalOnly) {
                 // alert(modalHeight);
-                modalContainer.style.top = amountScrolledY + (browserHeight*0.01 ) +'%'; //- (modalHeight / 2) + 'px';
+                modalContainer.style.top = amountScrolledY + (browserHeight*0.02 ) +'%'; //- (modalHeight / 2) + 'px';
             }
 
             modalContainer.style.left = amountScrolledX + (browserWidth / 2) - (modalWidth / 2) + 'px';

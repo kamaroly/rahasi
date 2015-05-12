@@ -20,7 +20,7 @@
             </a>
             <a href="{{ route('sentinel.logout') }}" class="item"> <i class="exit icon"></i>Logout</a>
 
-             <a href="#" class="item" data-toggle="control-sidebar"> <i class="setting icon"></i>Settings</a>
+             <a href="#" class="item" data-toggle="control-sidebar"> <i class="setting icon"></i>Acccount Settings</a>
             @endif
           </div>
         </nav>

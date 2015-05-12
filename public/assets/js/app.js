@@ -186,17 +186,6 @@ $(function () {
     $.AdminLTE.pushMenu.activate(o.sidebarToggleSelector);
   }
 
-  //Activate Bootstrap tooltip
-  if (o.enableBSToppltip) {
-    $('body').tooltip({
-      selector: o.BSTooltipSelector
-    });
-  }
-
-  //Activate box widget
-  if (o.enableBoxWidget) {
-    $.AdminLTE.boxWidget.activate();
-  }
 
   //Activate fast click
   if (o.enableFastclick && typeof FastClick != 'undefined') {
@@ -717,23 +706,35 @@ function _init() {
   /////////////////////////////
 
   // POPUP ANY ITEM WITH MODAL CLASS
-  document.getElementById('modal').onclick = function(event) {
-  // Get current element href
-  var url = this.href;
-
-  Modal.open({
-    ajaxContent: url.toString(),
-    width:'60%',
   
-  });
-  //prevent default behavious
-  event.preventDefault();
-  return false;
-};
+//   document.getElementById('modal').onclick = function(event) {
+//     //prevent default behavious
+//   event.preventDefault();
+//   // Get current element href
+//   var url = this.href;
 
-///////////////////////////
-// ADD SEMANTIC UI TABS  //
-///////////////////////////
-$('#tab').tab();
+//   Modal.open({
+//     ajaxContent: url.toString(),
+//     width:'60%',
+  
+//   });  
+// });
 
 }(jQuery));
+
+  /////////////////////////////
+  // MODAL JAVASCRIPT CODES  //
+  /////////////////////////////
+
+function modal(element) {
+     // Get current called event
+     var event = window.event || arguments.callee.caller.arguments[0];
+     event.preventDefault();
+
+    var url = event.href;
+    Modal.open({
+    ajaxContent: element.href.toString(),
+    draggable: true,
+    width:'50%',
+  });
+}

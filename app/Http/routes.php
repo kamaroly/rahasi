@@ -6,7 +6,14 @@ Route::get('/home',['as'=>'home','middleware'=>'sentry.auth','uses'=>'WelcomeCon
 Route::get('/dashboard',['as'=>'dashboard','middleware'=>'sentry.auth','uses'=>'WelcomeController@dashboard']);
 
 
-// settings routes
-Route::get('/settings', ['as'=>'settings.index',function(){
-	return view('settings.index');
-}]);
+
+Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
+
+	Route::get('/general',['as'=>'settings.general', function(){
+		 return view('settings.general');
+	}]);
+
+	Route::get('/api',['as'=>'settings.api', function(){
+		 return view('settings.api');
+	}]);
+});

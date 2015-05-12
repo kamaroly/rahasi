@@ -502,6 +502,9 @@ a:focus {
   position: relative;
   margin: 0;
   padding: 0;
+  display: block;
+  border-top: 1px solid #3E3E44;
+  border-bottom: 1px solid #2C2C2C;
 }
 .sidebar-menu > li > a {
   padding: 12px 5px 12px 15px;
@@ -696,6 +699,7 @@ a:focus {
 .control-sidebar.control-sidebar-open,
 .control-sidebar.control-sidebar-open + .control-sidebar-bg {
   right: 0;
+  min-height: 93%; /** Make sure side bars have same height as the screen **/
 }
 .control-sidebar-open .control-sidebar-bg,
 .control-sidebar-open .control-sidebar {
@@ -4364,13 +4368,13 @@ fieldset[disabled] .btn-vk.active {
 /*TOP MENU*/
 .header.menu{
   float: right;
-  background: rgba(0,0,0,.03);
-  color: rgba(0,0,0,.8);
+  background: rgba(0,0,0,.01);
+  color:  #444550;
   font-weight: 400;
   box-shadow: 0 2px 0 inset;
 }
 .header.menu .item {
-  color: #eaeaea;
+  color: #444550;
   position: relative;
   display: inline-block;
   padding: 15px 15px;
