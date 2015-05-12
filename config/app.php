@@ -148,8 +148,9 @@ return [
 		/**
 		 * Thirdy Part service provider
 		 */
-		  'Sentinel\SentinelServiceProvider', 
+		  'Sentinel\SentinelServiceProvider',
 		  'anlutro\LaravelSettings\ServiceProvider',
+		  'Illuminate\Html\HtmlServiceProvider',
 
 	],
 
@@ -198,6 +199,10 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+		// Addition facades
+		'Form'		=>	'Illuminate\Html\FormFacade',
+		'Html'		=>	'Illuminate\Html\HtmlFacade',
 
 		// Custom facades
 		'Setting' => 'anlutro\LaravelSettings\Facade',

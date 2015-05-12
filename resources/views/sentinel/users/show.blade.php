@@ -40,5 +40,4 @@
 			@endif
 	    </ul>
 	</div>
-	
-	<hr />
+<hr />

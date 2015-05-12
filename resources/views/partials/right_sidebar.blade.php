@@ -16,7 +16,7 @@
                 </a>
               </li>
               <li>
-                <a href="{{route('settings.general')}}" onClick="modal(this)">
+                <a href="{{route('settings.general.view')}}" onClick="modal(this)">
                   <i class="menu-icon fa fa-university bg-green"></i>
                   <div class="menu-info">
                     <h4 class="control-sidebar-subheading">General</h4>
@@ -25,7 +25,7 @@
                 </a>
               </li>
               <li>
-                <a href="{{route('settings.api')}}"  onClick="modal(this)">
+                <a href="{{route('settings.api.view')}}"  onClick="modal(this)">
                   <i class="menu-icon fa fa-code bg-yellow"></i>
                   <div class="menu-info">
                     <h4 class="control-sidebar-subheading">API</h4>

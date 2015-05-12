@@ -71,6 +71,7 @@ var Modal = (function () {
 
             modalContainer.style.width = settings.width;
             modalContainer.style.height = settings.height;
+            modalContainer.style.margin = '0 auto';
 
             method.center({});
 
@@ -269,6 +270,7 @@ var Modal = (function () {
             }
 
             modalContainer.style.left = amountScrolledX + (browserWidth / 2) - (modalWidth / 2) + 'px';
+            modalContainer.style.margin = '0 auto';
 
             modalOverlay.style.height = documentHeight + 'px';
             modalOverlay.style.width = '100%';
