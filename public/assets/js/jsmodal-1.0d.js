@@ -62,9 +62,8 @@ var Modal = (function () {
                 modalContent.innerHTML = parameters.content;
             } else if (parameters.ajaxContent && !parameters.content) {
                 modalContainer.className = 'modal-loading';
-              
                 method.ajax(parameters.ajaxContent, function insertAjaxResult(ajaxResult) {
-                    modalContent.innerHTML = ajaxResult;
+                modalContent.innerHTML = ajaxResult;
                 });
             } else {
                 modalContent.innerHTML = '';
@@ -76,12 +75,14 @@ var Modal = (function () {
             method.center({});
 
             if (settings.lock || settings.hideClose) {
-                modalClose.style.visibility = 'hidden';
+             modalClose.style.visibility = 'hidden';
             }
             if (!settings.hideOverlay) {
                 modalOverlay.style.visibility = 'visible';
+                modalOverlay.style.display    = 'block';
             }
             modalContainer.style.visibility = 'visible';
+            modalContainer.style.display    = 'block';
 
             document.onkeypress = function (e) {
                 if (e.keyCode === 27 && settings.lock !== true) {
@@ -205,9 +206,12 @@ var Modal = (function () {
             modalOverlay.setAttribute('style', '');
             modalOverlay.style.cssText = '';
             modalOverlay.style.visibility = 'hidden';
+            modalOverlay.style.display = 'none';
+
             modalContainer.setAttribute('style', '');
             modalContainer.style.cssText = '';
             modalContainer.style.visibility = 'hidden';
+            modalContainer.style.display = 'none';
             modalHeader.style.cursor = 'default';
             modalClose.setAttribute('style', '');
             modalClose.style.cssText = '';
@@ -282,6 +286,8 @@ var Modal = (function () {
 
         modalOverlay.style.visibility = 'hidden';
         modalContainer.style.visibility = 'hidden';
+        modalOverlay.style.display  = 'none';
+        modalContainer.style.display = 'none';
 
         if (window.addEventListener) {
             window.addEventListener('load', function () {
