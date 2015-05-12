@@ -1,0 +1,31 @@
+body {
+	margin     : 0;
+	padding    : 0;
+	width      : 100%;
+	height     : 100%;
+	color      : #eaeaea;
+	display    : table;
+	font-weight: 100;
+	font-family: 'Lato';
+	background: #444;
+}
+.container {
+	text-align    : center;
+	display       : table-cell;
+	vertical-align: middle;
+}
+.content {
+	text-align: center;
+	display   : inline-block;
+}
+.title {
+	font-size    : 96px;
+	margin-bottom: 20px;
+}
+
+.sub-title{
+	font-size: 60px;
+}
+.quote {
+	font-size: 24px;
+}

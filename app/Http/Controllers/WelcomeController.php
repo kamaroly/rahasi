@@ -33,4 +33,12 @@ class WelcomeController extends Controller {
 		return view('welcome');
 	}
 
+	/**
+	 * Show Rahasi home page
+	 */
+	public function dashboard()
+	{
+		return view('dashboard');
+	}
+
 }

@@ -1,15 +1,4 @@
-@extends(config('sentinel.layout'))
-
-{{-- Web site Title --}}
-@section('title')
-@parent
-Home
-@stop
-
-{{-- Content --}}
-@section('content')
-
-    <?php
+ <?php
         // Determine the edit profile route
         if (($user->email == Sentry::getUser()->email)) {
             $editAction = route('sentinel.profile.edit');
@@ -53,10 +42,3 @@ Home
 	</div>
 	
 	<hr />
-
-	<h4>User Object</h4>
-	<div>
-		<p>{{ var_dump($user) }}</p>
-	</div>
-
-@stop
