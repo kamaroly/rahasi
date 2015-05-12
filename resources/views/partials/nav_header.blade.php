@@ -14,13 +14,15 @@
           </a>
           <div class="header menu">
            @if (Sentry::check())
-           <a href="{{ route('settings.index') }}" class="item" id="modal"> <i class="setting icon"></i>Settings</a>
-            <a class="{{ (Request::is('profile') ? 'active' : '') }} item" href="{{ route('sentinel.profile.show') }}">
+           <a class="{{ (Request::is('profile') ? 'active' : '') }} item" href="{{ route('sentinel.profile.show') }}">
               <i class="user icon"></i> 
               {{ Session::get('email') }}
             </a>
             <a href="{{ route('sentinel.logout') }}" class="item"> <i class="exit icon"></i>Logout</a>
+
+             <a href="#" class="item" data-toggle="control-sidebar"> <i class="setting icon"></i>Settings</a>
             @endif
           </div>
         </nav>
+
       </header>
