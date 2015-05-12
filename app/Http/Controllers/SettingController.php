@@ -1,6 +1,8 @@
 <?php namespace Rahasi\Http\Controllers;
 
 use Rahasi\Http\Requests;
+use Rahasi\Http\Requests\GeneralSettingsRequest;
+use Rahasi\Commands\SettingRegisterCommand;
 use Rahasi\Models\Setting;
 use Rahasi\Http\Controllers\Controller;
 
@@ -25,6 +27,7 @@ class SettingController extends Controller {
 
 	public function generalSave(GeneralSettingsRequest $request)
 	{
-		dd($request);
+		// Dispatch setting object
+		$this->dispatch(new SettingRegisterCommand($request->all()));
 	}
 }

@@ -11,7 +11,7 @@ class GeneralSettingsRequest extends Request {
 	 */
 	public function authorize()
 	{
-		return Sentry::check();
+		return \Sentry::check();
 	}
 
 	/**
