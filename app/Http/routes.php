@@ -16,4 +16,9 @@ Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
 	Route::get('/api',['as'=>'settings.api', function(){
 		 return view('settings.api');
 	}]);
+
+	Route::get('/save', function(){
+		Setting::set('foo', 'bar');
+		dd(Setting::save());
+	});
 });
