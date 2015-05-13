@@ -1,7 +1,7 @@
 <?php namespace Rahasi\Repositories\Settings;
  
-use Bosnadev\Repositories\Contracts\RepositoryInterface;
-use Bosnadev\Repositories\Eloquent\Repository;
+use Rahasi\Repositories\Contracts\RepositoryInterface;
+use Rahasi\Repositories\Abstracts\Repository;
  
 class SettingRepository extends Repository {
  

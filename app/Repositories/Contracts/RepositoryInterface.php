@@ -1,4 +1,4 @@
-<?php namespace Rahasi\Contracts;
+<?php namespace Rahasi\Repositories\Contracts;
 
 interface RepositoryInterface {
  
