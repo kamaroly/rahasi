@@ -144,6 +144,7 @@ return [
 		'Rahasi\Providers\ConfigServiceProvider',
 		'Rahasi\Providers\EventServiceProvider',
 		'Rahasi\Providers\RouteServiceProvider',
+		'Rahasi\Providers\RepositoryProvider',
 
 		/**
 		 * Thirdy Part service provider

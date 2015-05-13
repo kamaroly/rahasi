@@ -12,11 +12,11 @@
       <label>{{Lang::get('settings.timezone')}}</label>
       <input type="text" name="timezone" placeholder="{{Lang::get('settings.timezone')}}">
     </div>
-
     <div class="field">
       <label>{{Lang::get('settings.name')}}</label>
       <input type="text" name="name" placeholder="{{Lang::get('settings.name')}}">
     </div>
+
    <div class="field">
       <label>{{Lang::get('settings.website')}}</label>
       <input type="text" name="website" placeholder="{{Lang::get('settings.website')}}">

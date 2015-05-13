@@ -3,7 +3,7 @@
 use Rahasi\Http\Requests;
 use Rahasi\Http\Requests\GeneralSettingsRequest;
 use Rahasi\Commands\SettingRegisterCommand;
-use Rahasi\Repositories\Settings\SettingRepository as Setting;
+use Rahasi\Repositories\Contracts\SettingsRepositoryInterface as Setting;
 use Rahasi\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
@@ -21,8 +21,6 @@ class SettingController extends Controller {
 	public function general()
 	{
 		$settings 	=	$this->setting->all();
-
-		dd($settings);
 
 		return view('settings.general',compact('settings'));
 	}
