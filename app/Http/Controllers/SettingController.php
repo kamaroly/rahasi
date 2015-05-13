@@ -1,5 +1,6 @@
 <?php namespace Rahasi\Http\Controllers;
 
+use Redirect;
 use Rahasi\Http\Requests;
 use Rahasi\Http\Requests\GeneralSettingsRequest;
 use Rahasi\Commands\SettingRegisterCommand;
@@ -29,5 +30,7 @@ class SettingController extends Controller {
 	{
 		// Dispatch setting object
 		$this->dispatch(new SettingRegisterCommand($request->all()));
+
+		return 	Redirect::back();
 	}
 }

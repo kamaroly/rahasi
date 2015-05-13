@@ -22,11 +22,8 @@ class GeneralSettingsRequest extends Request {
 	public function rules()
 	{
 		return [
-				'account_name' => 'required',
-				'country' => 'required',
-				'name' => 'required',
-				'website' => '',
-				'email' => 'required|email',
+				'country' => 'alpha',
+				'email' => 'email',
 		];
 	}
 
