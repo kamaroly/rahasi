@@ -7,7 +7,6 @@ Route::get('/home',['as'=>'home','middleware'=>'sentry.auth','uses'=>'WelcomeCon
 Route::get('/dashboard',['as'=>'dashboard','middleware'=>'sentry.auth','uses'=>'WelcomeController@dashboard']);
 
 
-
 Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
 
 	// Saving General settings
@@ -18,4 +17,8 @@ Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
 	Route::get('/api',['as'=>'settings.api.view', 'uses' => 'SettingController@api']);
 	Route::post('/api',['as'=>'settings.api.save', 'uses' => 'SettingController@apiSave']);
 
+});
+
+Route::get('/test', function(){
+	return uniqid('kamaro_',false);
 });
