@@ -3,18 +3,7 @@
 @section('content')
 <script src="/assets/js/react.js"></script>
 <script src="/assets/js/JSXTransformer.js"></script>
+<script src="/assets/js/d3.js"></script>
 
-
-<script type="text/jsx">
-	var HelloWorld = React.createClass({
-		render: function() {
-			return (
-				<div className="HelloWorld">Hello World</div>
-			);
-		}
-	});
-
-	React.render(<HelloWorld />,document.getElementById('container'));
-</script>
-
+<script src="/assets/js/dashboard.js" type="text/jsx;harmony=true"></script>
 @stop
