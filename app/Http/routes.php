@@ -19,6 +19,6 @@ Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
 
 });
 
-Route::get('/test', function(){
-	return uniqid('kamaro_',false);
+Route::get('/react', function(){
+	return view('tests.reactjs');
 });
