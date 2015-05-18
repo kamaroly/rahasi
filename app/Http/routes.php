@@ -19,7 +19,6 @@ Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
 
 });
 
-
 Route::group(['prefix'=>'payments'], function(){
 
 		Route::get('/', function(){
@@ -30,3 +29,36 @@ Route::group(['prefix'=>'payments'], function(){
 			return view('payments.form');
 		}]);
 });
+
+Route::get('/react', function(){
+	return view('tests.reactjs');
+});
+
+Route::get('/charge/{chargeId}', function($chargeId){
+
+	$charge = \Rahasi\Repositories\Eloquents\Charge::find($chargeId);
+
+	$chargedata = $charge->toArray();
+	// Remove all unnecessary information
+	$chargedata['source'] = $charge->chargeable;
+	return $chargedata;
+});
+
+Route::get('/customer/{id}/{type}', function($id,$type){
+
+	$customer = \Rahasi\Repositories\Eloquents\Customer::find($id);
+
+	if ($type=='mobile') {
+		return $customer->mobile;
+	}
+
+	return $customer->cards;
+});
+
+Route::get('/mobile/{id}', function($id){
+
+	$mobile = \Rahasi\Repositories\Eloquents\Mobile::find($id);
+
+	return $mobile->customer;
+});
+
