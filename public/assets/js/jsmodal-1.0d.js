@@ -63,7 +63,7 @@ var Modal = (function () {
             } else if (parameters.ajaxContent && !parameters.content) {
                 modalContainer.className = 'modal-loading';
                 method.ajax(parameters.ajaxContent, function insertAjaxResult(ajaxResult) {
-                modalContent.innerHTML = ajaxResult;
+                    modalContent.innerHTML = ajaxResult;
                 });
             } else {
                 modalContent.innerHTML = '';
@@ -71,19 +71,16 @@ var Modal = (function () {
 
             modalContainer.style.width = settings.width;
             modalContainer.style.height = settings.height;
-            modalContainer.style.margin = '0 auto';
 
             method.center({});
 
             if (settings.lock || settings.hideClose) {
-             modalClose.style.visibility = 'hidden';
+                modalClose.style.visibility = 'hidden';
             }
             if (!settings.hideOverlay) {
                 modalOverlay.style.visibility = 'visible';
-                modalOverlay.style.display    = 'block';
             }
             modalContainer.style.visibility = 'visible';
-            modalContainer.style.display    = 'block';
 
             document.onkeypress = function (e) {
                 if (e.keyCode === 27 && settings.lock !== true) {
@@ -207,12 +204,9 @@ var Modal = (function () {
             modalOverlay.setAttribute('style', '');
             modalOverlay.style.cssText = '';
             modalOverlay.style.visibility = 'hidden';
-            modalOverlay.style.display = 'none';
-
             modalContainer.setAttribute('style', '');
             modalContainer.style.cssText = '';
             modalContainer.style.visibility = 'hidden';
-            modalContainer.style.display = 'none';
             modalHeader.style.cursor = 'default';
             modalClose.setAttribute('style', '');
             modalClose.style.cssText = '';
@@ -265,12 +259,11 @@ var Modal = (function () {
             }
 
             if (!parameters.horizontalOnly) {
-                // alert(modalHeight);
+                // modalContainer.style.top = amountScrolledY + (browserHeight / 2) - (modalHeight / 2) + 'px';
                 modalContainer.style.top = amountScrolledY + (browserHeight*0.02 ) +'%'; //- (modalHeight / 2) + 'px';
             }
 
             modalContainer.style.left = amountScrolledX + (browserWidth / 2) - (modalWidth / 2) + 'px';
-            modalContainer.style.margin = '0 auto';
 
             modalOverlay.style.height = documentHeight + 'px';
             modalOverlay.style.width = '100%';
@@ -288,8 +281,6 @@ var Modal = (function () {
 
         modalOverlay.style.visibility = 'hidden';
         modalContainer.style.visibility = 'hidden';
-        modalOverlay.style.display  = 'none';
-        modalContainer.style.display = 'none';
 
         if (window.addEventListener) {
             window.addEventListener('load', function () {

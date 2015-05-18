@@ -4,13 +4,13 @@
          <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="{{ ((Request::is('/') || (Request::is('dashboard*'))) ? 'active' : '') }} treeview">
+            <li class="{{ ((Request::is('/') || (Request::is('dashboard*')) || (Request::is('home*'))) ? 'active' : '') }} treeview">
               <a href="{{ route('dashboard') }}">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>
              <li class="treeview">
-              <a href="#">
+              <a href="/payments">
                 <i class="fa fa-money"></i> <span>Payments</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>

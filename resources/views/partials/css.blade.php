@@ -1,6 +1,7 @@
 <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 <!-- Semantic UI 3.3.2 -->
 <link rel="stylesheet" type="text/css" href="/assets/css/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/accordion.css">
 <!-- FontAwesome 4.3.0 -->
 <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <!-- Ionicons 2.0.0 -->

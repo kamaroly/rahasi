@@ -1,5 +1,5 @@
  <!-- Default box -->
-          <div class="box">
+          <div class="box ui grid">
             <div class="box-header with-border">
               <h3 class="box-title">
               @section('title')

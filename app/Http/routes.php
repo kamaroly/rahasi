@@ -19,6 +19,14 @@ Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
 
 });
 
-Route::get('/react', function(){
-	return view('tests.reactjs');
+
+Route::group(['prefix'=>'payments'], function(){
+
+		Route::get('/', function(){
+			return view('payments.index');
+		});
+
+		Route::get('/new',['as'=>'payments.form', function(){
+			return view('payments.form');
+		}]);
 });

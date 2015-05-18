@@ -708,14 +708,31 @@ function _init() {
 // MODAL JAVASCRIPT CODES  //
 /////////////////////////////
 
-function modal(element) {
+function modal(element,modalWidth) {
+
   // Capture event
   var event = window.event || arguments.callee.caller.arguments[0];
   // if it's IE then use returnValue
   if (event.preventDefault) { event.preventDefault(); } else { event.returnValue = false; }
+  console.log(modalWidth);
 
- Modal.open({
+  if (typeof modalWidth=='undefined') {
+    modalWidth = 'auto';
+  }else{
+    modalWidth+='%';
+  }
+
+  Modal.open({
     ajaxContent: element.href,
-    width:'50%',
+    width:modalWidth.toString(),
   });
 }
+
+function escapeHtml(unsafe) {
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+ }
