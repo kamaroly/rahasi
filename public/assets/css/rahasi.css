@@ -4389,5 +4389,39 @@ fieldset[disabled] .btn-vk.active {
   -webkit-transition: opacity .2s ease,background .2s ease,box-shadow .2s ease;
   transition: opacity .2s ease,background .2s ease,box-shadow .2s ease;
 }
-
-.no
+.ui.form .inline.fields .field{
+  position: relative;
+  width: 100%;
+}
+.ui.form .inline.field>:first-child, .ui.form .inline.fields .field>:first-child{
+    margin-top: 1.35em;
+}
+.ui.form .inline.field>.ui.input, .ui.form .inline.field>input, .ui.form .inline.fields .field>.ui.input, .ui.form .inline.fields .field>input{
+width: 62%;
+  display: block;
+  margin-top: .85em;
+  float: right;
+  background: #fff;
+  border: solid 1px #ccc;
+  border-radius: .1875em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-font-smoothing: antialiased;
+}
+.ui.form .inline.field>.ui.input, .ui.form .inline.field>input.identified, .ui.form .inline.fields .field>.ui.input, .ui.form .inline.fields .field>input.identified {
+  border-color: #2ecc71;
+}
+.ui.form .inline.field>.ui.input, .ui.form .inline.field>input:focus, .ui.form .inline.fields .field>.ui.input, .ui.form .inline.fields .field>input:focus {
+  border-color: #fff;
+  -webkit-box-shadow: 0 0 .1875em #3498db;
+  box-shadow: 0 0 .2875em #3498db;
+  outline: none;
+}
+.ui.form .inline.field>.ui.input, .ui.form .inline.field>input:focus.identified, .ui.form .inline.fields .field>.ui.input, .ui.form .inline.fields .field>input:focus.identified {
+  border-color: #2ecc71;
+  -webkit-box-shadow: 0 0 .1875em #2ecc71;
+  box-shadow: 0 0 .1875em #2ecc71;
+}

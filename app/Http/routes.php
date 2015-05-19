@@ -19,17 +19,11 @@ Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
 
 });
 
-Route::group(['prefix'=>'payments'], function(){
+Route::resource('/payments', 'PaymentController');
 
-		Route::get('/', function(){
-			return view('payments.index');
-		});
-
-		Route::get('/new',['as'=>'payments.form', function(){
-			return view('payments.form');
-		}]);
+Route::get('/test', function(){
+	return substr('250722123128', -9);
 });
-
 Route::get('/react', function(){
 	return view('tests.reactjs');
 });
