@@ -39,6 +39,8 @@ class PaymentController extends Controller {
 	{
 	   $this->dispatch(new PaymentCommand($payment->all()));
 
+	   flash()->success('Payment Created.');
+
 	   return Redirect::route('payments.index');
 	}
 
