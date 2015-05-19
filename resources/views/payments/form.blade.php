@@ -20,7 +20,7 @@
       <input type="text" name="statement_desc" placeholder="{!! trans('payments.statement_desc') !!}">
     </div>
     <div class="field">
-        <button class="ui blue submit right button">{!! trans('payments.create_payment') !!} </button>
+     <button class="ui blue submit right button">{!! trans('payments.create_payment') !!} </button>
     </div>
 </div>
 {!! Form::close() !!}

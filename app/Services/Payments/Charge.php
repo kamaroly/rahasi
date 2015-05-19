@@ -7,6 +7,9 @@ use Rahasi\Services\Payments\Card\PayWithCard;
 */
 class Charge
 {
+	/**
+	 * Process payment
+	 */
 	public function processPayment($paymentInfo){
 
 		$payment = (array) $paymentInfo;
@@ -22,5 +25,7 @@ class Charge
 		if(array_key_exists('card_number', $payment)){
 			return (new PayWithCard)->charge($payment);
 		}
+
+		return false;
 	}
 }
