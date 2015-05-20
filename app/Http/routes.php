@@ -22,7 +22,7 @@ Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
 Route::resource('/payments', 'PaymentController');
 
 Route::get('/test', function(){
-	return substr('250722123128', -9);
+	return Artisan::call('api-key:generate');
 });
 Route::get('/react', function(){
 	return view('tests.reactjs');

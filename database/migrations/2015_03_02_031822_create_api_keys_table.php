@@ -1,66 +1,72 @@
-<?php
+<?php namespace Chrisbjr\ApiGuard\Repositories;
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App;
+use Eloquent;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class CreateApiKeysTable extends Migration
+/**
+ * Class ApiKeyRepository
+ *
+ * @package Chrisbjr\ApiGuard\Repositories
+ */
+abstract class ApiKeyRepository extends Eloquent
 {
 
+    protected $table = 'api_keys';
+
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
+
     /**
-     * Run the migrations.
-     *
-     * @return void
+     * @param $key
+     * @return ApiKeyRepository
      */
-    public function up()
+    public function getByKey($key)
     {
-        Schema::create('api_keys', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->string('key', 40);
-            $table->smallInteger('level');
-            $table->boolean('ignore_limits');
-            $table->nullableTimestamps();
-            $table->softDeletes();
+        $apiKey = self::where('key', '=', $key)
+            ->first();
 
-            // unique key
-            $table->unique('key');
+        if (empty($apiKey) || $apiKey->exists == false) {
+            return null;
+        }
 
-            // Uncomment this if you want to link user ids to your users table
-            //$table->foreign('user_id')->references('id')->on('users');
-        });
-
-        Schema::create('api_logs', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('api_key_id', false, true)->nullable();
-            $table->string('route', 150);
-            $table->string('method', 6);
-            $table->text('params');
-            $table->string('ip_address');
-            $table->nullableTimestamps();
-
-            $table->index('route');
-            $table->index('method');
-            $table->foreign('api_key_id')->references('id')->on('api_keys');
-        });
+        return $apiKey;
     }
 
     /**
-     * Reverse the migrations.
+     * A sure method to generate a unique API key
      *
-     * @return void
+     * @return string
      */
-    public function down()
+    public function generateKey()
     {
-        Schema::table('api_keys', function (Blueprint $table) {
-            //$table->dropForeign('api_keys_user_id_foreign');
-        });
+        do {
+            $salt = sha1(time() . mt_rand());
+            $newKey = substr($salt, 0, 40);
+        } // Already in the DB? Fail. Try again
+        while (self::keyExists($newKey));
 
-        Schema::table('api_logs', function (Blueprint $table) {
-            $table->dropForeign('api_logs_api_key_id_foreign');
-        });
+        return $newKey;
+    }
 
-        Schema::drop('api_keys');
-        Schema::drop('api_logs');
+    /**
+     * Checks whether a key exists in the database or not
+     *
+     * @param $key
+     * @return bool
+     */
+    private function keyExists($key)
+    {
+        $apiKeyCount = self::where('live_sk', '=', $key)
+                            ->orWhere('live_pk', '=', $key)
+                            ->orWhere('test_sk', '=', $key)
+                            ->orWhere('test_pk', '=', $key)
+                            ->limit(1)->count();
+
+        if ($apiKeyCount > 0) return true;
+
+        return false;
     }
 
 }
