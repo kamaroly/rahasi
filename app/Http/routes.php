@@ -22,7 +22,8 @@ Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
 Route::resource('/payments', 'PaymentController');
 
 Route::get('/test', function(){
-	return Artisan::call('api-key:generate');
+		    Setting::set('foo', 'bar');
+	return	Setting::save();
 });
 Route::get('/react', function(){
 	return view('tests.reactjs');

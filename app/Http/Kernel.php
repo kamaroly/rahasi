@@ -24,8 +24,6 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		'auth' => 'Rahasi\Http\Middleware\Authenticate',
-		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'Rahasi\Http\Middleware\RedirectIfAuthenticated',
 
 		 // Sentinel MW
