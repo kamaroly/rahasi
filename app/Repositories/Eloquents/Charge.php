@@ -1,8 +1,7 @@
 <?php namespace Rahasi\Repositories\Eloquents;
 
-use Illuminate\Database\Eloquent\Model;
 
-class Charge extends Model {
+class Charge extends BaseModel {
 
 	public $incrementing = false;
 
@@ -37,7 +36,7 @@ class Charge extends Model {
          * for the `id` field (provided by $model->getKeyName())
          */
         static::creating(function ($model) {
-            $model->{$model->getKeyName()} = (string) uniqid('ch_');
+            $model->{$model->getKeyName()} = (string) 'ch_'.$model->generateKey();
         });
     }
 }

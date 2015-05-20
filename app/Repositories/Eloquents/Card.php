@@ -1,8 +1,7 @@
 <?php namespace Rahasi\Repositories\Eloquents;
 
-use Illuminate\Database\Eloquent\Model;
 
-class Card extends Model {
+class Card extends BaseModel {
 
 
 	// Removing auto-id increment;
@@ -35,8 +34,10 @@ class Card extends Model {
          * Attach to the 'creating' Model Event to provide a UUID
          * for the `id` field (provided by $model->getKeyName())
          */
-        static::creating(function ($model) {
-            $model->{$model->getKeyName()} = (string) uniqid('card_');
+        static::creating(function ($model)  {
+        	
+             $model->{$model->getKeyName()} = (string) 'card_'.$model->generateKey(); 
+           
         });
     }
 }

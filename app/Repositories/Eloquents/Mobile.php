@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mobile extends Model {
+class Mobile extends BaseModel {
 
 	// Removing auto-id increment;
 	public $incrementing = false;
@@ -32,12 +32,14 @@ class Mobile extends Model {
      */
     protected static function boot()
     {
-        parent::boot();        /**
+        parent::boot();        
+        /**
          * Attach to the 'creating' Model Event to provide a UUID
          * for the `id` field (provided by $model->getKeyName())
          */
+        
         static::creating(function ($model) {
-            $model->{$model->getKeyName()} = (string) uniqid('mobile_');
+            $model->{$model->getKeyName()} = (string) 'mobile_'.$model->generateKey();
         });
     }
 }

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Customer extends Model {
+class Customer extends BaseModel {
 
 	public $incrementing = false;
 
@@ -33,8 +33,8 @@ class Customer extends Model {
          * Attach to the 'creating' Model Event to provide a UUID
          * for the `id` field (provided by $model->getKeyName())
          */
-        static::creating(function ($model) {
-            $model->{$model->getKeyName()} = (string) uniqid('cus_');
+        static::creating(function ($model)  {
+            $model->{$model->getKeyName()} = (string) 'cus_'.$model->generateKey();
         });
     }
 }
