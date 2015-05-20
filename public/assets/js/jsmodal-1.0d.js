@@ -288,7 +288,7 @@ var Modal = (function () {
                 document.body.appendChild(modalContainer);
             }, false);
         } else if (window.attachEvent) {
-            window.attachEvent('onload', function () {
+                window.attachEvent('onload', function () {
                 document.body.appendChild(modalOverlay);
                 document.body.appendChild(modalContainer);
             });

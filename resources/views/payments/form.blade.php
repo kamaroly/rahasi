@@ -1,3 +1,6 @@
+@extends('layouts.modal')
+@section('content')
+
 {!! Form::open(array('route' => 'payments.store','class'=>'ui form rahasi-form ' )) !!}
  <div class="inline  fields">
     <div class="required field" >
@@ -23,4 +26,29 @@
      <button class="ui blue submit right button">{!! trans('payments.create_payment') !!} </button>
     </div>
 </div>
+ <div class="ui accordion field">
+        <div class="title">
+          <i class="icon dropdown"></i>
+          Optional Details
+        </div>
+        <div class="content field">
+          <label>Maiden Name</label>
+          <input placeholder="Maiden Name" type="text">
+        </div>
+  </div>
 {!! Form::close() !!}
+@stop
+
+@section('js')
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.accordion')
+  .accordion({
+    selector: {
+      trigger: '.title .icon'
+    }
+  })
+;
+});
+</script>
+@stop
