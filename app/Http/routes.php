@@ -1,6 +1,5 @@
 <?php
 
-
 Route::get('/','WelcomeController@index');
 // Dashboard Routes after user signs in 
 Route::get('/home',['as'=>'home','middleware'=>'sentry.auth','uses'=>'WelcomeController@dashboard']);

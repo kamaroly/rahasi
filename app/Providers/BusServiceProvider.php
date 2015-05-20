@@ -12,15 +12,8 @@ class BusServiceProvider extends ServiceProvider {
 	 * @param  \Illuminate\Bus\Dispatcher  $dispatcher
 	 * @return void
 	 */
-	public function boot(Dispatcher $dispatcher)
+	public function boot(Dispatcher $dispatcher,\Cartalyst\Sentry\Sentry $sentry)
 	{
-		// If user is authenticated then set userID
-		if (\Sentry::check()) {
-			Setting::setExtraColumns(array(
-		    'user_id' => \Sentry::getUser()->id
-		));
-		}
-
 		$dispatcher->mapUsing(function($command)
 		{
 			return Dispatcher::simpleMapping(
