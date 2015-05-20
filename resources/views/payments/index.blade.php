@@ -9,7 +9,4 @@
       {{Lang::get('payments.create_new_payment')}}
   </a>
 
-<script src="/assets/js/react.js" type="text/javascript" charset="utf-8"></script>  
-<script src="/assets/js/JXTransformer.js" type="text/jsx" charset="utf-8"></script>
-
 @stop

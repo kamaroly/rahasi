@@ -714,7 +714,6 @@ function modal(element,modalWidth) {
   var event = window.event || arguments.callee.caller.arguments[0];
   // if it's IE then use returnValue
   if (event.preventDefault) { event.preventDefault(); } else { event.returnValue = false; }
-  console.log(modalWidth);
 
   if (typeof modalWidth=='undefined') {
     modalWidth = 'auto';
