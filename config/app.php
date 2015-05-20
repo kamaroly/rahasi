@@ -152,6 +152,7 @@ return [
 		  'Sentinel\SentinelServiceProvider',
 		  'anlutro\LaravelSettings\ServiceProvider',
 		  'Illuminate\Html\HtmlServiceProvider',
+		  'Laracasts\Flash\FlashServiceProvider',
 
 	],
 
@@ -207,6 +208,7 @@ return [
 
 		// Custom facades
 		'Setting' => 'anlutro\LaravelSettings\Facade',
+		 'Flash' => 'Laracasts\Flash\Flash',
 
 	],
 
