@@ -145,6 +145,7 @@ return [
 		'Rahasi\Providers\EventServiceProvider',
 		'Rahasi\Providers\RouteServiceProvider',
 		'Rahasi\Providers\RepositoryProvider',
+		'Rahasi\Providers\SettingProvider',
 
 		/**
 		 * Thirdy Part service provider
@@ -209,7 +210,7 @@ return [
 
 		// Custom facades
 		'Setting' => 'anlutro\LaravelSettings\Facade',
-		 'Flash' => 'Laracasts\Flash\Flash',
+		'Flash' => 'Laracasts\Flash\Flash',
 
 	],
 

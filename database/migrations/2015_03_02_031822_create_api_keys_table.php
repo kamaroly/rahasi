@@ -24,7 +24,10 @@ abstract class ApiKeyRepository extends Eloquent
      */
     public function getByKey($key)
     {
-        $apiKey = self::where('key', '=', $key)
+        $apiKey = self::where('live_sk', '=', $key)
+                        ->orWhere('live_pk', '=', $key)
+                        ->orWhere('test_sk', '=', $key)
+                        ->orWhere('test_pk', '=', $key)
             ->first();
 
         if (empty($apiKey) || $apiKey->exists == false) {

@@ -36,6 +36,7 @@ class CreateChargesTable extends Migration {
 			$table->string('receipt_email')->nullable();
 			$table->string('receipt_number')->nullable();
 			$table->decimal('application_fee')->default(0.00);
+			$table->integer('user_id')->unsigned();
 			$table->timestamps();
 
 			$table->unique('id');

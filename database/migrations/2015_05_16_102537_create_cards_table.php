@@ -25,6 +25,7 @@ class CreateCardsTable extends Migration {
 			$table->string('address_line1')->nullable(); //Billing address country, if provided when creating card
 			$table->integer('cvc_check')->nullable(); //if a CVC was provided, results of the check: pass, fail, unavailable, or unchecked
 			$table->string('customer_id')->nullable();  //The customer that this card belongs to. This attribute will not be in the card object if the card belongs to a recipient instead.
+			$table->integer('user_id')->unsigned();
 			$table->timestamps();
 
 			$table->unique('id');

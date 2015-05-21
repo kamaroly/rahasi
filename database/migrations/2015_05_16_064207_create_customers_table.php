@@ -24,6 +24,7 @@ class CreateCustomersTable extends Migration {
 			$table->string('currency')->nullable();
 			$table->string('sources')->nullable();
 			$table->string('default_source')->nullable();
+			$table->integer('user_id')->unsigned();
 			$table->timestamps();
 
 			$table->unique('id');

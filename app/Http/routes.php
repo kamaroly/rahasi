@@ -21,8 +21,8 @@ Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
 Route::resource('/payments', 'PaymentController');
 
 Route::get('/test', function(){
-		    Setting::set('foo', 'bar');
-	return	Setting::save();
+	
+	dd(Sentry::getUser());
 });
 Route::get('/react', function(){
 	return view('tests.reactjs');
