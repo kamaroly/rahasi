@@ -30,7 +30,11 @@ class Mobile extends BaseModel  {
 	{
 		return $this->belongsTo('\Rahasi\Repositories\Models\Eloquents\Customer');
 	}
-
+	/** User relationship */
+	public function user()
+	{
+			return $this->belongsTo('Rahasi\Repositories\Models\Eloquents\User');
+	}
 	/**
      * The "booting" method of the model.
      *

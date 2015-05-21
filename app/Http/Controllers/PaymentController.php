@@ -1,8 +1,9 @@
 <?php namespace Rahasi\Http\Controllers;
 
-use Redirect;
+use Redirect,Session;
 use Rahasi\Http\Requests;
 use Rahasi\Repositories\Contracts\ChargeRepositoryInterface as Charge;
+use Rahasi\Repositories\Models\Eloquents\User;
 use Rahasi\Commands\PaymentCommand;
 use Rahasi\Http\Requests\PaymentRequest;
 use Rahasi\Http\Controllers\Controller;
@@ -25,9 +26,11 @@ class PaymentController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(User $user)
 	{
-		$payments 	= $this->charge->all();
+		$userId = Session::get('userId');
+
+		$payments 	= $user->find($userId)->payments->all();
 
 		return view('payments.index',compact('payments'));
 	}

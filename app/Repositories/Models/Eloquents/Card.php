@@ -23,6 +23,10 @@ class Card extends BaseModel {
 		return $this->belongsTo('\Rahasi\Repositories\Models\Eloquents\Customer');
 	}
 
+	public function user()
+	{
+			return $this->belongsTo('Rahasi\Repositories\Models\Eloquents\User');
+	}
 	/**
      * The "booting" method of the model.
      *

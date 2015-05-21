@@ -9,4 +9,5 @@
       {{Lang::get('payments.create_new_payment')}}
   </a>
 
+@include('payments.table',compact('payments'))
 @stop
