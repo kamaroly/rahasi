@@ -11,7 +11,7 @@ class Customer extends BaseModel {
 	 */
 	public function cards()
 	{
-		return $this->hasMany('\Rahasi\Repositories\Eloquents\Card');
+		return $this->hasMany('\Rahasi\Repositories\Models\Eloquents\Card');
 	}
 
 	/**
@@ -19,7 +19,7 @@ class Customer extends BaseModel {
 	 */ 
 	public function mobile()
 	{
-		return $this->hasMany('\Rahasi\Repositories\Eloquents\Mobile');
+		return $this->hasMany('\Rahasi\Repositories\Models\Eloquents\Mobile');
 	}
 
 	/**
@@ -35,6 +35,7 @@ class Customer extends BaseModel {
          */
         static::creating(function ($model)  {
             $model->{$model->getKeyName()} = (string) 'cus_'.$model->generateKey();
+            $model->user_id 				= $model->getUserId();
         });
     }
 }

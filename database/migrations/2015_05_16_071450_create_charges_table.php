@@ -14,7 +14,7 @@ class CreateChargesTable extends Migration {
 	{
 		Schema::create('charges', function(Blueprint $table)
 		{
-			$table->string("id"); //: "ch_162Ff42eZvKYlo2CDae1HhUI",
+			$table->string('id'); //: "ch_162Ff42eZvKYlo2CDae1HhUI",
 			$table->boolean('livemode')->default(false);
 			$table->boolean('paid')->default(false);
 			$table->string('status')->nullable();

@@ -1,5 +1,6 @@
 <?php namespace Rahasi\Repositories\Models\Eloquents;
 
+use Session;
 use Illuminate\Database\Eloquent\Model;
 /**
 * Base class for the modesl
@@ -7,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 abstract class BaseModel extends Model
 {
 
+    public function getUserId()
+    {
+        return Session::get('userId');
+    }
      /**
      * A sure method to generate a unique API key
      *

@@ -1,6 +1,6 @@
 <?php namespace Rahasi\Repositories\Models\Eloquents;
 
-
+use Session;
 class Mobile extends BaseModel  {
 
 	// Removing auto-id increment;
@@ -8,12 +8,19 @@ class Mobile extends BaseModel  {
 
 	// Hiding Attributes From Array Or JSON Conversion
 	protected $hidden = ['customer_id','created_at','updated_at'];
+
+	/** @var array Allowed mass assignment */
+	protected $fillable	= ['msisdn','brand','country','address_line1','customer_id'];
+
+	/** @var Sentry */
+	public $user;
+
 	/**
 	 * Relationship with the charge table
 	 */
 	public function charge()
 	{
-		return $this->morphMany('Rahasi\Repositories\Eloquents\Charge','chargeable');
+		return $this->morphMany('Rahasi\Repositories\Models\Eloquents\Charge','chargeable');
 	}
 
 	/**
@@ -21,7 +28,7 @@ class Mobile extends BaseModel  {
 	 */
 	public function customer()
 	{
-		return $this->belongsTo('\Rahasi\Repositories\Eloquents\Customer');
+		return $this->belongsTo('\Rahasi\Repositories\Models\Eloquents\Customer');
 	}
 
 	/**
@@ -37,7 +44,8 @@ class Mobile extends BaseModel  {
          * for the `id` field (provided by $model->getKeyName())
          */
         static::creating(function ($model) {
-            $model->{$model->getKeyName()} = (string) 'mobile_'.$model->generateKey();
+            $model->{$model->getKeyName()} 	= (string) 'mobile_'.$model->generateKey();
+            $model->user_id 				= $model->getUserId();
         });
     }
 }

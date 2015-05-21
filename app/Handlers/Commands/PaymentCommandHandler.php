@@ -9,6 +9,15 @@ use Illuminate\Queue\InteractsWithQueue;
 class PaymentCommandHandler {
 
 	/**
+	 * Instance of the charge object
+	 * @var Rahasi\Services\Payments\Charge;
+	 */
+	public $charge;
+
+	function __construct(Charge $charge) {
+		$this->charge =  $charge;
+	}
+	/**
 	 * Handle the payment Command.
 	 *
 	 * @param  PaymentCommand  $command
@@ -17,7 +26,7 @@ class PaymentCommandHandler {
 	public function handle(PaymentCommand $command)
 	{
 		// Create the new payment in the database
-		$payment = (new Charge)->processPayment($command);
+		$payment = $this->charge->processPayment($command);
 
 		Event::fire('payment.created', [$payment]);
 	}

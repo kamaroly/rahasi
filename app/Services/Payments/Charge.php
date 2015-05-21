@@ -1,12 +1,27 @@
 <?php namespace Rahasi\Services\Payments;
 
-use Rahasi\Services\Payments\Mfs\PayWithMfs;
-use Rahasi\Services\Payments\Card\PayWithCard;
+use Rahasi\Services\Payments\Mfs\PayWithMfs as Mfs;
+use Rahasi\Services\Payments\Cards\PayWithCard as Card;
 /**
 * Create payment
 */
 class Charge
 {
+	/**
+	 * Instance of mfs payment
+	 * @var Rahasi\Services\Payments\Mfs\PayWithMfs
+	 */
+	public $mfs;
+	/**
+	 * Instance of Card payment
+	 * @var Rahasi\Services\Payments\Card\PayWithCard
+	 */
+	public $card;
+
+	function __construct(Mfs $mfs, Card $card) {
+		$this->mfs 		= 	$mfs;
+		$this->card 	=   $card;
+	}
 	/**
 	 * Process payment
 	 */
@@ -18,12 +33,12 @@ class Charge
 
 		// If we are paying with MFS
 		if (array_key_exists('phone_number', $payment)) {
-			return (new PayWithMfs)->charge($payment);
+			return $this->mfs->charge($payment);
 		}
 
 		//If We are paying with CARD
 		if(array_key_exists('card_number', $payment)){
-			return (new PayWithCard)->charge($payment);
+			return $this->card->charge($payment);
 		}
 
 		return false;

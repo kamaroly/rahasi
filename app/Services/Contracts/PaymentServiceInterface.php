@@ -1,4 +1,4 @@
-<?php namespace Rahasi\Contracts;
+<?php namespace Rahasi\Services\Contracts;
 
 /**
  * Contract for managing charges

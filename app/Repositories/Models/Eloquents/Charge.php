@@ -8,6 +8,29 @@ class Charge extends BaseModel {
 	// Hiding Attributes From Array Or JSON Conversion
 	protected $hidden = ['customer_id','chargeable_type','chargeable_id','updated_at'];
 
+	/** @var array allowed mass assignment fields */
+	protected $fillable	=['livemode',
+							'paid',
+							'status',
+							'amount',
+							'currency',
+							'refounded',
+							'chargeable_id',
+							'chargeable_type',
+							'captured',
+							'balance_transaction',
+							'failure_message',
+							'failure_code',
+							'amount_refunded',
+							'customer_id',
+							'invoice',
+							'description',
+							'dispute',
+							'statement_descriptor',
+							'receipt_email',
+							'receipt_number',
+							'application_fee'
+							];
 	/**
 	 * Chargeable object morphy Relationship
 	 */
@@ -21,7 +44,7 @@ class Charge extends BaseModel {
 	 */
 	public function customer()
 	{
-		return $this->belongsTo('\Rahasi\Repositories\Eloquents\Customer');
+		return $this->belongsTo('\Rahasi\Repositories\Models\Eloquents\Customer');
 	}
 
 	/**
@@ -37,6 +60,7 @@ class Charge extends BaseModel {
          */
         static::creating(function ($model) {
             $model->{$model->getKeyName()} = (string) 'ch_'.$model->generateKey();
+            $model->user_id 				= $model->getUserId();
         });
     }
 }

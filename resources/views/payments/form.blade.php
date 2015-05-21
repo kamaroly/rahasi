@@ -15,7 +15,7 @@
 
     <div class="field" >
       <label class="fix wide column">{!! trans('payments.description') !!}</label>
-      <input type="text" name="descripton" placeholder="{!! trans('payments.description') !!}">
+      <input type="text" name="description" placeholder="{!! trans('payments.description') !!}">
     </div>
 
     <div class="field" >

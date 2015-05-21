@@ -12,7 +12,7 @@ class Card extends BaseModel {
 
 	public function charge()
 	{
-			return $this->morphMany('Rahasi\Repositories\Eloquents\Charge','chargeable');
+			return $this->morphMany('Rahasi\Repositories\Models\Eloquents\Charge','chargeable');
 	}
 
 	/**
@@ -20,7 +20,7 @@ class Card extends BaseModel {
 	 */
 	public function customer()
 	{
-		return $this->belongsTo('\Rahasi\Repositories\Eloquents\Customer');
+		return $this->belongsTo('\Rahasi\Repositories\Models\Eloquents\Customer');
 	}
 
 	/**
@@ -35,9 +35,9 @@ class Card extends BaseModel {
          * for the `id` field (provided by $model->getKeyName())
          */
         static::creating(function ($model)  {
-        	
-             $model->{$model->getKeyName()} = (string) 'card_'.$model->generateKey(); 
-           
+             $model->{$model->getKeyName()} = (string) 'card_'.$model->generateKey();
+             $model->user_id 				= $model->getUserId();
+
         });
     }
 }

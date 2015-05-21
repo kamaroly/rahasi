@@ -1,21 +1,42 @@
 <?php namespace Rahasi\Services\Payments\Mfs;
 
 use Exception;
+use Rahasi\Services\Contracts\PaymentServiceInterface;
+use Rahasi\Repositories\Contracts\MobileRepositoryInterface as Mfs;
 /**
 * Charge with MFS
 */
-class PayWithMfs
+class PayWithMfs implements PaymentServiceInterface
 {
+  /** 
+   * Instance of the Mobile Repository
+   * @var Rahasi\Repositories\Contracts\MobileRepositoryInterface
+   */
+  public $mfs;
+
+  function __construct(Mfs $mfs) {
+    $this->mfs = $mfs;
+  }
+   /**
+   * Charge a given MFS account
+   * @param array $payment information
+   * @param $mfs Rahasi\Repositories\Contracts\MobileRepositoryInterface
+   * @return mixed
+   */
   public function charge($paymentInfo)
   {
-
   		$phoneType = $this->getPhoneType($paymentInfo['phone_number']);
 
-  		$mfsType = '\Rahasi\Services\Payments\Mfs\PayWith'.$phoneType;
+  		$mfsType = '\Rahasi\Services\Payments\Mfs\Operators\PayWith'.$phoneType;
 
-  		return (new $mfsType)->charge($paymentInfo);
+  		return (new $mfsType($this->mfs))->charge($paymentInfo);
   }
 
+   /**
+   * Detect MFS account to be charged
+   * @param string mobile phone number
+   * @return mixed
+   */
   public function getPhoneType($phone)
   {
   	// First get last nine digits ex (250722123127 should be 722123127)
