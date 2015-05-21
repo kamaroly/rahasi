@@ -1,6 +1,6 @@
-<?php namespace Rahasi\Repositories\Abstracts;
+<?php namespace Rahasi\Repositories\Eloquents;
 
-use Rahasi\Repositories\Contracts\SettingsRepositoryInterface as Repository;
+use Rahasi\Repositories\Contracts\RepositoryInterface as Repository;
 
 abstract class Criteria {
 

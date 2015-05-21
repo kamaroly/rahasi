@@ -2,7 +2,7 @@
 
 use Redirect;
 use Rahasi\Http\Requests;
-use Rahasi\Repositories\Eloquents\Charge;
+use Rahasi\Repositories\Contracts\ChargeRepositoryInterface as Charge;
 use Rahasi\Commands\PaymentCommand;
 use Rahasi\Http\Requests\PaymentRequest;
 use Rahasi\Http\Controllers\Controller;
@@ -12,13 +12,22 @@ use Illuminate\Http\Request;
 class PaymentController extends Controller {
 
 	/**
+	 * Mobile repository
+	 * @var Rahasi\Repositories\Contracts\MobileRepositoryInterface;
+	 */
+	public $charge;
+
+	function __construct(Charge $charge) {
+		$this->charge = $charge;
+	}
+	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index(Charge $charges)
+	public function index()
 	{
-		$payments 	= $charges->all();
+		$payments 	= $this->charge->all();
 
 		return view('payments.index',compact('payments'));
 	}

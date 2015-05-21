@@ -1,10 +1,10 @@
-<?php namespace Rahasi\Repositories\Abstracts;
+<?php namespace Rahasi\Repositories\Eloquents;
 
-use Rahasi\Repositories\Contracts\SettingsRepositoryInterface;
+use Rahasi\Repositories\Contracts\RepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Container\Container as App;
 
-abstract class Repository implements SettingsRepositoryInterface{
+abstract class Repository implements RepositoryInterface{
 
 	/**
 	 * Application instance
@@ -18,9 +18,9 @@ abstract class Repository implements SettingsRepositoryInterface{
 	protected $model;
 
 	function __construct(App $app) {
-		
+
 		$this->app   = $app;
-		
+
 		$this->makeModel();
 	}
 	 /**

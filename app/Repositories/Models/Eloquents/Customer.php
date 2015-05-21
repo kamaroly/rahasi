@@ -1,4 +1,4 @@
-<?php namespace Rahasi\Repositories\Eloquents;
+<?php namespace Rahasi\Repositories\Models\Eloquents;
 
 use Illuminate\Database\Eloquent\Model;
 

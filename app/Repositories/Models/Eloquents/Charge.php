@@ -1,24 +1,23 @@
-<?php namespace Rahasi\Repositories\Eloquents;
+<?php namespace Rahasi\Repositories\Models\Eloquents;
 
-use Illuminate\Database\Eloquent\Model;
 
-class Mobile extends BaseModel {
+class Charge extends BaseModel {
 
-	// Removing auto-id increment;
 	public $incrementing = false;
 
 	// Hiding Attributes From Array Or JSON Conversion
-	protected $hidden = ['customer_id','created_at','updated_at'];
+	protected $hidden = ['customer_id','chargeable_type','chargeable_id','updated_at'];
+
 	/**
-	 * Relationship with the charge table
+	 * Chargeable object morphy Relationship
 	 */
-	public function charge()
+	public function chargeable()
 	{
-		return $this->morphMany('Rahasi\Repositories\Eloquents\Charge','chargeable');
+		return $this->morphTo();
 	}
 
 	/**
-	 * Customer of this Mobile
+	 * Customer of this charge
 	 */
 	public function customer()
 	{
@@ -32,14 +31,12 @@ class Mobile extends BaseModel {
      */
     protected static function boot()
     {
-        parent::boot();        
-        /**
+        parent::boot();        /**
          * Attach to the 'creating' Model Event to provide a UUID
          * for the `id` field (provided by $model->getKeyName())
          */
-        
         static::creating(function ($model) {
-            $model->{$model->getKeyName()} = (string) 'mobile_'.$model->generateKey();
+            $model->{$model->getKeyName()} = (string) 'ch_'.$model->generateKey();
         });
     }
 }

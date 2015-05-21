@@ -12,9 +12,21 @@ class RepositoryProvider extends ServiceProvider {
 	public function register()
 	{
 		// Registering all Repositories
+		$this->bootRepositories();
+	}
+
+	protected function bootRepositories()
+	{
+		// Bind mobile repository interface
 		$this->app->bind(
-			'Rahasi\Repositories\Contracts\SettingsRepositoryInterface',
-			'Rahasi\Repositories\Settings\SettingRepository'
+			'Rahasi\Repositories\Contracts\MobileRepositoryInterface',
+			'Rahasi\Repositories\Eloquents\MobileRepository'
+			);
+
+		//Bind mobile repository interface
+		$this->app->bind(
+			'Rahasi\Repositories\Contracts\ChargeRepositoryInterface',
+			'Rahasi\Repositories\Eloquents\ChargeRepository'
 			);
 	}
 

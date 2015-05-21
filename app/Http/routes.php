@@ -21,8 +21,7 @@ Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
 Route::resource('/payments', 'PaymentController');
 
 Route::get('/test', function(){
-	
-	dd(Sentry::getUser());
+	dd(new \Rahasi\Repositories\Eloquents\MobileRepository);
 });
 Route::get('/react', function(){
 	return view('tests.reactjs');

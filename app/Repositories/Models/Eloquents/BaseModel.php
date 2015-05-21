@@ -1,4 +1,4 @@
-<?php namespace Rahasi\Repositories\Eloquents;
+<?php namespace Rahasi\Repositories\Models\Eloquents;
 
 use Illuminate\Database\Eloquent\Model;
 /**
@@ -31,7 +31,7 @@ abstract class BaseModel extends Model
     private function keyExists($key)
     {
         $primaryKeyCount = self::where('id', 'LIKE', "%$key%")->limit(1)->count();
-        
+
         return ($primaryKeyCount > 0);
     }
 }
