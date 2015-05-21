@@ -1,5 +1,7 @@
 <?php
 return [
+	/** Headers n Titles */
+	'payments'		=>	'Payments',
 	/** Labels */
 	'phone_number' 	=> 'Phone number:',
 	'amount'		=>'amount:',

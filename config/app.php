@@ -149,10 +149,11 @@ return [
 		/**
 		 * Thirdy Part service provider
 		 */
-		  'Sentinel\SentinelServiceProvider',
-		  'anlutro\LaravelSettings\ServiceProvider',
-		  'Illuminate\Html\HtmlServiceProvider',
-		  'Laracasts\Flash\FlashServiceProvider',
+	  'Sentinel\SentinelServiceProvider',
+	  'anlutro\LaravelSettings\ServiceProvider',
+	  'Illuminate\Html\HtmlServiceProvider',
+	  'Laracasts\Flash\FlashServiceProvider',
+	  'Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider',
 
 	],
 

@@ -2,6 +2,7 @@
 
 use Redirect;
 use Rahasi\Http\Requests;
+use Rahasi\Repositories\Eloquents\Charge;
 use Rahasi\Commands\PaymentCommand;
 use Rahasi\Http\Requests\PaymentRequest;
 use Rahasi\Http\Controllers\Controller;
@@ -15,9 +16,11 @@ class PaymentController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Charge $charges)
 	{
-		return view('payments.index');
+		$payments 	= $charges->all();
+
+		return view('payments.index',compact('payments'));
 	}
 
 	/**

@@ -1,6 +1,5 @@
 <?php
 
-
 Route::get('/','WelcomeController@index');
 // Dashboard Routes after user signs in 
 Route::get('/home',['as'=>'home','middleware'=>'sentry.auth','uses'=>'WelcomeController@dashboard']);
@@ -22,7 +21,8 @@ Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
 Route::resource('/payments', 'PaymentController');
 
 Route::get('/test', function(){
-	return substr('250722123128', -9);
+		    Setting::set('foo', 'bar');
+	return	Setting::save();
 });
 Route::get('/react', function(){
 	return view('tests.reactjs');

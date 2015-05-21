@@ -1,5 +1,6 @@
 <?php namespace Rahasi\Providers;
 
+use Setting,Sentry;
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 
@@ -11,7 +12,7 @@ class BusServiceProvider extends ServiceProvider {
 	 * @param  \Illuminate\Bus\Dispatcher  $dispatcher
 	 * @return void
 	 */
-	public function boot(Dispatcher $dispatcher)
+	public function boot(Dispatcher $dispatcher,\Cartalyst\Sentry\Sentry $sentry)
 	{
 		$dispatcher->mapUsing(function($command)
 		{
