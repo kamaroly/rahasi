@@ -1,9 +1,10 @@
+
 var data = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
 
         {
-            label: "My Second dataset",
+            label: "Gross volume",
             fillColor: "rgba(151,187,205,0.2)",
             pointColor: "rgba(151,187,205,1)",
             pointStrokeColor: "#fff",

@@ -5,7 +5,7 @@
 @section('content')
 
 
-<canvas id="dashboard"  class="ui grid sixteen columns"></canvas>
+<canvas id="dashboard"  class="ui grid sixteen columns" style="width: 100%;height: 30%;"></canvas>
 @stop
 
 @section('js')
