@@ -28,6 +28,7 @@ class PaymentController extends Controller {
 	 */
 	public function index(User $user)
 	{
+
 		$userId = Session::get('userId');
 
 		$payments 	= $user->find($userId)->payments->all();

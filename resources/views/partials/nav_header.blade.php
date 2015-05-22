@@ -12,7 +12,15 @@
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only"></span>
           </a>
+            <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                <label class="onoffswitch-label" for="myonoffswitch">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
           <div class="header menu">
+
            @if (Sentry::check())
             <a href="{{ route('sentinel.logout') }}" class="item"> <i class="fa fa-exit"></i>Logout</a>
 
