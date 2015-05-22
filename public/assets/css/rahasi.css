@@ -4437,11 +4437,9 @@ width: 62%;
      -moz-user-select:none;
       -ms-user-select: none;
     display: inline-block;
-  border-color: #fff;
-  -webkit-box-shadow: 0 0 .8875em #3498db;
-  box-shadow: 0 0 .9875em #3498db;
   outline: none;
   margin-top: 8px;
+  margin-left: 5%;
   vertical-align: middle;
   line-height: 1;
 }
@@ -4478,19 +4476,17 @@ width: 62%;
     background-color: #E8A923;
     color: #FAF7F2;
     text-align: right;
-   -webkit-box-shadow: 0 0 .8875em red;
-  box-shadow: 0 0 .9875em red;
-}
+  }
 .onoffswitch-switch {
     display: block;
     width: 18px;
-    margin: 2px;
+    margin: 1px;
     background: #444;
     border: 1px solid #999999;
     border-radius: 2px;
     position: absolute;
     top: 0; bottom: 0;
-    right: 80%;
+    right: 84%;
     -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
     -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
 }
