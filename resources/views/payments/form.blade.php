@@ -28,7 +28,7 @@
           <i class="icon dropdown"></i>
           Optional Details
         </div>
-        <div id="accordion">
+        <div id="accordion" style="display:none">
          <div class="field" >
           <label>Maiden Name</label>
           <input placeholder="Maiden Name" type="text">

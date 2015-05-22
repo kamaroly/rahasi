@@ -630,4 +630,4 @@ function toggle_visibility(id) {
           e.style.display = 'none';
        else
           e.style.display = 'block';
-    }
+}

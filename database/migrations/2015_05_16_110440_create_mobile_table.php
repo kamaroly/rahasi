@@ -18,7 +18,9 @@ class CreateMobileTable extends Migration {
 			$table->string('msisdn');  //Telephone.
 			$table->string('brand');  // Tigo,Mtn airtel etc....
 			$table->string('country')->nullable()->default('RW');  // Two-letter ISO code representing the country of the card. You could use this attribute to get a sense of the international breakdown of cards you’ve collected.
-			$table->string('address_line1')->nullable(); //Billing address country, if provided when creating card
+			$table->string('city')->nullable();
+			$table->string('owner_name')->nullable();		//Mobile holder name
+			$table->string('address')->nullable(); //Billing address country, if provided when creating card
 			$table->string('customer_id')->nullable();  //The customer that this card belongs to. This attribute will not be in the card object if the card belongs to a recipient instead.
 			$table->integer('user_id')->unsigned();
 			$table->timestamps();
