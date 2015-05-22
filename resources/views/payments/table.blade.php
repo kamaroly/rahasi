@@ -23,3 +23,13 @@
 		@endforeach
 	</tbody>
 </table>
+
+@section('js')
+<script type="text/javascript">
+<!--
+ $('.ui.accordion')
+  .accordion();
+
+//-->
+</script>
+@stop

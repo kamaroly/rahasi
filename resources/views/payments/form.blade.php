@@ -22,33 +22,31 @@
       <label class="fix wide column">{!! trans('payments.statement_desc') !!}</label>
       <input type="text" name="statement_desc" placeholder="{!! trans('payments.statement_desc') !!}">
     </div>
-    <div class="field">
-     <button class="ui blue submit right button">{!! trans('payments.create_payment') !!} </button>
-    </div>
-</div>
+
  <div class="ui accordion field">
-        <div class="title">
+        <div class="title" onclick="toggle_visibility('accordion')">
           <i class="icon dropdown"></i>
           Optional Details
         </div>
-        <div class="content field">
+        <div class="content field" id="accordion">
           <label>Maiden Name</label>
           <input placeholder="Maiden Name" type="text">
+               <div class="two fields">
+        <div class="field">
+          <label>First Name</label>
+          <input placeholder="First Name" type="text">
         </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input placeholder="Last Name" type="text">
+        </div>
+      </div>
+    </div>
   </div>
+ <div class="field">
+     <button class="ui blue submit right button">{!! trans('payments.create_payment') !!} </button>
+  </div>
+</div>
 {!! Form::close() !!}
-@stop
 
-@section('js')
-<script type="text/javascript">
-$(document).ready(function() {
-  $('.accordion')
-  .accordion({
-    selector: {
-      trigger: '.title .icon'
-    }
-  })
-;
-});
-</script>
 @stop

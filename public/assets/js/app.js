@@ -577,137 +577,13 @@ function _init() {
   };
 }
 
-/* ------------------
- * - Custom Plugins -
- * ------------------
- * All custom plugins are defined below.
+
+/**
+ * Method to trigger Modal for jsModal
+ * @param  Object element    the clicked on object
+ * @param  integer modalWidth this will help to center the modal 
+ * @return mixed 
  */
-
-/*
- * BOX REFRESH BUTTON
- * ------------------
- * This is a custom plugin to use with the component BOX. It allows you to add
- * a refresh button to the box. It converts the box's state to a loading state.
- *
- * @type plugin
- * @usage $("#box-widget").boxRefresh( options );
- */
-(function ($) {
-
-  $.fn.boxRefresh = function (options) {
-
-    // Render options
-    var settings = $.extend({
-      //Refresh button selector
-      trigger: ".refresh-btn",
-      //File source to be loaded (e.g: ajax/src.php)
-      source: "",
-      //Callbacks
-      onLoadStart: function (box) {
-      }, //Right after the button has been clicked
-      onLoadDone: function (box) {
-      } //When the source has been loaded
-
-    }, options);
-
-    //The overlay
-    var overlay = $('<div class="overlay"><div class="fa fa-refresh fa-spin"></div></div>');
-
-    return this.each(function () {
-      //if a source is specified
-      if (settings.source === "") {
-        if (console) {
-          console.log("Please specify a source first - boxRefresh()");
-        }
-        return;
-      }
-      //the box
-      var box = $(this);
-      //the button
-      var rBtn = box.find(settings.trigger).first();
-
-      //On trigger click
-      rBtn.on('click', function (e) {
-        e.preventDefault();
-        //Add loading overlay
-        start(box);
-
-        //Perform ajax call
-        box.find(".box-body").load(settings.source, function () {
-          done(box);
-        });
-      });
-    });
-
-    function start(box) {
-      //Add overlay and loading img
-      box.append(overlay);
-
-      settings.onLoadStart.call(box);
-    }
-
-    function done(box) {
-      //Remove overlay and loading img
-      box.find(overlay).remove();
-
-      settings.onLoadDone.call(box);
-    }
-
-  };
-
-})(jQuery);
-
-/*
- * TODO LIST CUSTOM PLUGIN
- * -----------------------
- * This plugin depends on iCheck plugin for checkbox and radio inputs
- *
- * @type plugin
- * @usage $("#todo-widget").todolist( options );
- */
-(function ($) {
-
-  $.fn.todolist = function (options) {
-    // Render options
-    var settings = $.extend({
-      //When the user checks the input
-      onCheck: function (ele) {
-      },
-      //When the user unchecks the input
-      onUncheck: function (ele) {
-      }
-    }, options);
-
-    return this.each(function () {
-
-      if (typeof $.fn.iCheck != 'undefined') {
-        $('input', this).on('ifChecked', function (event) {
-          var ele = $(this).parents("li").first();
-          ele.toggleClass("done");
-          settings.onCheck.call(ele);
-        });
-
-        $('input', this).on('ifUnchecked', function (event) {
-          var ele = $(this).parents("li").first();
-          ele.toggleClass("done");
-          settings.onUncheck.call(ele);
-        });
-      } else {
-        $('input', this).on('change', function (event) {
-          var ele = $(this).parents("li").first();
-          ele.toggleClass("done");
-          settings.onCheck.call(ele);
-        });
-      }
-    });
-  };
-
-}(jQuery));
-
-/////////////////////////////
-// MODAL JAVASCRIPT CODES  //
-/////////////////////////////
-
 function modal(element,modalWidth) {
 
   // Capture event
@@ -724,9 +600,15 @@ function modal(element,modalWidth) {
   Modal.open({
     ajaxContent: element.href,
     width:modalWidth.toString(),
+    hideOverlay:false,
   });
 }
 
+/**
+ * Escape any HTML unsafe charcot
+ * @param  string unsafe the con
+ * @return object      
+ */
 function escapeHtml(unsafe) {
     return unsafe
          .replace(/&/g, "&amp;")
@@ -735,3 +617,16 @@ function escapeHtml(unsafe) {
          .replace(/"/g, "&quot;")
          .replace(/'/g, "&#039;");
  }
+
+/**
+ * Method to show / hide element based on the display 
+ * @param  elementId id ID of the element to be toggled
+ * @return mixed
+ */
+function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
