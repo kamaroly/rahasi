@@ -50,11 +50,11 @@
   </div>
 
      
-
-</div>
 <div class="field">
-  <input type="submit" class="ui bottom attached green button" value="{!! trans('payments.create_payment') !!}" style="width:100%">
+  <button type="submit" class="ui bottom attached green button" style="width:100%">{!! trans('payments.create_payment') !!}</button>
 </div>
+</div>
+
 {!! Form::close() !!}
 
 @stop
