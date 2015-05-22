@@ -24,36 +24,36 @@
     </div>
 
  <div class="ui accordion field">
+ <div class="ui divider"></div>
         <div class="title" onclick="toggle_visibility('accordion')">
           <i class="icon dropdown"></i>
-          Optional Details
+          {!! trans('payments.more_options') !!}
         </div>
         <div id="accordion" style="display:none">
          <div class="field" >
-          <label>Maiden Name</label>
-          <input placeholder="Maiden Name" type="text">
+          <label>{!! trans('payments.owner_name') !!}</label>
+          <input name="owner_name" type="text">
         </div>
          <div class="field" >
-          <label>Maiden Name</label>
-          <input placeholder="Maiden Name" type="text">
+          <label>{!! trans('payments.country') !!}</label>
+          <input name="country" type="text">
         </div>
          <div class="field" >
-          <label>Maiden Name</label>
-          <input placeholder="Maiden Name" type="text">
+          <label>{!! trans('payments.city') !!}</label>
+          <input name="city" type="text">
         </div>
          <div class="field" >
-          <label>Maiden Name</label>
-          <input placeholder="Maiden Name" type="text">
+          <label>{!! trans('payments.address') !!}</label>
+          <input name="address" type="text">
         </div>
-         <div class="field" >
-          <label>Maiden Name</label>
-          <input placeholder="Maiden Name" type="text">
-        </div>
-        </div>
+     </div>
   </div>
- <div class="field">
-     <button class="ui blue submit right button">{!! trans('payments.create_payment') !!} </button>
-  </div>
+
+     
+
+</div>
+<div class="field">
+  <input type="submit" class="ui bottom attached green button" value="{!! trans('payments.create_payment') !!}" style="width:100%">
 </div>
 {!! Form::close() !!}
 
