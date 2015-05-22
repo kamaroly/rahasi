@@ -600,6 +600,7 @@ function modal(element,modalWidth) {
   Modal.open({
     ajaxContent: element.href,
     width:modalWidth.toString(),
+    height:'auto',
     hideOverlay:false,
   });
 }

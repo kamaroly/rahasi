@@ -28,20 +28,28 @@
           <i class="icon dropdown"></i>
           Optional Details
         </div>
-        <div class="content field" id="accordion">
+        <div id="accordion">
+         <div class="field" >
           <label>Maiden Name</label>
           <input placeholder="Maiden Name" type="text">
-               <div class="two fields">
-        <div class="field">
-          <label>First Name</label>
-          <input placeholder="First Name" type="text">
         </div>
-        <div class="field">
-          <label>Last Name</label>
-          <input placeholder="Last Name" type="text">
+         <div class="field" >
+          <label>Maiden Name</label>
+          <input placeholder="Maiden Name" type="text">
         </div>
-      </div>
-    </div>
+         <div class="field" >
+          <label>Maiden Name</label>
+          <input placeholder="Maiden Name" type="text">
+        </div>
+         <div class="field" >
+          <label>Maiden Name</label>
+          <input placeholder="Maiden Name" type="text">
+        </div>
+         <div class="field" >
+          <label>Maiden Name</label>
+          <input placeholder="Maiden Name" type="text">
+        </div>
+        </div>
   </div>
  <div class="field">
      <button class="ui blue submit right button">{!! trans('payments.create_payment') !!} </button>
