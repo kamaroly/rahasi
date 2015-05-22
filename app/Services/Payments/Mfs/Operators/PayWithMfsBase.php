@@ -79,7 +79,7 @@ class PaywithMfsBase implements PaymentServiceInterface{
               'currency'             => isset($mobile['currency'])?$mobile['currency']:'RWF',
               'captureds'            => isset($mobile['captureds'])?$mobile['captureds']:false,
               'description'          => isset($mobile['description'])?$mobile['description']:null,
-              'statement_descriptor' => isset($mobile['statement_descriptor'])?$mobile['statement_desc']:null,
+              'statement_descriptor' => isset($mobile['statement_desc'])?$mobile['statement_desc']:null,
               ];
        
    }
