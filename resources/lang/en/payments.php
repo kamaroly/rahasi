@@ -1,18 +1,21 @@
 <?php
 return [
 	/** Headers n Titles */
-	'payments'		=>	'Payments',
-	'more_options'	=>	'More options',
+	'payments'			=>	'Payments',
+	'more_options'		=>	'More options',
+	'latest_payments'	=>	'Recent payments',
 
 	/** Labels */
 	'phone_number' 			=>  'Phone number',
-	'amount'				=>	'Amount:',
+	'amount'				=>	'Amount',
 	'description'			=>	'Description',
 	'statement_desc'		=>	'Statement desc',
 	'owner_name'			=>	'Owner name',
 	'country'				=>	'Country',
 	'city'					=>	'City',
 	'address'				=>	'Address',
+	'status'				=>	'Transaction status',
+	'source'				=>	'Payment source',
 
 	/** Buttons */
 	'create_payment'	=> 	'Create payment',
