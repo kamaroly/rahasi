@@ -18,6 +18,10 @@ class WelcomeController extends Controller {
 		$this->user 	=	Session::get('userId');
 	}
 
+	public function index()
+	{
+		return view('welcome');
+	}
 	/**
 	 * Show Rahasi home page
 	 */

@@ -4,32 +4,43 @@ use Redirect;
 use Rahasi\Http\Requests;
 use Rahasi\Http\Requests\GeneralSettingsRequest;
 use Rahasi\Commands\SettingRegisterCommand;
-use Rahasi\Repositories\Contracts\SettingsRepositoryInterface as Setting;
+use Setting;
 use Rahasi\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
 class SettingController extends Controller {
 
-	/** @var Rahasi\Models\Settings holds settings model instance */
-	private $setting;
 
-	function __construct(Setting $setting) {
-		$this->setting = $setting;
+	function __construct() {
+		parent::__construct();
+			Setting::setExtraColumns(array(
+			'user_id' => $this->user
+		));
 	}
-
 
 	public function general()
 	{
-		$settings 	=	$this->setting->all();
+		return view('settings.general');
+	}
 
-		return view('settings.general',compact('settings'));
+	public function api()
+	{
+		return view('settings.api');
 	}
 
 	public function generalSave(GeneralSettingsRequest $request)
 	{
-		// Dispatch setting object
-		$this->dispatch(new SettingRegisterCommand($request->all()));
+		// Get all submited settings
+		$settings = $request->all();
+
+		// Remove form tocken as we don't need it
+		unset($settings['_token']);
+
+		foreach ($settings as $key => $value) {
+			Setting::set($key,$value);
+		}
+		Setting::save();
 
 		return 	Redirect::back();
 	}
