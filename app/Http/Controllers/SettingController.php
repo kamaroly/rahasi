@@ -26,6 +26,7 @@ class SettingController extends Controller {
 
 	public function api()
 	{
+
 		return view('settings.api');
 	}
 
