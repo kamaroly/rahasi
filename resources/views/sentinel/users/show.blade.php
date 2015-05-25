@@ -17,7 +17,7 @@ Edit Profile
     ?>
 
 	<h4>Account Profile</h4>
-	
+
   	<div class="well clearfix">
 	    <div class="col-md-8">
 		    @if ($user->first_name)
@@ -27,7 +27,6 @@ Edit Profile
 		    	<p><strong>Last Name:</strong> {{ $user->last_name }} </p>
 			@endif
 		    <p><strong>Email:</strong> {{ $user->email }}</p>
-		    
 		</div>
 		<div class="col-md-4">
 			<p><em>Account created: {{ $user->created_at }}</em></p>
