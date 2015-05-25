@@ -1,18 +1,11 @@
 <?php namespace Rahasi\Http\Controllers;
+use Session;
+use Rahasi\Repositories\Models\Eloquents\User;
+use Rahasi\Repositories\Models\Eloquents\Charge as Payments;
 
 class WelcomeController extends Controller {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Welcome Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller renders the "marketing page" for the application and
-	| is configured to only allow guests. Like most of the other sample
-	| controllers, you are free to modify or remove it as you desire.
-	|
-	*/
-
+	public $user;
 	/**
 	 * Create a new controller instance.
 	 *
@@ -21,24 +14,34 @@ class WelcomeController extends Controller {
 	public function __construct()
 	{
 		$this->middleware('guest');
-	}
 
-	/**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		return view('welcome');
+		$this->user 	=	Session::get('userId');
 	}
 
 	/**
 	 * Show Rahasi home page
 	 */
-	public function dashboard()
+	public function dashboard(Payments $payment)
 	{
-		return view('dashboard');
+		$payments = $payment->lists('created_at','amount');
+
+		return view('dashboard',compact('payments'));
+	}
+
+	public function gross($items,User $user)
+	{
+
+	// Get current user payments
+	$charges = $user->find($this->user)->payments()->orderBy('created_at')->lists($items);
+
+	if ($items == 'created_at') {
+	return array_map(function($charge){
+		return  substr($charge,0,10);
+	}, $charges);
+	}
+	return array_map(function($charge){
+		return  (int) $charge;
+	}, $charges);
 	}
 
 }

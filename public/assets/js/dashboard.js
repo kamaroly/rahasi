@@ -1,62 +1,77 @@
-var data = [
-    {
-        value: 20,
-        color:"#637b85"
-    },
-    {
-        value : 30,
-        color : "#2c9c69"
-    },
-    {
-        value : 40,
-        color : "#dbba34"
-    },
-    {
-        value : 10,
-        color : "#c62f29"
+
+jQuery.extend({
+    getValues: function(url) {
+        var result = null;
+        $.ajax({
+            url: url,
+            type: 'get',
+            dataType: 'json',
+            async: false,
+            success: function(data) {
+                result = data;
+            }
+        });
+       return result;
     }
+});
+var chartData = $.getValues('/charges/amount');
+var chartLebels = $.getValues('/charges/created_at');
 
-];
-var canvas = document.getElementById("hours");
-var ctx = canvas.getContext("2d");
-new Chart(ctx).Doughnut(data);
-
-
+console.log(chartLebels);
 var data = {
-    labels : ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+    labels : chartLebels,
     datasets : [
         {
-            fillColor : "rgba(99,123,133,0.4)",
-            strokeColor : "rgba(220,220,220,1)",
-            pointColor : "rgba(220,220,220,1)",
-            pointStrokeColor : "#fff",
-            data : [65,54,30,81,56,55,40]
-        },
-        {
-            fillColor : "rgba(219,186,52,0.4)",
-            strokeColor : "rgba(220,220,220,1)",
-            pointColor : "rgba(220,220,220,1)",
-            pointStrokeColor : "#fff",
-            data : [20,60,42,58,31,21,50]
-        },
-    ]
-}
-var canvas = document.getElementById("shipments");
-var ctx = canvas.getContext("2d");
-new Chart(ctx).Line(data);
-
-var data = {
-    labels : ["Helpful","Friendly","Kind","Rude","Slow","Frustrating"],
-    datasets : [
-        {
-            fillColor : "rgba(220,220,220,0.5)",
-            strokeColor : "#637b85",
-            pointColor : "#dbba34",
-            pointStrokeColor : "#637b85",
-            data : [65,59,90,81,30,56]
+            fillColor : "rgba(155,210,230,.05)",
+            strokeColor : "rgb(115,180,190)",
+            pointColor : "#424647",
+            pointStrokeColor : "rgb(115,180,190)",
+            data : chartData
         }
     ]
-}
-var canvas = document.getElementById("departments");
-var ctx = canvas.getContext("2d");
-new Chart(ctx).Radar(data);
+};
+var options =  { 
+    scaleOverlay : true,
+    scaleOverride : true,
+    scaleSteps : 5,
+    scaleStepWidth : 15000,
+    scaleStartValue : 0,
+
+    scaleLineColor : "rgba(0,0,0,o,.25)", 
+    scaleLineWidth : 1,
+
+    scaleShowLabels : true,
+    scaleLabel : "<%=value%>",
+    scaleFontFamily : "'Lato'", 
+    scaleFontSize : 12, 
+    scaleFontStyle : "800",
+    scaleFontColor : "#222",    
+
+    scaleShowGridLines : true,
+    scaleGridLineColor : "rgba(0,0,0,.1)",
+    scaleGridLineWidth : 1, 
+
+    // bezierCurve : true,
+
+    pointDot : true,
+    pointDotRadius : 5,
+    pointDotStrokeWidth : 1,
+
+    datasetStroke : true,
+    datasetStrokeWidth : 1,
+    datasetFill : true,
+
+    animation : true,
+    animationSteps : 120,
+    animationEasing : "easeOutQuart",
+    onAnimationComplete : null
+    };
+
+
+var ctx = document.getElementById("gross").getContext("2d");
+new Chart(ctx).Line(data,options);
+
+
+
+
+

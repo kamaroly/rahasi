@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://localhost:8000/home -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>RAHASI | Dashboard</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<!-- Semantic UI 3.3.2 -->
+<link rel="stylesheet" type="text/css" href="./RAHASI _ Dashboard_files/semantic.min.css">
+<!-- FontAwesome 4.3.0 -->
+<link href="./RAHASI _ Dashboard_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- Ionicons 2.0.0 -->
+<link href="./RAHASI _ Dashboard_files/ionicons.min.css" rel="stylesheet" type="text/css">    
+<!-- AdminLTE Skins. Choose a skin from the css/skins 
+     folder instead of downloading all of them to reduce the load. -->
+<link href="./RAHASI _ Dashboard_files/_all-skins.css" rel="stylesheet" type="text/css">
+
+<link href="./RAHASI _ Dashboard_files/jsmodal-light.css" rel="stylesheet" type="text/css">
+<!-- Theme style -->
+<link href="./RAHASI _ Dashboard_files/rahasi.css" rel="stylesheet" type="text/css">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->  </head>
+  <body class="skin-blue sidebar-mini">
+    <div class="wrapper">
+            <header class="main-header">
+        <!-- Logo -->
+        <a href="./RAHASI _ Dashboard_files/RAHASI _ Dashboard.html" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+                 </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="http://localhost:8000/home#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only"></span>
+          </a>
+                    <div class="header menu">
+
+                       <a href="http://localhost:8000/logout" class="item"> <i class="sign out icon"></i>Logout</a>
+
+             <a href="http://localhost:8000/home#" class="item" data-toggle="control-sidebar"> <i class="setting icon"></i>Acccount Settings</a>
+                      </div>
+        </nav>
+
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+         <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="active treeview">
+              <a href="http://localhost:8000/dashboard">
+                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+            </li>
+             <li class="treeview">
+              <a href="http://localhost:8000/payments">
+                <i class="fa fa-money"></i> <span>Payments</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+            </li>
+            <li class="treeview">
+              <a href="http://localhost:8000/home#">
+                <i class="fa fa-exchange"></i> <span>Transfers</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+            </li>
+             <li class="treeview">
+              <a href="http://localhost:8000/home#">
+                <i class="fa fa-th"></i> <span>Balance</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+            </li>
+                      </ul>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper" style="min-height: 602px;">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+          	 DASHBOARD             <small></small>
+          </h1>
+</section>
+        <!-- Main content -->
+        <section class="content">
+          <!-- Small boxes (Stat box) -->
+          <!-- Default box -->
+          <div class="box">
+            <!-- Include flash message -->
+            <div class="box-header with-border">
+              <h3 class="box-title">
+               DASHBOARD               </h3>
+            </div>
+          <div class="box-body" id="container">
+                        <div class="container clearfix">
+    <div class="third widget line">
+        <div class="chart-legend">
+            <h3>dashboard.gross</h3>
+        </div>
+        <div class="canvas-container">
+            <canvas id="shipments"></canvas>
+        </div>
+    </div>
+
+</div>
+            </div><!-- /.box-body -->
+            <div class="box-footer">
+                          </div><!-- /.box-footer-->
+          </div><!-- /.box -->        </section>
+       </div>
+       <!-- ./wrapper -->
+              <footer class="main-footer">
+        <strong>Copyright © 2015  <a href="http://rahasi.com/">Rahasi</a>.</strong> All rights reserved.
+      </footer>       <!-- Add the sidebar's background. This div must be placed
+           immediately after the control sidebar -->
+      <div class="control-sidebar-bg" style="position: fixed; height: auto;"></div>
+      <!-- Control Sidebar -->      
+      <aside class="control-sidebar control-sidebar-dark">                
+           <!-- Tab panes -->
+        <div class="tab-content">
+          <!-- Home tab content -->
+          <div class="tab-pane" id="control-sidebar-home-tab">
+            <h3 class="control-sidebar-heading"><i class="fa fa-gears"></i> Settings</h3>
+            <ul class="control-sidebar-menu">
+             <li>
+                <a href="http://localhost:8000/profile" onclick="modal(this,60)">
+                  <i class="menu-icon fa fa-user bg-green"></i>
+                  <div class="menu-info">
+                    <h4 class="control-sidebar-subheading"> user@user.com</h4>
+                    <p>user@user.com profile.settings</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="http://localhost:8000/settings/general" onclick="modal(this,60)">
+                  <i class="menu-icon fa fa-university bg-green"></i>
+                  <div class="menu-info">
+                    <h4 class="control-sidebar-subheading">General</h4>
+                    <p>Bank Account, MFS etc.... settings</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="http://localhost:8000/settings/api" onclick="modal(this,60)">
+                  <i class="menu-icon fa fa-code bg-yellow"></i>
+                  <div class="menu-info">
+                    <h4 class="control-sidebar-subheading">API</h4>
+                    <p>Secret and Publishable keys settinsg</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript::;" onclick="modal(this)">
+                  <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+                  <div class="menu-info">
+                    <h4 class="control-sidebar-subheading">Notification settings</h4>
+                    <p>Configure the way,  you want to be notified.</p>
+                  </div>
+                </a>
+              </li>
+              
+            </ul><!-- /.control-sidebar-menu -->
+
+      
+
+          </div><!-- /.tab-pane -->
+        </div>
+      </aside><!-- /.control-sidebar -->      </div>
+    <!-- jQuery 2.1.3 -->
+<script src="./RAHASI _ Dashboard_files/jsmodal-1.0d.js"></script>
+<script src="./RAHASI _ Dashboard_files/jQuery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./RAHASI _ Dashboard_files/semantic.js" type="text/javascript" charset="utf-8"></script>
+<script src="./RAHASI _ Dashboard_files/app.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script src="./RAHASI _ Dashboard_files/chart.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./RAHASI _ Dashboard_files/dashboard.js" type="text/javascript" charset="utf-8"></script>
+  
+<div id="modal-overlay" style="visibility: hidden;"></div><div id="modal-container" style="visibility: hidden;"><div id="modal-header"><div id="modal-close"></div></div><div id="modal-content"></div></div></body></html>

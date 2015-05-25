@@ -1,6 +1,5 @@
 <?php namespace Rahasi\Repositories\Models\Eloquents;
 
-
 class Charge extends BaseModel {
 
 	public $incrementing = false;
@@ -52,6 +51,8 @@ class Charge extends BaseModel {
 	{
 			return $this->belongsTo('Rahasi\Repositories\Models\Eloquents\User');
 	}
+
+
 	/**
      * The "booting" method of the model.
      *
