@@ -15,7 +15,7 @@
     </div>
  @stop
 @section('js')
-<script src="/assets/js/chart.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/assets/js/Chart.min.js" type="text/javascript" charset="utf-8"></script>
 
 <script type="text/javascript">
 </script>
