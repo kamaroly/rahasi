@@ -6,6 +6,17 @@ class ApiKey extends ApiKeyRepository
 {
 
     /**
+     * Get API KEYS by USER ID
+     *
+     * @param $user id
+     * @return this
+     */
+    public function getByUser($userId)
+    {
+        return self::where('user_id', '=', $userId)->first();
+    }
+
+    /**
      * @param $key
      * @return ApiKeyRepository
      */
@@ -37,6 +48,7 @@ class ApiKey extends ApiKeyRepository
         return $newKey;
     }
 
+
     /**
      * Checks whether a key exists in the database or not
      *
@@ -56,6 +68,7 @@ class ApiKey extends ApiKeyRepository
         return false;
     }
 
+
     /**
      * Generate new key
      */
@@ -69,7 +82,7 @@ class ApiKey extends ApiKeyRepository
             $apiKey = new apiKey;
         }
         /** API KEYS NAMES DEFINITION */
-        $apiKey->$keyType =$keyType.$apiKey->generateKey();
+        $apiKey->$keyType =$keyType.'_'.$apiKey->generateKey();
 
         /** END OF THE DEFINITIONS */
         $apiKey->user_id    = $userId;

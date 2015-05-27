@@ -25,10 +25,11 @@ class SettingController extends Controller {
 		return view('settings.general');
 	}
 
-	public function api()
+	public function api(ApiKey $apiKey)
 	{
+		$keys = $apiKey->getByUser($this->user);
 
-		return view('settings.api');
+		return view('settings.api',compact('keys'));
 	}
 
 	/**
@@ -52,6 +53,6 @@ class SettingController extends Controller {
 
 	public function newKey($keytype,ApiKey $apikey)
 	{
-		return $apikey->newKey('test_pk',$this->user);
+		return $apikey->newKey($keytype,$this->user);
 	}
 }

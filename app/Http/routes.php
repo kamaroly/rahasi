@@ -23,10 +23,4 @@ Route::get('/charges/{items}','WelcomeController@gross');
 Route::group(['prefix'=>'api/ajax'], function(){
 
 	Route::get('/apikeys/{keyType}','SettingController@newKey');
-
-	Route::get('/artisan', function(){
-		echo '<br>init with Sentry tables migrations...';
-
-      return 'Finished ';
-	});
 });
