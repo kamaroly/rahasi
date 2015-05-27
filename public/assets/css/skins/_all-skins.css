@@ -20,7 +20,7 @@
   color: #444;
 }
 .skin-blue .main-header .navbar .nav > li > a {
-  color: #367fa9;
+  color: #243542;
 }
 .skin-blue .main-header .navbar .nav > li > a:hover,
 .skin-blue .main-header .navbar .nav > li > a:active,
@@ -29,20 +29,20 @@
 .skin-blue .main-header .navbar .nav .open > a:hover,
 .skin-blue .main-header .navbar .nav .open > a:focus {
   background: rgba(0, 0, 0, 0.1);
-  color: #367fa9;
+  color: #243542;
 }
 .skin-blue .main-header .navbar .sidebar-toggle {
-  color: #367fa9;
+  color: #243542;
 }
 .skin-blue .main-header .navbar .sidebar-toggle:hover {
-  color: #367fa9;
+  color: #243542;
   background: rgba(0, 0, 0, 0.1);
 }
 .skin-blue .main-header .navbar .sidebar-toggle {
-  color: #367fa9;
+  color: #243542;
 }
 .skin-blue .main-header .navbar .sidebar-toggle:hover {
-  /*background-color: #367fa9;*/
+  /*background-color: #243542;*/
 background: transparent;
 
 }
@@ -54,11 +54,24 @@ background: transparent;
     color: #fff;
   }
   .skin-blue .main-header .navbar .dropdown-menu li a:hover {
-    background: #367fa9;
+    background: #243542;
   }
 }
 .skin-blue .main-header .logo {
-  background-color: #367fa9;
+    position: absolute;
+  height: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background: #243542;
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #243542), color-stop(100%, #243542));
+  background-image: -webkit-linear-gradient(bottom, #243542 0%,#243542 100%);
+  background-image: -moz-linear-gradient(bottom, #243542 0%,#243542 100%);
+  background-image: -o-linear-gradient(bottom, #243542 0%,#243542 100%);
+  background-image: linear-gradient(bottom, #243542 0%,#243542 100%);
+  box-shadow: 0 1px 0px #d4d7d7;
+  text-align: center;
   color: #ffffff;
   border-bottom: 0px solid transparent;
 }
@@ -92,7 +105,7 @@ background: transparent;
 .skin-blue .sidebar-menu > li:hover > a,
 .skin-blue .sidebar-menu > li.active > a {
   color: #ffffff;
-  background: #1e282c;
+  background: #243542;
   font-weight: 400;
   font-size: 14px;
   border-left-color: #3c8dbc;
@@ -190,7 +203,7 @@ background: transparent;
   color: #fff;
 }
 .skin-blue-light .main-header .navbar .sidebar-toggle:hover {
-  background-color: #367fa9;
+  background-color: #243542;
 }
 @media (max-width: 767px) {
   .skin-blue-light .main-header .navbar .dropdown-menu li.divider {
@@ -200,7 +213,7 @@ background: transparent;
     color: #fff;
   }
   .skin-blue-light .main-header .navbar .dropdown-menu li a:hover {
-    background: #367fa9;
+    background: #243542;
   }
 }
 .skin-blue-light .main-header .logo {
