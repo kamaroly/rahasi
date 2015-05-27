@@ -5,28 +5,57 @@
 @stop
 
 @section('content')
- {!! Form::open(['route'=>'settings.save','method'=>'post','accept-charset'=>'utf-8','class'=>'ui form segment']) !!}
 
-  <div class="three fields">
+<div class="ui form">
+  <div class="two fields">
     <div class="field">
-      <label>{{Lang::get('settings.test_secret_key')}}</label>
-      <input type="text" name= "test_secret_key" value ="{!! Setting::get('test_secret_key') !!}">
+         <div class="key secret">
+            <label class="default-label">{{Lang::get('settings.test_secret_key')}}:</label>
+            <div class="container">
+                <span class="value">sk_test_KkrSYUKtnv7mXXzTgYHNzVG5</span>
+                <a id="test_secret_key" href="#"  title="Roll Key">
+                  <i class="refresh icon testkey"></i>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="field">
-      <label>{{Lang::get('settings.test_publishable_key')}}</label>
-      <input type="text" name= "test_publishable_key" value ="{!! Setting::get('test_publishable_key') !!}">
-    </div>
+         <div class="key secret test">
+            <label class="default-label">{{Lang::get('settings.test_publishable_key')}}:</label>
+            <div class="container">
+                <span class="value" id="test_pk">sk_live_KkrSYUKtnv7mXXzTgYHNzVG5</span>
+                <a id="test_publishable_key" >
+                  <i class="refresh icon testkey"></i>
+                </a>
+            </div>
+        </div>
+     </div>
+   </div>
+   <div class="ui divider"></div>
+   <div class="two fields">
     <div class="field">
-      <label>{{Lang::get('settings.live_secret_key')}}</label>
-      <input type="text" name= "live_secret_key" value ="{!! Setting::get('live_secret_key') !!}">
+      <div class="key secret">
+            <label class="default-label">{{Lang::get('settings.live_secret_key')}}:</label>
+            <div class="container">
+                <span class="value">sk_live_KkrSYUKtnv7mXXzTgYHNzVG5</span>
+                <a class="roll" href="" rel="tooltip" title="Roll Key">
+                  <i class="refresh icon"></i>
+                </a>
+            </div>
+        </div>
     </div>
-
+    
     <div class="field">
-      <label>{{Lang::get('settings.live_publishable_key')}}</label>
-      <input type="text" name= "live_publishable_key" value ="{!! Setting::get('live_publishable_key') !!}">
+      <div class="key secret">
+            <label class="default-label">{{Lang::get('settings.live_publishable_key')}}:</label>
+            <div class="container">
+                <span class="value">sk_live_KkrSYUKtnv7mXXzTgYHNzVG5</span>
+                <a class="roll" href="" rel="tooltip" title="Roll Key">
+                  <i class="refresh icon"></i>
+                </a>
+            </div>
+        </div>
     </div>
-      <input type="submit" class="ui green submit button" value="{{ lang::get('general.save') }}"/>
-  <div  class="ui reset red button">Close</div>
 </div>
-  {!! Form::close() !!}
+</div>
 @stop

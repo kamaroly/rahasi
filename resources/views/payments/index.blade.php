@@ -10,4 +10,5 @@
   </a>
 
 @include('payments.table',compact('payments'))
+
 @stop

@@ -18,12 +18,11 @@ Route::group(['prefix'=>'settings','middleware'=>'sentry.auth'],function(){
 
 Route::resource('/payments', 'PaymentController');
 
-Route::get('/test', function(){
-	dd(new \Rahasi\Repositories\Eloquents\MobileRepository);
-});
-Route::get('/react', function(){
-	return view('tests.reactjs');
-});
-
 Route::get('/charges/{items}','WelcomeController@gross');
 
+Route::group(['prefix'=>'api/ajax'], function(){
+
+	Route::get('/apikeys/pk', function(){
+		return 'pk_test_oiHfk4DxY9rrLt1hLo3z7g5n';
+	});
+});

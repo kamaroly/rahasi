@@ -4482,3 +4482,65 @@ canvas{
         /*height: auto !important;*/
         max-height: 300px;
     }
+
+div.container {
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #fff;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 0 #fff;
+  -moz-box-shadow: 0 1px 0 #fff;
+  -ms-box-shadow: 0 1px 0 #fff;
+  -o-box-shadow: 0 1px 0 #fff;
+  box-shadow: 0 1px 0 #fff;
+}
+div.container {
+  display: inline-block;
+  padding: 9px 10px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 4px;
+  border: 1px solid #bbb !important;
+  border-top-color: #999 !important;
+  }
+   span.value {
+  font-family: monospace;
+  margin-right: 20px;
+  color: #000;
+}
+a.roll {
+  width: 14px;
+  -webkit-touch-callout: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  background-size: 100% 100%;
+  color: #444;
+}
+
+ label.default-label {
+  background: transparent !important;
+  color: #444 !important;
+  text-align: right;
+  padding-right: 15px;
+  text-shadow: 0 1px 0 #fff;
+}
+.testkey{
+  color: #444;
+}
+.testkey:hover{
+  color: #fcb831;
+}
+.livekey{
+ color: #fcb831;
+}

@@ -15,6 +15,7 @@ return [
  'email'					=> 'Email',
 
  /** API */
+ 'api'						=>	'API settings',
  'test_secret_key'			=> 	'Test secret key',
  'test_publishable_key'		=>	'Test publishable key',
  'live_secret_key'			=>	'Live secret key',

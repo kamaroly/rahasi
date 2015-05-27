@@ -631,3 +631,43 @@ function toggle_visibility(id) {
        else
           e.style.display = 'block';
 }
+/**
+ * Update the content of the SPAN
+ * @param  string elementId Element ID
+ * @param  HTML data      
+ * @return VOID
+ */
+function updateSpanContent (elementId,data) {
+  var span = document.getElementById(argument);
+  while( span.firstChild ) {
+      span.removeChild( span.firstChild );
+  }
+  span.appendChild( document.createTextNode(data) );
+}
+/** Update API KEYS  */
+jQuery(document).ready(function($) {
+  $('#test_publishable_key').click(function(event) {
+      // if it's IE then use returnValue
+  if (event.preventDefault) { event.preventDefault(); } else { event.returnValue = false; }
+    
+    $.ajax({
+        type: "get",
+        url: "/api/ajax/apikeys/pk/",
+        cache: false,
+        success: function(data)
+        {
+          // All went well, let's try to update the test publishable key
+          console.info(data); 
+          // Remove any content then update it
+           var span = document.getElementById('test_pk');
+            while( span.firstChild ) {
+                span.removeChild( span.firstChild );
+            }
+            span.appendChild( document.createTextNode(data) );
+
+        } 
+      });     
+
+  });
+});
+
