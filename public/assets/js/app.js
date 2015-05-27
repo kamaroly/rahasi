@@ -649,7 +649,7 @@ jQuery(document).ready(function($) {
   $('#test_publishable_key').click(function(event) {
       // if it's IE then use returnValue
   if (event.preventDefault) { event.preventDefault(); } else { event.returnValue = false; }
-    
+
     $.ajax({
         type: "get",
         url: "/api/ajax/apikeys/pk/",
@@ -665,8 +665,8 @@ jQuery(document).ready(function($) {
             }
             span.appendChild( document.createTextNode(data) );
 
-        } 
-      });     
+        }
+      });
 
   });
 });

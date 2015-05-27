@@ -3,6 +3,7 @@
 use Redirect;
 use Rahasi\Http\Requests;
 use Rahasi\Http\Requests\GeneralSettingsRequest;
+use Rahasi\Repositories\Models\Eloquents\ApiKey;
 use Rahasi\Commands\SettingRegisterCommand;
 use Setting;
 use Rahasi\Http\Controllers\Controller;
@@ -30,6 +31,9 @@ class SettingController extends Controller {
 		return view('settings.api');
 	}
 
+	/**
+	 * Save settings
+	 */ 
 	public function generalSave(GeneralSettingsRequest $request)
 	{
 		// Get all submited settings
@@ -44,5 +48,10 @@ class SettingController extends Controller {
 		Setting::save();
 
 		return 	Redirect::back();
+	}
+
+	public function newKey($keytype,ApiKey $apikey)
+	{
+		return $apikey->newKey('test_pk',$this->user);
 	}
 }
