@@ -12,6 +12,7 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected $commands = [
 		'Rahasi\Console\Commands\Inspire',
+		'Rahasi\Console\Commands\GenerateApiKey'
 	];
 
 	/**
