@@ -24,7 +24,7 @@ class RegisteredUserEventServiceProvider extends ServiceProvider {
 	{
 
 	Event::listen('sentinel.user.registered', function($user){
-		Artisan::call('api-key:generate', [
+		Artisan::call('rahasi-api-key:generate', [
         '--user-id'=> $user->id
         ]);
 	 }, 9);
