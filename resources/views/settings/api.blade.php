@@ -23,7 +23,7 @@
          <div class="key secret test">
             <label class="default-label">{{Lang::get('settings.test_publishable_key')}}:</label>
             <div class="container">
-                <span class="value" id="test_pk">{!! $keys->test_pk !!}</span>
+                <span id="test_pk">{!! $keys->test_pk !!}</span>
                 <a id="test_pk_refresh" >
                   <i class="refresh icon testkey"></i>
                 </a>
