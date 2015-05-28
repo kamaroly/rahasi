@@ -1,9 +1,18 @@
 <?php namespace Rahasi\Repositories\Models\Eloquents;
 
-use Chrisbjr\ApiGuard\Repositories\ApiKeyRepository;
+use App;
+use Eloquent;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ApiKey extends ApiKeyRepository
+class ApiKey extends  Eloquent
 {
+
+    protected $table = 'api_keys';
+
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
+
 
     /**
      * Get API KEYS by USER ID
@@ -76,10 +85,10 @@ class ApiKey extends ApiKeyRepository
     {
 
         // check whether this user already has an API key
-        $apiKey = apiKey::where('user_id', '=', $userId)->first();
+        $apiKey = self::where('user_id', '=', $userId)->first();
 
         if (is_null($apiKey)) {
-            $apiKey = new apiKey;
+            $apiKey = self;
         }
         /** API KEYS NAMES DEFINITION */
         $apiKey->$keyType =$keyType.'_'.$apiKey->generateKey();

@@ -1,9 +1,11 @@
 <?php  namespace Rahasi\Repositories\Models\Eloquents;
 
-use Chrisbjr\ApiGuard\Repositories\ApiLogRepository;
+use Eloquent,Config;
 
-class ApiLog extends ApiLogRepository
+class ApiLog extends  Eloquent
 {
+
+    protected $table = 'api_logs';
 
        /**
      * @return ApiKeyRepository
