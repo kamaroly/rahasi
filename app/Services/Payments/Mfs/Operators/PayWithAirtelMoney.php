@@ -3,6 +3,6 @@
 /**
 * Pay with Tigo Cash interface interface
 */
-class PayWithAirtelMoney extends PaywithMfsBase{
+class PayWithAirtelMoney extends PayWithMfsBase{
 
 }

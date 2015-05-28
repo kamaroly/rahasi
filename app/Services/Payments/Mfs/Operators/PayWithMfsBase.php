@@ -6,7 +6,7 @@ use Rahasi\Repositories\Eloquents\MobileRepository as mfs;
 /**
 * Pay with Tigo Cash interface interface
 */
-class PaywithMfsBase implements PaymentServiceInterface{
+class PayWithMfsBase implements PaymentServiceInterface{
 
 	/**
 	 * Mobile Repository Interface

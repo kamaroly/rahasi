@@ -3,6 +3,6 @@
 /**
 * Pay with Tigo Cash interface interface
 */
-class PayWithMtnMobileMoney extends PaywithMfsBase{
+class PayWithMtnMobileMoney extends PayWithMfsBase{
 
 }
