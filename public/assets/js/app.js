@@ -644,30 +644,67 @@ function updateSpanContent (elementId,data) {
   }
   span.appendChild( document.createTextNode(data) );
 }
-/** Update API KEYS  */
+
+/** SETTINGS API KEYS  */
 jQuery(document).ready(function($) {
-  $('#test_publishable_key').click(function(event) {
-      // if it's IE then use returnValue
-  if (event.preventDefault) { event.preventDefault(); } else { event.returnValue = false; }
-    
-    $.ajax({
+
+   /*--------------------------------- 
+  | SECTION TO GENERATE NEW API KESY |
+    --------------------------------*/
+
+  var newApiKey = function(apiKeyType){
+        $.ajax({
         type: "get",
-        url: "/api/ajax/apikeys/pk/",
+        url: "/api/ajax/apikeys/"+apiKeyType+"/",
         cache: false,
         success: function(data)
         {
           // All went well, let's try to update the test publishable key
           console.info(data); 
           // Remove any content then update it
-           var span = document.getElementById('test_pk');
+           var span = document.getElementById(apiKeyType);
             while( span.firstChild ) {
                 span.removeChild( span.firstChild );
             }
             span.appendChild( document.createTextNode(data) );
 
-        } 
-      });     
+        }
+      });
+  }
+  /*------------------------------------
+  | SECTION TO GENERATE TEST   API KEY |
+   -----------------------------------*/
 
+  $('#test_pk_refresh').click(function(event) {
+      // if it's IE then use returnValue
+  if (event.preventDefault) { event.preventDefault(); } else { event.returnValue = false; }
+   newApiKey('test_pk');
   });
+
+  $('#test_sk_refresh').click(function(event) {
+      // if it's IE then use returnValue
+  if (event.preventDefault) { event.preventDefault(); } else { event.returnValue = false; }
+   newApiKey('test_sk');
+  });
+
+  /*------------------------------------
+  | SECTION TO GENERATE LIVE   API KEY |
+   -----------------------------------*/
+  $('#live_pk_refresh').click(function(event) {
+      // if it's IE then use returnValue
+  if (event.preventDefault) { event.preventDefault(); } else { event.returnValue = false; }
+   newApiKey('live_pk');
+  });
+
+  $('#live_sk_refresh').click(function(event) {
+      // if it's IE then use returnValue
+  if (event.preventDefault) { event.preventDefault(); } else { event.returnValue = false; }
+   newApiKey('live_sk');
+  });
+
+ /*--------------------------------- 
+  | SECTION TO GENERATE NEW API KESY |
+    --------------------------------*/
+
 });
 

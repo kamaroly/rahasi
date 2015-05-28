@@ -154,6 +154,7 @@ return [
 	  'Illuminate\Html\HtmlServiceProvider',
 	  'Laracasts\Flash\FlashServiceProvider',
 	  'Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider',
+	  'Rahasi\Providers\RegisteredUserEventServiceProvider',
 
 	],
 

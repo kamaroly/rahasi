@@ -22,7 +22,5 @@ Route::get('/charges/{items}','WelcomeController@gross');
 
 Route::group(['prefix'=>'api/ajax'], function(){
 
-	Route::get('/apikeys/pk', function(){
-		return 'pk_test_oiHfk4DxY9rrLt1hLo3z7g5n';
-	});
+	Route::get('/apikeys/{keyType}','SettingController@newKey');
 });
