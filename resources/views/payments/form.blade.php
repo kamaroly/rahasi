@@ -5,12 +5,12 @@
  <div class="inline  fields">
     <div class="required field" >
       <label class="fix wide column left ">{!! trans('payments.phone_number') !!}</label>
-      <input type="text"  name="phone_number" placeholder="250722000000">
+      <input type="tel"  name="phone_number" placeholder="250722000000">
     </div>
 
     <div class="required field" >
       <label class="fix wide column left ">{!! trans('payments.amount') !!}</label>
-      <input type="text" name="amount" placeholder="500.0">
+      <input type="number" name="amount" placeholder="500.0">
     </div>
 
     <div class="field" >
