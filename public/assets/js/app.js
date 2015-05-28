@@ -596,11 +596,17 @@ function modal(element,modalWidth) {
   }else{
     modalWidth+='%';
   }
-
+  var height = 'auto';
+  
+  // If screen size width is less than 480 then make it 100 %
+  if (window.innerWidth <= 480) {
+    modalWidth='90%';
+    height = window.innerHeight;
+  }
   Modal.open({
     ajaxContent: element.href,
     width:modalWidth.toString(),
-    height:'auto',
+    height:height.toString(),
     hideOverlay:false,
   });
 }

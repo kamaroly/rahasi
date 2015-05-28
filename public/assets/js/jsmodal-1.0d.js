@@ -261,6 +261,10 @@ var Modal = (function () {
             if (!parameters.horizontalOnly) {
                 // modalContainer.style.top = amountScrolledY + (browserHeight / 2) - (modalHeight / 2) + 'px';
                 modalContainer.style.top = amountScrolledY + (browserHeight*0.02 ) +'%'; //- (modalHeight / 2) + 'px';
+
+                if (window.innerWidth <= 480) {
+                     modalContainer.style.top = amountScrolledY + (browserHeight*0.035 ) +'%';
+                }
             }
 
             modalContainer.style.left = amountScrolledX + (browserWidth / 2) - (modalWidth / 2) + 'px';
