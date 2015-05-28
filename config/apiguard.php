@@ -24,7 +24,7 @@ return [
     |
     */
 
-    'model'                => 'Chrisbjr\ApiGuard\Models\ApiKey',
+    'model'                => 'Rahasi\Repositories\Models\Eloquents\ApiKey',
 
     /*
     |--------------------------------------------------------------------------
@@ -36,7 +36,7 @@ return [
     |
     */
 
-    'apiLogModel'          => 'Chrisbjr\ApiGuard\Models\ApiLog',
+    'apiLogModel'          => 'Rahasi\Repositories\Models\Eloquents\ApiLog',
 
     /*
     |--------------------------------------------------------------------------
