@@ -709,8 +709,16 @@ jQuery(document).ready(function($) {
   });
 
  /*--------------------------------- 
-  | SECTION TO GENERATE NEW API KESY |
+  | END TO GENERATE NEW API KESY |
     --------------------------------*/
+});
 
+$('.environment.checkbox').checkbox('attach events',  '.check', 'check'); 
+$('.environment').click(function(){
+    if($("#environment").is(':checked')){
+        $('.test').css('color', '#cccccc');
+    } else {
+         $('.test').css('color', 'orange');
+    }
 });
 

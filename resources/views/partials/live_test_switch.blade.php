@@ -1,7 +1,4 @@
-<div class="onoffswitch">
-    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
-    <label class="onoffswitch-label" for="myonoffswitch">
-        <span class="onoffswitch-inner"></span>
-        <span class="onoffswitch-switch"></span>
-    </label>
-</div>
+ <div class="ui environment toggle slider checkbox">
+        <input type="checkbox" name="environment" id="environment">
+        <label><b class="test">TEST</b> / <b>LIVE</b></label>
+ </div>

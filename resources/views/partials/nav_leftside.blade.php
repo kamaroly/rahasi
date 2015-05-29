@@ -3,7 +3,7 @@
         <section class="sidebar">
          <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
+            <li class="header">@include('partials.live_test_switch')</li>
             <li class="{{ ((Request::is('/') || (Request::is('dashboard*')) || (Request::is('home*'))) ? 'active' : '') }} treeview">
               <a href="{{ route('dashboard') }}">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> 

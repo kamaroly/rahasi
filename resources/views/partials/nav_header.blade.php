@@ -5,6 +5,7 @@
           <span class="logo-mini"><b>RAHA</b>SI</span>
           {{-- logo for regular state and mobile devices --}}
           <span class="logo-lg"><b>RAHA</b>SI</span>
+
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -12,7 +13,11 @@
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only"></span>
           </a>
-          {{-- @include('partials.live_test_switch') --}}
+
+          <div class="menu" style="float: left;">
+            
+          </div>
+
           <div class="header menu">
 
            @if (Sentry::check())

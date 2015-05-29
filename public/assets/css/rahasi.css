@@ -4544,3 +4544,28 @@ a.roll {
 .livekey{
  color: #fcb831;
 }
+
+.ui.environment.toggle.checkbox .box:before, .environment.toggle.checkbox label:before {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  content: '';
+  top: 0;
+  z-index: 1;
+  border: none;
+  background-color: rgba(0,0,0,.05);
+  width: 3.5rem;
+  height: 1.5rem;
+  border-radius: 500rem;
+  background: orange;
+}
+b.test{
+  color: orange;
+  float: left;
+ }
+.environment.toggle.checkbox .box, .environment.toggle.checkbox label {
+  min-height: 1.5rem;
+  padding-left: 4.5rem;
+  color: #ccc;
+}
+
