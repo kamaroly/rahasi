@@ -1,5 +1,7 @@
 <?php namespace Rahasi\Repositories\Models\Eloquents;
 
+use DB;
+
 class Charge extends BaseModel {
 
 	public $incrementing = false;
@@ -69,4 +71,12 @@ class Charge extends BaseModel {
             $model->user_id 				= $model->getUserId();
         });
     }
+
+    // public function summaryReport($userId)			
+    // {
+    // return	DB::table($this->table)
+    //              ->select(DB::raw('DATE(created_at)'), DB::raw('count(*) as total'))
+    //              ->groupBy(DB::raw('DATE(created_at)'))
+    //              ->get();
+    // }
 }
