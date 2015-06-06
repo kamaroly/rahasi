@@ -27,3 +27,7 @@ Route::group(['prefix' => 'api/ajax'], function () {
 
 	Route::get('/apikeys/{keyType}', 'SettingController@newKey');
 });
+
+Route::get('/index', function () {
+	return view('settings.index');
+});

@@ -10,13 +10,15 @@
   right: 0;
   z-index: 5;
   background: #9999;
-  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #ddd), color-stop(100%, #ddd));
-  background-image: -webkit-linear-gradient(bottom, #ddd 0%,#ddd 100%);
-  background-image: -moz-linear-gradient(bottom, #ddd 0%,#fafafb 100%);
-  background-image: -o-linear-gradient(bottom, #ddd 0%,#fafafb 100%);
-  background-image: linear-gradient(bottom, #ddd 0%,#fafafb 100%);
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #ced4dc), color-stop(100%, #ced4dc));
+  background-image: -webkit-linear-gradient(bottom, #ced4dc 0%,#ced4dc 100%);
+  background-image: -moz-linear-gradient(bottom, #ced4dc 0%,#fafafb 100%);
+  background-image: -o-linear-gradient(bottom, #ced4dc 0%,#fafafb 100%);
+  background-image: linear-gradient(bottom, #ced4dc 0%,#fafafb 100%);
   box-shadow: 0 1px 0px #d4d7d7;
   text-align: center;
+
+  border-bottom: 1px solid #2C2C2C;
   color: #444;
 }
 .skin-blue .main-header .navbar .nav > li > a {
