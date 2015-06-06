@@ -15,7 +15,7 @@
           </a>
 
           <div class="menu" style="float: left;">
-            
+
           </div>
 
           <div class="header menu">
@@ -23,7 +23,7 @@
            @if (Sentry::check())
             <a href="{{ route('sentinel.logout') }}" class="item"> <i class="sign out icon"></i>Logout</a>
 
-             <a href="#" class="item" data-toggle="control-sidebar"> <i class="setting icon"></i>Acccount Settings</a>
+             <a href="{{ route('settings.general') }}" class="item"> <i class="setting icon"></i>Acccount Settings</a>
             @endif
           </div>
         </nav>

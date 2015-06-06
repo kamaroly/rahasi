@@ -1,10 +1,10 @@
-@extends('layouts.default')
+@extends('settings.index')
 
 @section('title')
-  {!! trans('settings.general') !!}
+{!! trans('settings.general') !!}
 @stop
 
-@section('content')
+@section('settings-body')
  {!! Form::open(['route'=>'settings.save','method'=>'post','accept-charset'=>'utf-8','class'=>'ui form segment']) !!}
   <div class="two fields">
     <div class="field">

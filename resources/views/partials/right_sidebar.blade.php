@@ -1,5 +1,5 @@
- <!-- Control Sidebar -->      
-      <aside class="control-sidebar control-sidebar-dark">                
+{{--  <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
            <!-- Tab panes -->
         <div class="tab-content">
           <!-- Home tab content -->
@@ -42,11 +42,11 @@
                   </div>
                 </a>
               </li>
-              
+
             </ul><!-- /.control-sidebar-menu -->
 
-      
+
 
           </div><!-- /.tab-pane -->
         </div>
-      </aside><!-- /.control-sidebar -->
+      </aside><!-- /.control-sidebar --> --}}

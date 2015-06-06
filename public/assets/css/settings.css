@@ -21,158 +21,158 @@
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.general_icon {
-  background-image: url("settings/toolbar/general-12000ba4c202184a5a7f77eb2b7bcbaf.png");
+  background-image: url("/assets/img/general-12000ba4c202184a5a7f77eb2b7bcbaf.png");
   background-size: 27px 25px;
   background-position: 50% 17px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.general_icon {
-    background-image: url("settings/toolbar/general@2x-46fd73ce6c5725fec455ded97957b29d.png");
+    background-image: url("/assets/img/general@2x-46fd73ce6c5725fec455ded97957b29d.png");
   }
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.team_icon {
-  background-image: url("settings/toolbar/team-524804afe2450af2f7c5a58492c8e29f.png");
+  background-image: url("/assets/img/team-524804afe2450af2f7c5a58492c8e29f.png");
   background-size: 33px 24px;
   background-position: 50% 18px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.team_icon {
-    background-image: url("settings/toolbar/team@2x-45dd7f8a0be2fa23030f61653d0cb42a.png");
+    background-image: url("/assets/img/team@2x-45dd7f8a0be2fa23030f61653d0cb42a.png");
   }
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.key_icon {
-  background-image: url("settings/toolbar/api_key-aed66dc0ccf9982a8a2cc46c65f093f4.png");
+  background-image: url("/assets/img/api_key-aed66dc0ccf9982a8a2cc46c65f093f4.png");
   background-size: 25px 25px;
   background-position: 50% 17px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.key_icon {
-    background-image: url("settings/toolbar/api_key@2x-25acc8fd45c4728da32449abbbdd39f5.png");
+    background-image: url("/assets/img/api_key@2x-25acc8fd45c4728da32449abbbdd39f5.png");
   }
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.calendar_icon {
-  background-image: url("settings/toolbar/calendar-3897a31357789f57d676b71901e3d6c6.png");
+  background-image: url("/assets/img/calendar-3897a31357789f57d676b71901e3d6c6.png");
   background-size: 23px 23px;
   background-position: 50% 19px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.calendar_icon {
-    background-image: url("settings/toolbar/calendar@2x-8e6cd7761ed814d1fe6b072be1be7ed9.png");
+    background-image: url("/assets/img/calendar@2x-8e6cd7761ed814d1fe6b072be1be7ed9.png");
   }
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.webhooks_icon {
-  background-image: url("settings/toolbar/webhooks-fcf638bbf0fdf31b838ec9702cac421e.png");
+  background-image: url("/assets/img/webhooks-fcf638bbf0fdf31b838ec9702cac421e.png");
   background-size: 25px 25px;
   background-position: 50% 17px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.webhooks_icon {
-    background-image: url("settings/toolbar/webhooks@2x-003e2b94a050a2ddf1ea9d31f5799a88.png");
+    background-image: url("/assets/img/webhooks@2x-003e2b94a050a2ddf1ea9d31f5799a88.png");
   }
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.test_data_icon {
-  background-image: url("settings/toolbar/test_data-d1c6196e8e08afa70985f446e085e90b.png");
+  background-image: url("/assets/img/test_data-d1c6196e8e08afa70985f446e085e90b.png");
   background-size: 18px 22px;
   background-position: 50% 20px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.test_data_icon {
-    background-image: url("settings/toolbar/test_data@2x-6cc98c77a0c12dae4ec9e06922cffbba.png");
+    background-image: url("/assets/img/test_data@2x-6cc98c77a0c12dae4ec9e06922cffbba.png");
   }
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.applications_icon {
-  background-image: url("settings/toolbar/applications-1ba48232329375ed16ed5c3a982718be.png");
+  background-image: url("/assets/img/applications-1ba48232329375ed16ed5c3a982718be.png");
   background-size: 23px 23px;
   background-position: 50% 19px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.applications_icon {
-    background-image: url("settings/toolbar/applications@2x-d44aab73a2a0a186becfd0d83909b5fe.png");
+    background-image: url("/assets/img/applications@2x-d44aab73a2a0a186becfd0d83909b5fe.png");
   }
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.security_icon {
-  background-image: url("settings/toolbar/security-172eef0914c4a06d780392e6a823c146.png");
+  background-image: url("/assets/img/security-172eef0914c4a06d780392e6a823c146.png");
   background-size: 19px 26px;
   background-position: 50% 17px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.security_icon {
-    background-image: url("settings/toolbar/security@2x-b253f9fb2133d02f05ce20900a6dd781.png");
+    background-image: url("/assets/img/security@2x-b253f9fb2133d02f05ce20900a6dd781.png");
   }
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.emails_icon {
-  background-image: url("settings/toolbar/emails-9867adc9233786f39227d47c0f56200d.png");
+  background-image: url("/assets/img/emails-9867adc9233786f39227d47c0f56200d.png");
   background-size: 29px 20px;
   background-position: 50% 21px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.emails_icon {
-    background-image: url("settings/toolbar/emails@2x-2d12ca157ef0757966fa59f96a12b674.png");
+    background-image: url("/assets/img/emails@2x-2d12ca157ef0757966fa59f96a12b674.png");
   }
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.transfers_icon {
-  background-image: url("settings/toolbar/transfers-42322e9f3048bdba0e654e963f0373a7.png");
+  background-image: url("/assets/img/transfers-42322e9f3048bdba0e654e963f0373a7.png");
   background-size: 28px 25px;
   background-position: 50% 17px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.transfers_icon {
-    background-image: url("settings/toolbar/transfers@2x-3d8584d44d2d13a335ad79cd1d019190.png");
+    background-image: url("/assets/img/transfers@2x-3d8584d44d2d13a335ad79cd1d019190.png");
   }
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.apple_pay_icon {
-  background-image: url("settings/toolbar/apple_pay-5e9f6a2b572f8c88cec1f2392b37e979.png");
+  background-image: url("/assets/img/apple_pay-5e9f6a2b572f8c88cec1f2392b37e979.png");
   background-size: 27px 27px;
   background-position: 50% 18px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.apple_pay_icon {
-    background-image: url("settings/toolbar/apple_pay@2x-00e3f45062905acc5a19681c83caf8f8.png");
+    background-image: url("/assets/img/apple_pay@2x-00e3f45062905acc5a19681c83caf8f8.png");
   }
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.verifications_icon {
-  background-image: url("settings/toolbar/verifications-7de51e4d55a957c5d3334930f6868460.png");
+  background-image: url("/assets/img/verifications-7de51e4d55a957c5d3334930f6868460.png");
   background-size: 27px 27px;
   background-position: 50% 13px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.verifications_icon {
-    background-image: url("settings/toolbar/verifications@2x-9b217dc6c9a24330cfb975716c14edc4.png");
+    background-image: url("/assets/img/verifications@2x-9b217dc6c9a24330cfb975716c14edc4.png");
   }
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.documents_icon {
-  background-image: url("settings/toolbar/documents-5dae5a97e5ba453da10b9722a1750fb4.png");
+  background-image: url("/assets/img/documents-5dae5a97e5ba453da10b9722a1750fb4.png");
   background-size: 18px 22px;
   background-position: 50% 20px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.documents_icon {
-    background-image: url("settings/toolbar/documents@2x-ad2bb328797331145dc0e899ddb71fd5.png");
+    background-image: url("/assets/img/documents@2x-ad2bb328797331145dc0e899ddb71fd5.png");
   }
 }
 
@@ -8809,6 +8809,8 @@ a.button.medium.rounded span,button.button.medium.rounded span,strong.buttom.med
   height: 45px;
   text-shadow: 0 1px 0 rgba(255,255,255,0.5);
   background-color: #e8ebef;/**/
+    background: linear-gradient(#fff,#ecf0f4);
+  border-bottom-color: #ced4dc;
 }
 
 .modal-dialog-view div.modal div.modal-header h2 {
@@ -8870,169 +8872,55 @@ a.button.medium.rounded span,button.button.medium.rounded span,strong.buttom.med
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.general_icon {
-  background-image: url("settings/toolbar/general-12000ba4c202184a5a7f77eb2b7bcbaf.png");
+  background-image: url("/assets/img/general.png");
   background-size: 27px 25px;
   background-position: 50% 17px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.general_icon {
-    background-image: url("settings/toolbar/general@2x-46fd73ce6c5725fec455ded97957b29d.png");
-  }
-}
-
-.modal-dialog-view div.modal div.modal-header.toolbar li a.team_icon {
-  background-image: url("settings/toolbar/team-524804afe2450af2f7c5a58492c8e29f.png");
-  background-size: 33px 24px;
-  background-position: 50% 18px;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio:2) {
-  .modal-dialog-view div.modal div.modal-header.toolbar li a.team_icon {
-    background-image: url("settings/toolbar/team@2x-45dd7f8a0be2fa23030f61653d0cb42a.png");
+    background-image: url("/assets/img/general.png");
   }
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.key_icon {
-  background-image: url("settings/toolbar/api_key-aed66dc0ccf9982a8a2cc46c65f093f4.png");
+  background-image: url("/assets/img/api_key.png");
   background-size: 25px 25px;
   background-position: 50% 17px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.key_icon {
-    background-image: url("settings/toolbar/api_key@2x-25acc8fd45c4728da32449abbbdd39f5.png");
+    background-image: url("/assets/img/api_key.png");
   }
 }
 
-.modal-dialog-view div.modal div.modal-header.toolbar li a.calendar_icon {
-  background-image: url("settings/toolbar/calendar-3897a31357789f57d676b71901e3d6c6.png");
-  background-size: 23px 23px;
-  background-position: 50% 19px;
-}
 
-@media only screen and (-webkit-min-device-pixel-ratio:2) {
-  .modal-dialog-view div.modal div.modal-header.toolbar li a.calendar_icon {
-    background-image: url("settings/toolbar/calendar@2x-8e6cd7761ed814d1fe6b072be1be7ed9.png");
-  }
-}
-
-.modal-dialog-view div.modal div.modal-header.toolbar li a.webhooks_icon {
-  background-image: url("settings/toolbar/webhooks-fcf638bbf0fdf31b838ec9702cac421e.png");
-  background-size: 25px 25px;
-  background-position: 50% 17px;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio:2) {
-  .modal-dialog-view div.modal div.modal-header.toolbar li a.webhooks_icon {
-    background-image: url("settings/toolbar/webhooks@2x-003e2b94a050a2ddf1ea9d31f5799a88.png");
-  }
-}
-
-.modal-dialog-view div.modal div.modal-header.toolbar li a.test_data_icon {
-  background-image: url("settings/toolbar/test_data-d1c6196e8e08afa70985f446e085e90b.png");
-  background-size: 18px 22px;
-  background-position: 50% 20px;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio:2) {
-  .modal-dialog-view div.modal div.modal-header.toolbar li a.test_data_icon {
-    background-image: url("settings/toolbar/test_data@2x-6cc98c77a0c12dae4ec9e06922cffbba.png");
-  }
-}
-
-.modal-dialog-view div.modal div.modal-header.toolbar li a.applications_icon {
-  background-image: url("settings/toolbar/applications-1ba48232329375ed16ed5c3a982718be.png");
-  background-size: 23px 23px;
-  background-position: 50% 19px;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio:2) {
-  .modal-dialog-view div.modal div.modal-header.toolbar li a.applications_icon {
-    background-image: url("settings/toolbar/applications@2x-d44aab73a2a0a186becfd0d83909b5fe.png");
-  }
-}
-
-.modal-dialog-view div.modal div.modal-header.toolbar li a.security_icon {
-  background-image: url("settings/toolbar/security-172eef0914c4a06d780392e6a823c146.png");
-  background-size: 19px 26px;
-  background-position: 50% 17px;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio:2) {
-  .modal-dialog-view div.modal div.modal-header.toolbar li a.security_icon {
-    background-image: url("settings/toolbar/security@2x-b253f9fb2133d02f05ce20900a6dd781.png");
-  }
-}
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.emails_icon {
-  background-image: url("settings/toolbar/emails-9867adc9233786f39227d47c0f56200d.png");
+  background-image: url("/assets/img/emails.png");
   background-size: 29px 20px;
   background-position: 50% 21px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.emails_icon {
-    background-image: url("settings/toolbar/emails@2x-2d12ca157ef0757966fa59f96a12b674.png");
+    background-image: url("/assets/img/emails.png");
   }
 }
 
 .modal-dialog-view div.modal div.modal-header.toolbar li a.transfers_icon {
-  background-image: url("settings/toolbar/transfers-42322e9f3048bdba0e654e963f0373a7.png");
+  background-image: url("/assets/img/transfers.png");
   background-size: 28px 25px;
   background-position: 50% 17px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2) {
   .modal-dialog-view div.modal div.modal-header.toolbar li a.transfers_icon {
-    background-image: url("settings/toolbar/transfers@2x-3d8584d44d2d13a335ad79cd1d019190.png");
+    background-image: url("/assets/img/transfers.png");
   }
 }
 
-.modal-dialog-view div.modal div.modal-header.toolbar li a.apple_pay_icon {
-  background-image: url("settings/toolbar/apple_pay-5e9f6a2b572f8c88cec1f2392b37e979.png");
-  background-size: 27px 27px;
-  background-position: 50% 18px;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio:2) {
-  .modal-dialog-view div.modal div.modal-header.toolbar li a.apple_pay_icon {
-    background-image: url("settings/toolbar/apple_pay@2x-00e3f45062905acc5a19681c83caf8f8.png");
-  }
-}
-
-.modal-dialog-view div.modal div.modal-header.toolbar li a.verifications_icon {
-  background-image: url("settings/toolbar/verifications-7de51e4d55a957c5d3334930f6868460.png");
-  background-size: 27px 27px;
-  background-position: 50% 13px;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio:2) {
-  .modal-dialog-view div.modal div.modal-header.toolbar li a.verifications_icon {
-    background-image: url("settings/toolbar/verifications@2x-9b217dc6c9a24330cfb975716c14edc4.png");
-  }
-}
-
-.modal-dialog-view div.modal div.modal-header.toolbar li a.documents_icon {
-  background-image: url("settings/toolbar/documents-5dae5a97e5ba453da10b9722a1750fb4.png");
-  background-size: 18px 22px;
-  background-position: 50% 20px;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio:2) {
-  .modal-dialog-view div.modal div.modal-header.toolbar li a.documents_icon {
-    background-image: url("settings/toolbar/documents@2x-ad2bb328797331145dc0e899ddb71fd5.png");
-  }
-}
-
-.modal-dialog-view div.modal div.modal-header.toolbar li span.border {
-  display: block;
-  position: absolute;
-  width: 2px;
-  height: 70px;
-  top: 1px;
-  background: url("toolbar/icons/selected_indicator-70ee64ea1cf596adcdf1c7608e068167.png");
-}
 
 .modal-dialog-view div.modal div.modal-header.toolbar li span.border.right {
   right: 0;

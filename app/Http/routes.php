@@ -9,14 +9,18 @@ Route::get('/comming', function () {
 Route::get('/home', ['as' => 'home', 'middleware' => 'sentry.auth', 'uses' => 'WelcomeController@dashboard']);
 Route::get('/dashboard', ['as' => 'dashboard', 'middleware' => 'sentry.auth', 'uses' => 'WelcomeController@dashboard']);
 
-Route::group(['prefix' => 'settings', 'middleware' => 'sentry.auth'], function () {
+Route::group(['prefix' => 'account', 'middleware' => 'sentry.auth'], function () {
 
 	// Saving General settings
-	Route::get('/general', ['as' => 'settings.general.view', 'uses' => 'SettingController@general']);
+	Route::get('/general', ['as' => 'settings.general', 'uses' => 'SettingController@general']);
 	Route::post('/save', ['as' => 'settings.save', 'uses' => 'SettingController@generalSave']);
 
 	// Saving Api settings
-	Route::get('/api', ['as' => 'settings.api.view', 'uses' => 'SettingController@api']);
+	Route::get('/apikeys', ['as' => 'settings.api.view', 'uses' => 'SettingController@api']);
+
+	Route::get('/transfers', ['as' => 'settings.transfers', 'uses' => 'SettingController@transfers']);
+
+	Route::get('/transfers/add', ['as' => 'settings.transfers.add', 'uses' => 'SettingController@transfersAdd']);
 });
 
 Route::resource('/payments', 'PaymentController');
@@ -26,8 +30,4 @@ Route::get('/charges/{items}', 'WelcomeController@gross');
 Route::group(['prefix' => 'api/ajax'], function () {
 
 	Route::get('/apikeys/{keyType}', 'SettingController@newKey');
-});
-
-Route::get('/index', function () {
-	return view('settings.index');
 });

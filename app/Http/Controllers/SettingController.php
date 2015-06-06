@@ -1,42 +1,42 @@
 <?php namespace Rahasi\Http\Controllers;
 
-use Redirect;
-use Rahasi\Http\Requests;
+use Rahasi\Http\Controllers\Controller;
 use Rahasi\Http\Requests\GeneralSettingsRequest;
 use Rahasi\Repositories\Models\Eloquents\ApiKey;
-use Rahasi\Commands\SettingRegisterCommand;
+use Redirect;
 use Setting;
-use Rahasi\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
 
 class SettingController extends Controller {
 
-
 	function __construct() {
 		parent::__construct();
-			Setting::setExtraColumns(array(
-			'user_id' => $this->user
+		Setting::setExtraColumns(array(
+			'user_id' => $this->user,
 		));
 	}
 
-	public function general()
-	{
+	public function general() {
 		return view('settings.general');
 	}
 
-	public function api(ApiKey $apiKey)
-	{
+	public function api(ApiKey $apiKey) {
 		$keys = $apiKey->getByUser($this->user);
 
-		return view('settings.api',compact('keys'));
+		return view('settings.api', compact('keys'));
+	}
+
+	public function transfers() {
+		return view('settings.transfers');
+	}
+
+	public function transfersAdd() {
+		return view('settings.bankform');
 	}
 
 	/**
 	 * Save settings
-	 */ 
-	public function generalSave(GeneralSettingsRequest $request)
-	{
+	 */
+	public function generalSave(GeneralSettingsRequest $request) {
 		// Get all submited settings
 		$settings = $request->all();
 
@@ -44,15 +44,14 @@ class SettingController extends Controller {
 		unset($settings['_token']);
 
 		foreach ($settings as $key => $value) {
-			Setting::set($key,$value);
+			Setting::set($key, $value);
 		}
 		Setting::save();
 
-		return 	Redirect::back();
+		return Redirect::back();
 	}
 
-	public function newKey($keytype,ApiKey $apikey)
-	{
-		return $apikey->newKey($keytype,$this->user);
+	public function newKey($keytype, ApiKey $apikey) {
+		return $apikey->newKey($keytype, $this->user);
 	}
 }

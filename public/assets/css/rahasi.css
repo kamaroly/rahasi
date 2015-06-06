@@ -4396,7 +4396,7 @@ fieldset[disabled] .btn-vk.active {
 .ui.form .inline.field>:first-child, .ui.form .inline.fields .field>:first-child{
     margin-top: 1.35em;
 }
-.ui.form .inline.field>.ui.input, .ui.form .inline.field>input, .ui.form .inline.fields .field>.ui.input, .ui.form .inline.fields .field>input{
+.ui.form .inline.field>.ui.input, .ui.form .inline.field>input,.ui.form .inline.field>select, .ui.form .inline.fields .field>.ui.input, .ui.form .inline.fields .field>input{
 width: 62%;
   display: block;
   margin-top: .85em;

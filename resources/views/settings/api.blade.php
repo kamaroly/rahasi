@@ -1,10 +1,10 @@
-@extends('layouts.default')
+@extends('settings.index')
 
 @section('title')
 {!! trans('settings.api') !!}
 @stop
 
-@section('content')
+@section('settings-body')
 
 <div class="ui form">
   <div class="two fields">
