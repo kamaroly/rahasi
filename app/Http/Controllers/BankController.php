@@ -44,16 +44,6 @@ class BankController extends Controller {
 	}
 
 	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id) {
-		//
-	}
-
-	/**
 	 * Show the form for editing the specified resource.
 	 *
 	 * @param  int  $id
@@ -80,7 +70,7 @@ class BankController extends Controller {
 	 * @return Response
 	 */
 	public function destroy($id) {
-		//
+		dd('insider BankController @destroy, bank destroyed');
 	}
 
 }
