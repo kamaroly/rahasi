@@ -12,16 +12,10 @@ class EventServiceProvider extends ServiceProvider {
 	 */
 
 	protected $listen = [
-		'\Rahasi\Events\BankWasAdded' => [
-			'\Rahasi\Handlers\Events\ValidateBankDetails',
-			'\Rahasi\Handlers\Events\LogBankWasAdded',
-
+		'BankWasAdded' => [
+			'LogBankWasAdded',
+			'BankWasAddedWebHook',
 		],
-		'\Rahasi\Events\DidSomethingEvent' => [
-			'\Rahasi\Handlers\Events\RespondOneWay',
-			'\Rahasi\Handlers\Events\RespondAnotherWay',
-		],
-
 	];
 
 	/**

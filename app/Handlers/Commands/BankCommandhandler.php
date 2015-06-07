@@ -1,6 +1,8 @@
 <?php namespace Rahasi\Handlers\Commands;
 
+use Event;
 use Rahasi\Commands\BankCommand;
+use Rahasi\Events\BankWasAdded;
 use Rahasi\Repositories\Models\Eloquents\User;
 use Session;
 
@@ -19,15 +21,13 @@ class BankCommandhandler {
 		// Make sure userDetails is an Array
 		$userDetails = (array) $userDetails;
 
-		// dd($userDetails);
+		// Make sure this array is not a collection
+		$userDetails = array_shift($userDetails);
+
 		//Attempt to add new bank
 		if ($bank = $user->banks()->create($userDetails)) {
-
-			dd($bank);
-			Event::fire(new BankWasSaved($bank));
+			Event::fire(new BankWasAdded($bank));
 		}
-
-		dd('test');
 	}
 
 }

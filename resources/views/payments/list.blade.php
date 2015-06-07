@@ -1,3 +1,14 @@
+@extends('layouts.default')
+@section('title')
+  {{Lang::get('payments.payments')}}
+@stop
+@section('content')
+
+<a class="ui left labeled icon black button no-data-button"  href="{{route('payments.create')}}" onClick="modal(this,28)">
+  <i class="plus icon"></i>
+      {{Lang::get('payments.create_new_payment')}}
+  </a>
+
 <table class="ui table">
 	<caption><h2 class="ui header">{!! trans('payments.latest_payments') !!} </h2></caption>
 	<thead>
@@ -11,18 +22,12 @@
 		</tr>
 	</thead>
 	<tbody>
-		@foreach ($payments as $payment)
-		<tr class="{{ ($payment->status == 'success') ?'':'negative' }}">
-			<td>{{ $payment->created_at }}</td>
-			<td>{{ $payment->amount }} {{ $payment->currency }} </td>
-			<td>{{ $payment->description }}</td>
-			<td>{{ $payment->statement_descriptor }}</td>
-			<td>{{ $payment->chargeable->brand }}</td>
-			<td>{{ $payment->status }}</td>
-		</tr>
-		@endforeach
+		@each ('payments.item', $payments, 'payment', 'payments.no-item')
 	</tbody>
 </table>
+
+@stop
+
 
 @section('js')
 <script type="text/javascript">

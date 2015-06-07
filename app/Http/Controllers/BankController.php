@@ -3,26 +3,19 @@
 use Rahasi\Commands\BankCommand;
 use Rahasi\Http\Controllers\Controller;
 use Rahasi\Http\Requests\BankRequest;
-use Rahasi\Repositories\Eloquents\UserBankRepository;
+use Redirect;
 
 class BankController extends Controller {
 
-	/**
-	 * Stores bank repository instance
-	 * @var
-	 */
-	public $bank;
-
-	function __construct(UserBankRepository $bank) {
-		$this->bank = $bank;
-	}
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
 	public function index() {
-		return view('account.transfers');
+
+		$banks = $this->user->banks;
+		return view('account.banks.list', compact('banks'));
 	}
 
 	public function transfersAdd() {
@@ -46,6 +39,8 @@ class BankController extends Controller {
 	public function store(BankRequest $request) {
 
 		$this->dispatch(new BankCommand($request->all()));
+
+		return Redirect::route('account.banks');
 	}
 
 	/**
