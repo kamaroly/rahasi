@@ -7,6 +7,7 @@ class UserBank extends BaseModel {
 	/** @var boolean tell models not the increment */
 	public $incrementing = false;
 
+	public $fillable = ['currency', 'bank_country', 'routing_number', 'account_number', 'user_id'];
 	/** @var string table name in the databse */
 	public $table = 'user_banks';
 

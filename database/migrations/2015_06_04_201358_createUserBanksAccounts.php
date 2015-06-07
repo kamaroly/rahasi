@@ -12,7 +12,7 @@ class CreateUserBanksAccounts extends Migration {
 	 */
 	public function up() {
 		Schema::create('user_banks', function (Blueprint $table) {
-			$table->increments('id');
+			$table->string('id');
 			$table->string('currency');
 			$table->string('bank_country');
 			$table->string('account_number');

@@ -1,7 +1,8 @@
 <?php namespace Rahasi\Handlers\Commands;
 
 use Rahasi\Commands\BankCommand;
-use Rahasi\Repositories\Eloquents\UserBankRepository;
+use Rahasi\Repositories\Models\Eloquents\User;
+use Session;
 
 class BankCommandhandler {
 
@@ -11,11 +12,22 @@ class BankCommandhandler {
 	 * @param  BankCommand  $command
 	 * @return void
 	 */
-	public function handle(BankCommand $userDetails, UserBankRepository $user) {
+	public function handle(BankCommand $userDetails) {
+
+		$user = User::findOrFail(Session::get('userId'));
+
+		// Make sure userDetails is an Array
+		$userDetails = (array) $userDetails;
+
+		// dd($userDetails);
 		//Attempt to add new bank
-		if ($bank = $user->banks->create($userDetails)) {
+		if ($bank = $user->banks()->create($userDetails)) {
+
+			dd($bank);
 			Event::fire(new BankWasSaved($bank));
 		}
+
+		dd('test');
 	}
 
 }
