@@ -1,4 +1,5 @@
-<?php 
+<?php
 return [
-	'cancel' 	=> 	'Cancel',
+	'cancel' => 'Cancel',
+	'delete' => 'Delete',
 ];

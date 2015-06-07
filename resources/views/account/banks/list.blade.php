@@ -8,7 +8,7 @@
 
     <a class="ui left labeled icon green button no-data-button" href="{{ route('account.banks.create') }}" onclick="modal(this,38)">
   <i class="plus icon"></i>
-  {{ trans('account.transfers.add') }}
+  {{ trans('bank.add') }}
   </a>
 
   <table class="ui table">
@@ -18,6 +18,7 @@
   	 		<th>{{ trans('bank.currency') }}</th>
   	 		<th>{{ trans('bank.routing_number') }}</th>
   	 		<th>{{ trans('bank.account_number') }}</th>
+  	 		<th><i class="setting icon"></i></th>
   	 	</tr>
    	 </thead>
  <tbody>
