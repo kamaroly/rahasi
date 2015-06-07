@@ -10,10 +10,18 @@ class EventServiceProvider extends ServiceProvider {
 	 *
 	 * @var array
 	 */
+
 	protected $listen = [
-		'event.name' => [
-			'EventListener',
+		'\Rahasi\Events\BankWasAdded' => [
+			'\Rahasi\Handlers\Events\ValidateBankDetails',
+			'\Rahasi\Handlers\Events\LogBankWasAdded',
+
 		],
+		'\Rahasi\Events\DidSomethingEvent' => [
+			'\Rahasi\Handlers\Events\RespondOneWay',
+			'\Rahasi\Handlers\Events\RespondAnotherWay',
+		],
+
 	];
 
 	/**
@@ -22,8 +30,7 @@ class EventServiceProvider extends ServiceProvider {
 	 * @param  \Illuminate\Contracts\Events\Dispatcher  $events
 	 * @return void
 	 */
-	public function boot(DispatcherContract $events)
-	{
+	public function boot(DispatcherContract $events) {
 		parent::boot($events);
 
 		//

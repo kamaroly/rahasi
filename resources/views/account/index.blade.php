@@ -8,13 +8,13 @@
             <div class="account-settings-view standard">
                 <div class="modal-inner">
                     <div class="modal-header toolbar">
-						@include('settings.menu')
+						@include('account.menu')
                     </div>
                     <div class="sheet"></div>
                     <div class="modal-content account-settings-view-content">
                         <div class="main">
                             <div class="settings-view">
-								@yield('settings-body')
+								@yield('account-body')
                             </div>
                         </div>
                     </div>

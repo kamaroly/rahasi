@@ -24,9 +24,6 @@ class WelcomeController extends Controller {
 	 * Show Rahasi home page
 	 */
 	public function dashboard(Payments $payment) {
-		// return (new Payments)->summaryReport($this->user);
-		$payments = $payment->lists('created_at', 'amount');
-
 		return view('dashboard', compact('payments'));
 	}
 
