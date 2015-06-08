@@ -20,9 +20,8 @@ class ApiCustomerController extends ApiController {
 	 */
 	public function index() {
 
-		$customer = $this->response->withCollection($this->user->customers, new BookTransformer);
+		return $this->response->withCollection($this->user->customers, new BookTransformer);
 
-		dd($customer);
 	}
 
 	/**
