@@ -2,12 +2,8 @@
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('/comming', function () {
-	return view('comming_soon');
-});
 // Dashboard Routes after user signs in
-Route::get('/home', ['as' => 'home', 'middleware' => 'sentry.auth', 'uses' => 'WelcomeController@dashboard']);
-Route::get('/dashboard', ['as' => 'dashboard', 'middleware' => 'sentry.auth', 'uses' => 'WelcomeController@dashboard']);
+Route::get('/dashboard', ['as' => 'home', 'middleware' => 'sentry.auth', 'uses' => 'WelcomeController@dashboard']);
 
 Route::group(['prefix' => 'account', 'middleware' => 'sentry.auth'], function () {
 

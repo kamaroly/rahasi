@@ -5,23 +5,23 @@
           <ul class="sidebar-menu">
             <li class="header">@include('partials.live_test_switch')</li>
             <li class="{{ ((Request::is('/') || (Request::is('dashboard*')) || (Request::is('home*'))) ? 'active' : '') }} treeview">
-              <a href="{{ route('dashboard') }}">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span> 
+              <a href="{{ route('home') }}">
+                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
               </a>
             </li>
              <li class="{{ (Request::is('payments*') ? 'active' : '') }} treeview">
               <a href="/payments">
-                <i class="fa fa-money"></i> <span>Payments</span> 
+                <i class="fa fa-money"></i> <span>Payments</span>
               </a>
             </li>
             <li class="{{ (Request::is('transfers*') ? 'active' : '') }} treeview">
               <a href="#">
-                <i class="fa fa-exchange"></i> <span>Transfers</span> 
+                <i class="fa fa-exchange"></i> <span>Transfers</span>
               </a>
             </li>
              <li class="{{ (Request::is('balance*') ? 'active' : '') }} treeview">
               <a href="#">
-                <i class="fa fa-th"></i> <span>Balance</span> 
+                <i class="fa fa-th"></i> <span>Balance</span>
               </a>
             </li>
             @if (Sentry::check() && Sentry::getUser()->hasAccess('admin'))

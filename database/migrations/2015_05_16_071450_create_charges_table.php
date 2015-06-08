@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateChargesTable extends Migration {
 
@@ -10,15 +10,13 @@ class CreateChargesTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function up()
-	{
-		Schema::create('charges', function(Blueprint $table)
-		{
+	public function up() {
+		Schema::create('charges', function (Blueprint $table) {
 			$table->string('id'); //: "ch_162Ff42eZvKYlo2CDae1HhUI",
 			$table->boolean('livemode')->default(false);
 			$table->boolean('paid')->default(false);
 			$table->string('status')->nullable();
-			$table->decimal('amount',10,2)->default(0.00);
+			$table->decimal('amount', 10, 2)->default(0.00);
 			$table->string('currency')->nullable();
 			$table->boolean('refounded')->default(false);
 			$table->string('chargeable_id')->nullable();
@@ -27,7 +25,7 @@ class CreateChargesTable extends Migration {
 			$table->string('balance_transaction')->nullable();
 			$table->string('failure_message')->nullable();
 			$table->string('failure_code')->nullable();
-			$table->decimal('amount_refunded',10,2)->default(0.00);
+			$table->decimal('amount_refunded', 10, 2)->default(0.00);
 			$table->string('customer_id')->nullable();
 			$table->string('invoice')->nullable();
 			$table->string('description')->nullable();
@@ -38,6 +36,7 @@ class CreateChargesTable extends Migration {
 			$table->decimal('application_fee')->default(0.00);
 			$table->integer('user_id')->unsigned();
 			$table->timestamps();
+			$table->softDeletes();
 
 			$table->unique('id');
 			$table->primary(array('id'));
@@ -50,8 +49,7 @@ class CreateChargesTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function down()
-	{
+	public function down() {
 		Schema::drop('charges');
 	}
 

@@ -25,6 +25,8 @@ abstract class Controller extends BaseController {
 	 */
 	public function __construct() {
 
+		$this->middleware('sentry.auth');
+
 		$this->userId = Session::get('userId');
 
 		$this->user = User::findOrFail($this->userId);
