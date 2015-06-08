@@ -35,5 +35,7 @@ Route::get('/charges/{items}', 'WelcomeController@gross');
 /** API ROUTE */
 
 Route::group(['prefix' => 'api/v1'], function () {
+
 	Route::resource('/customers', 'ApiCustomerController');
+	Route::resource('/charges', 'ApiChargeControlle');
 });

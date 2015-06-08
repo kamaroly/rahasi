@@ -1,17 +1,8 @@
 <?php namespace Rahasi\Http\Controllers;
 use Rahasi\Http\Requests\CustomerRequest;
 use Rahasi\Repositories\Eloquents\CustomerRepository;
+use Rahasi\Transformers\CustomerTransformer;
 
-class BookTransformer {
-	public function transform($customer) {
-
-		return ['email' => $customer->email,
-			'description' => $customer->description,
-			'livemode' => (bool) $customer->livemode,
-			'registered' => $customer->created_at,
-		];
-	}
-}
 class ApiCustomerController extends ApiController {
 	/**
 	 * Display a listing of the resource.
@@ -20,7 +11,7 @@ class ApiCustomerController extends ApiController {
 	 */
 	public function index() {
 
-		return $this->response->withCollection($this->user->customers, new BookTransformer);
+		return $this->response->withCollection($this->user->customers, new CustomerTransformer);
 
 	}
 
@@ -35,7 +26,7 @@ class ApiCustomerController extends ApiController {
 			$data = (array) $request->all();
 			$data['user_id'] = $this->user->id;
 			$newCustomer = $customer->create($data);
-			return $this->response->withItem($newCustomer, new BookTransformer);
+			return $this->response->withItem($newCustomer, new CustomerTransformer);
 
 		} catch (ModelNotFoundException $e) {
 
