@@ -1,7 +1,7 @@
 <?php namespace Rahasi\Http\Requests;
 
-use Sentry;
 use Rahasi\Http\Requests\Request;
+use Sentry;
 
 class PaymentRequest extends Request {
 
@@ -10,8 +10,7 @@ class PaymentRequest extends Request {
 	 *
 	 * @return bool
 	 */
-	public function authorize()
-	{
+	public function authorize() {
 		return Sentry::check();
 	}
 
@@ -20,11 +19,10 @@ class PaymentRequest extends Request {
 	 *
 	 * @return array
 	 */
-	public function rules()
-	{
+	public function rules() {
 		return [
-			'phone_number'	=> 	'required|numeric',
-			'amount'		=>	'required|numeric'
+			'phone_number' => 'required|numeric',
+			'amount' => 'required|numeric',
 		];
 	}
 

@@ -4,8 +4,6 @@ use Event;
 use Rahasi\Commands\PaymentCommand;
 use Rahasi\Services\Payments\Charge;
 
-use Illuminate\Queue\InteractsWithQueue;
-
 class PaymentCommandHandler {
 
 	/**
@@ -15,7 +13,7 @@ class PaymentCommandHandler {
 	public $charge;
 
 	function __construct(Charge $charge) {
-		$this->charge =  $charge;
+		$this->charge = $charge;
 	}
 	/**
 	 * Handle the payment Command.
@@ -23,8 +21,7 @@ class PaymentCommandHandler {
 	 * @param  PaymentCommand  $command
 	 * @return void
 	 */
-	public function handle(PaymentCommand $command)
-	{
+	public function handle(PaymentCommand $command) {
 		// Create the new payment in the database
 		$payment = $this->charge->processPayment($command);
 

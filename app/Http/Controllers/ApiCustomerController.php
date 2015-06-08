@@ -10,7 +10,7 @@ class ApiCustomerController extends ApiController {
 	 * @return Response
 	 */
 	public function index() {
-
+		dd('wy here?');
 		return $this->response->withCollection($this->user->customers, new CustomerTransformer);
 
 	}

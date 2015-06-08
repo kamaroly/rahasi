@@ -20,6 +20,10 @@ class EventServiceProvider extends ServiceProvider {
 		'Rahasi\Events\CustomerWasRegistered' => [
 			'Rahasi\Handlers\Events\CustomerLogs',
 		],
+
+		'Rahasi\Events\ChargeWasRegistered' => [
+			'Rahasi\Handlers\Events\ChargeLog',
+		],
 	];
 
 	/**
