@@ -5,6 +5,9 @@ Route::get('/', 'WelcomeController@index');
 // Dashboard Routes after user signs in
 Route::get('/dashboard', ['as' => 'home', 'middleware' => 'sentry.auth', 'uses' => 'WelcomeController@dashboard']);
 
+/** Customer routes */
+Route::resource('/customers', 'CustomerController');
+
 Route::group(['prefix' => 'account', 'middleware' => 'sentry.auth'], function () {
 
 	// Saving General account
@@ -16,9 +19,10 @@ Route::group(['prefix' => 'account', 'middleware' => 'sentry.auth'], function ()
 	//showing user configured banks
 	Route::get('/banks', ['as' => 'account.banks', 'uses' => 'BankController@index']);
 	Route::get('/banks/create', ['as' => 'account.banks.create', 'uses' => 'BankController@create']);
-	Route::post('/bank/store', ['as' => 'account.banks.store', 'uses' => 'BankController@store']);
-	Route::delete('/bank/destory/{bankId}', ['as' => 'account.banks.destroy', 'uses' => 'BankController@destroy']);
-
+	Route::post('/bank/store', ['as' => 'account.bank.store', 'uses' => 'BankController@store']);
+	Route::get('/bank/destory/{bankId}', ['as' => 'account.bank.destroy', 'uses' => 'BankController@destroy']);
+	Route::get('/bank/edit/{bankId}', ['as' => 'account.bank.edit', 'uses' => 'BankController@edit']);
+	Route::post('/bank/update/{bankId}', ['as' => 'account.bank.update', 'uses' => 'BankController@update']);
 	// Route::controller('/banks', 'BankController', ['account.bank']);
 	// Showing configurations for the account email
 	Route::get('/emails', ['as' => 'account.emails', 'uses' => 'AccountController@index']);
@@ -29,7 +33,7 @@ Route::resource('/payments', 'PaymentController');
 
 Route::get('/charges/{items}', 'WelcomeController@gross');
 
-Route::group(['prefix' => 'api/ajax'], function () {
-
-	Route::get('/apikeys/{keyType}', 'AccountController@newKey');
+Route::get('/test', function () {
+	$bar = 'HELLO.WORLD!';
+	return $bar = ucwords(strtolower($bar)); // Hello World!
 });

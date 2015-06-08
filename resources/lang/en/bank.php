@@ -7,4 +7,7 @@ return [
 
 	/** Lebels */
 	'add' => 'Add bank account',
+
+	/** Notifications */
+	'bank_is_updated' => 'Bank details are updated',
 ];

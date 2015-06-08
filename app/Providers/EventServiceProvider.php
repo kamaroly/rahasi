@@ -16,6 +16,10 @@ class EventServiceProvider extends ServiceProvider {
 			'LogBankWasAdded',
 			'BankWasAddedWebHook',
 		],
+		//Register customer was registered events
+		'Rahasi\Events\CustomerWasRegistered' =>[
+		'Rahasi\handlers\Events\CustomerLogs'
+		]
 	];
 
 	/**

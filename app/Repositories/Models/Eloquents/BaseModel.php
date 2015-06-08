@@ -1,15 +1,15 @@
 <?php namespace Rahasi\Repositories\Models\Eloquents;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Session;
 
 /**
  * Base class for the modesl
  */
 abstract class BaseModel extends Model {
-
-	use SoftDeletingTrait;
-
+	use SoftDeletes;
+	protected $softDelete = true;
 	protected $dates = ['deleted_at'];
 
 	public function getUserId() {

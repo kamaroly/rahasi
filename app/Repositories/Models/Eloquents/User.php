@@ -15,7 +15,7 @@ class User extends \Sentinel\Models\User {
 	/**
 	 * Customer of this card
 	 */
-	public function customer() {
+	public function customers() {
 		return $this->hasMany('\Rahasi\Repositories\Models\Eloquents\Customer');
 	}
 	/**

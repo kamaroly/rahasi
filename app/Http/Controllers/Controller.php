@@ -1,5 +1,6 @@
 <?php namespace Rahasi\Http\Controllers;
 
+use Illuminate\Events\Dispatcher;
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
@@ -23,13 +24,18 @@ abstract class Controller extends BaseController {
 	 *
 	 * @return void
 	 */
-	public function __construct() {
+
+	public $dispatcher;
+
+	public function __construct(Dispatcher $dispatcher) {
 
 		$this->middleware('sentry.auth');
 
 		$this->userId = Session::get('userId');
 
-		$this->user = User::findOrFail($this->userId);
+		$this->user = !$this->userId ?: User::findOrFail($this->userId);
+
+		$this->dispatcher = $dispatcher;
 	}
 
 	use DispatchesCommands, ValidatesRequests;

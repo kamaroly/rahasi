@@ -22,7 +22,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		@each ('payments.item', $payments, 'payment', 'payments.no-item')
+		@each ('payments.item', $payments, 'payment', 'payments.no-items')
 	</tbody>
 </table>
 
