@@ -30,10 +30,10 @@ Route::group(['prefix' => 'account', 'middleware' => 'sentry.auth'], function ()
 });
 
 Route::resource('/payments', 'PaymentController');
-
 Route::get('/charges/{items}', 'WelcomeController@gross');
 
-Route::get('/test', function () {
-	$bar = 'HELLO.WORLD!';
-	return $bar = ucwords(strtolower($bar)); // Hello World!
+/** API ROUTE */
+
+Route::group(['prefix' => 'api/v1'], function () {
+	Route::resource('/customers', 'ApiCustomerController');
 });

@@ -16,7 +16,6 @@ class RepositoryProvider extends ServiceProvider {
 
 	protected function bootRepositories() {
 
-		$this->app->bind('Rahasi\Repositories\Eloquents\Repository', 'Rahasi\Repositories\Eloquents\Repository');
 		// Bind mobile repository interface
 		$this->app->bind(
 			'Rahasi\Repositories\Contracts\MobileRepositoryInterface',

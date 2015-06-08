@@ -6,7 +6,7 @@ class Customer extends BaseModel {
 
 	public $incrementing = false;
 
-	protected $fillable = array('description', 'email');
+	protected $fillable = array('description', 'email', 'user_id');
 	/**
 	 * Customer Cards
 	 */
@@ -35,8 +35,9 @@ class Customer extends BaseModel {
 		 * for the `id` field (provided by $model->getKeyName())
 		 */
 		static::creating(function ($model) {
+
 			$model->{$model->getKeyName()} = (string) 'cus_' . $model->generateKey();
-			$model->user_id = $model->getUserId();
+			$model->user_id = (isset($model->attributes['user_id'])) ? $model->attributes['user_id'] : $model->getUserId();
 		});
 	}
 }

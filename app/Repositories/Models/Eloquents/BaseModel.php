@@ -12,7 +12,12 @@ abstract class BaseModel extends Model {
 	protected $softDelete = true;
 	protected $dates = ['deleted_at'];
 
+	/**
+	 * Get the ID of the current logged in user;
+	 * @return integer
+	 */
 	public function getUserId() {
+
 		return Session::get('userId');
 	}
 	/**

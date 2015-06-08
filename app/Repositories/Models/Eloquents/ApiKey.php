@@ -1,15 +1,8 @@
 <?php namespace Rahasi\Repositories\Models\Eloquents;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
-
 class ApiKey extends BaseModel {
 
 	protected $table = 'api_keys';
-
-	use SoftDeletes;
-
-	protected $dates = ['deleted_at'];
-
 	/**
 	 * Get API KEYS by USER ID
 	 *
@@ -25,9 +18,11 @@ class ApiKey extends BaseModel {
 	 * @return ApiKeyRepository
 	 */
 	public function getByKey($key) {
-		$apiKey = self::where('key', '=', $key)
+		$apiKey = self::Where('live_sk', $key)
+			->orWhere('test_sk', $key)
+			->orWhere('live_pk', $key)
+			->orWhere('test_pk', $key)
 			->first();
-
 		if (empty($apiKey) || $apiKey->exists == false) {
 			return null;
 		}
