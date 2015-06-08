@@ -24,6 +24,9 @@ class EventServiceProvider extends ServiceProvider {
 		'Rahasi\Events\ChargeWasRegistered' => [
 			'Rahasi\Handlers\Events\ChargeLog',
 		],
+		'Rahasi\Events\MobileWasRegistered' => [
+			//Mobile was registered events
+		],
 	];
 
 	/**

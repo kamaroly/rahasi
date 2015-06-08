@@ -1,6 +1,5 @@
 <?php namespace Rahasi\Handlers\Commands;
 
-use Event;
 use Rahasi\Commands\PaymentCommand;
 use Rahasi\Services\Payments\Charge;
 
@@ -23,9 +22,6 @@ class PaymentCommandHandler {
 	 */
 	public function handle(PaymentCommand $command) {
 		// Create the new payment in the database
-		$payment = $this->charge->processPayment($command);
-
-		Event::fire('payment.created', [$payment]);
-	}
+		return $payment = $this->charge->processPayment($command);}
 
 }
