@@ -26,7 +26,6 @@ class PayWithMfsBase implements PaymentServiceInterface {
 
 		// First start by transforming the input object
 		$paymentTransformed = $this->transform($payment);
-
 		return $this->saveCharge($paymentTransformed);
 	}
 
@@ -74,9 +73,9 @@ class PayWithMfsBase implements PaymentServiceInterface {
 			'currency' => isset($mobile['currency']) ? $mobile['currency'] : 'RWF',
 			'captureds' => isset($mobile['captureds']) ? $mobile['captureds'] : false,
 			'description' => isset($mobile['description']) ? $mobile['description'] : null,
+			'user_id' => isset($mobile['user_id']) ? $mobile['user_id'] : false,
 			'statement_descriptor' => isset($mobile['statement_desc']) ? $mobile['statement_desc'] : null,
 		];
-
 	}
 
 	/**

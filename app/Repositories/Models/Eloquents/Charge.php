@@ -29,6 +29,7 @@ class Charge extends BaseModel {
 		'receipt_email',
 		'receipt_number',
 		'application_fee',
+		'user_id',
 	];
 	/**
 	 * Chargeable object morphy Relationship

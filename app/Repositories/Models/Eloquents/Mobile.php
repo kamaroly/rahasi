@@ -9,7 +9,7 @@ class Mobile extends BaseModel {
 	protected $hidden = ['customer_id', 'created_at', 'updated_at'];
 
 	/** @var array Allowed mass assignment */
-	protected $fillable = ['msisdn', 'brand', 'country', 'address_line1', 'customer_id'];
+	protected $fillable = ['msisdn', 'brand', 'country', 'address_line1', 'customer_id', 'user_id'];
 
 	/** @var Sentry */
 	public $user;
@@ -38,13 +38,14 @@ class Mobile extends BaseModel {
 	 */
 	protected static function boot() {
 		parent::boot();
+
 		/**
 		 * Attach to the 'creating' Model Event to provide a UUID
 		 * for the `id` field (provided by $model->getKeyName())
 		 */
 		static::creating(function ($model) {
 			$model->{$model->getKeyName()} = (string) 'mobile_' . $model->generateKey();
-			$model->user_id = (isset($model->attributes['user_id'])) ? $model->attributes['user_id'] : $model->getUserId();
+			$model->user_id = (isset($model->attributes['user_id']) && !is_null($model->attributes['user_id'])) ? $model->attributes['user_id'] : $model->getUserId();
 		});
 	}
 }
