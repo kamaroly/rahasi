@@ -28,7 +28,7 @@ class UserBank extends BaseModel {
 		 */
 		static::creating(function ($model) {
 			$model->{$model->getKeyName()} = (string) 'bank_' . $model->generateKey();
-			$model->user_id = $model->getUserId();
+			$model->user_id = (isset($model->attributes['user_id'])) ? $model->attributes['user_id'] : $model->getUserId();
 		});
 	}
 }
