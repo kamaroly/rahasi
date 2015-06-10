@@ -19,6 +19,12 @@ class ApiChargeController extends ApiController {
 			$data = (array) Input::all();
 			$data['user_id'] = $this->user->id;
 			$newcharge = $charge->processPayment($data);
+
+			header('Access-Control-Allow-Origin: *');
+			header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+			header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
+			header('Access-Control-Allow-Credentials: true');
+
 			return $this->response->withItem($newcharge, new ChargeTransformer);
 
 		} catch (ModelNotFoundException $e) {
