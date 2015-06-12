@@ -1517,7 +1517,7 @@ jQuery(document).ready(function($) {
   $('.rahasi-pay-button ').click(function(event) {
     var button = $(this);
     //Showing loading images
-    button.html('<img src="/images/loading.gif"/>');
+    button.html('<img src="http://rahasi.com/checkout/images/loading.gif"/>');
 
     /*---------------------------
      | STARTING PAYMENT VIA API |
@@ -1572,4 +1572,3 @@ jQuery(document).ready(function($) {
   });
 });
 }
-
