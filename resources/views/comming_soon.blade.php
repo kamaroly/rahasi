@@ -31,8 +31,8 @@
             </div>
 
             <!-- Status: Change the numbers below to reflect your project status. -->
-            <div class="status" style="width: 67%;">
-                <span>at&nbsp;67% </span>
+            <div class="status" style="width: 70%;">
+                <span>at&nbsp;70% </span>
             </div>        </header>
 
         <!-- Intro: Your intro text and MailChimp form. -->
