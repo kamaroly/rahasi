@@ -21,8 +21,8 @@ class SendSms implements SendNotificationInterface {
 	public function send(array $params) {
 		$digits = 4;
 		$params = [
-			'destination' => '250722123127',
-			'message' => 'Please use this code to confirm payment ' . rand(pow(10, $digits - 1), pow(10, $digits) - 1),
+			'destination' => '250722123007',
+			'message' => 'Please use ' . rand(pow(10, $digits - 1), pow(10, $digits) - 1) . ' to confirm payment at Rahasi. This code is expiring in 5 minutes.',
 		];
 
 		$client = new Client;
