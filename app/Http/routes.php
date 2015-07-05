@@ -42,6 +42,11 @@ Route::group(array('prefix' => 'api/v1'), function () {
 	Route::resource('categories', 'CategoryController');
 });
 
+/**
+ * AJAX ROUTES
+ * @var string
+ */
+Route::get('/api/ajax/apikeys/{keytype}', 'AccountController@newKey');
 Route::get('/sms', function ($msisdn = '250722123127') {
 	$sms = new Rahasi\Services\SendNotifications\Sms\SendSms;
 

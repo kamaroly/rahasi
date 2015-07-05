@@ -21,9 +21,12 @@ class AccountController extends Controller {
 
 		$keys = $this->user->apiKeys()->first();
 
-		Artisan::call('rahasi-api-key:generate', [
-			'--user-id' => $this->user->id,
-		]);
+		if ($keys == null) {
+			Artisan::call('rahasi-api-key:generate', [
+				'--user-id' => $this->user->id,
+			]);
+			$keys = $this->user->apiKeys()->first();
+		}
 
 		return view('account.api', compact('keys'));
 	}
