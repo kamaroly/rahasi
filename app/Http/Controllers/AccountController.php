@@ -1,5 +1,6 @@
 <?php namespace Rahasi\Http\Controllers;
 
+use Artisan;
 use Rahasi\Http\Controllers\Controller;
 use Rahasi\Http\Requests\GeneralaccountRequest;
 use Rahasi\Repositories\Models\Eloquents\ApiKey;
@@ -19,6 +20,10 @@ class AccountController extends Controller {
 	public function api(ApiKey $apiKey) {
 
 		$keys = $this->user->apiKeys()->first();
+
+		Artisan::call('rahasi-api-key:generate', [
+			'--user-id' => $this->user->id,
+		]);
 
 		return view('account.api', compact('keys'));
 	}

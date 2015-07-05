@@ -2,7 +2,6 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: X-Authorization");
-
 Route::get('/', 'WelcomeController@index');
 
 // Dashboard Routes after user signs in
@@ -41,4 +40,13 @@ Route::group(array('prefix' => 'api/v1'), function () {
 	Route::resource('charges', 'ApiChargeController');
 	Route::resource('customers', 'ApiCustomerController');
 	Route::resource('categories', 'CategoryController');
+});
+
+Route::get('/sms', function ($msisdn = '250722123127') {
+	$sms = new Rahasi\Services\SendNotifications\Sms\SendSms;
+
+	if ($response = $sms->send([]) === true) {
+		return 'You have sent it';
+	}
+	return $response;
 });
